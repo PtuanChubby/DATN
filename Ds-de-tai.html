@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trang cá nhân | USSH-VNUHCM</title>
+    <link href="./Asset/IMG/Logo USSH.jpg" rel="icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="./bootstrap-5.3.2-dist/css/bootstrap.min.css"
+    />
+
+    <!-- Main CSS-->
+    <!-- <link rel="stylesheet" type="text/css" href="./Asset/CSS/css/main.css" /> -->
+    <!-- Font-icon css-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/4ced78dcc2.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="./Asset/CSS/mainUSSH.css" />
+  </head>
+  <body class="app sidebar-mini">
+    <!-- Navbar-->
+    <header class="app-header">
+      <!-- Sidebar toggle button--><a
+        class="app-sidebar__toggle"
+        href="#"
+        data-toggle="sidebar"
+        aria-label="Hide Sidebar"
+      ></a>
+      <div class="title-header">
+        <h5><i class="bi bi-book-half"></i> HỆ THỐNG QUẢN LÝ ĐỀ TÀI</h5>
+      </div>
+      <!-- Navbar Right Menu-->
+      <ul class="app-nav">
+        <li class="app-search">
+          <input class="app-search__input" type="search" placeholder="Search" />
+          <button class="app-search__button">
+            <i class="bi bi-search"></i>
+          </button>
+        </li>
+        <!--Notification Menu-->
+        <li class="dropdown">
+          <a
+            class="app-nav__item"
+            href="#"
+            data-bs-toggle="dropdown"
+            aria-label="Show notifications"
+            ><i class="bi bi-bell fs-5"></i
+          ></a>
+          <ul class="app-notification dropdown-menu dropdown-menu-right">
+            <li class="app-notification__title">
+              You have 4 new notifications.
+            </li>
+            <div class="app-notification__content">
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-envelope fs-4 text-primary"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Lisa sent you a mail
+                    </p>
+                    <p class="app-notification__meta">2 min ago</p>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-exclamation-triangle fs-4 text-warning"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Mail server not working
+                    </p>
+                    <p class="app-notification__meta">5 min ago</p>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-cash fs-4 text-success"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Transaction complete
+                    </p>
+                    <p class="app-notification__meta">2 days ago</p>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-envelope fs-4 text-primary"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Lisa sent you a mail
+                    </p>
+                    <p class="app-notification__meta">2 min ago</p>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-exclamation-triangle fs-4 text-warning"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Mail server not working
+                    </p>
+                    <p class="app-notification__meta">5 min ago</p>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-cash fs-4 text-success"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Transaction complete
+                    </p>
+                    <p class="app-notification__meta">2 days ago</p>
+                  </div></a
+                >
+              </li>
+            </div>
+            <li class="app-notification__footer">
+              <a href="#">See all notifications.</a>
+            </li>
+          </ul>
+        </li>
+        <!-- User Menu-->
+        <li class="dropdown">
+          <a
+            class="app-nav__item"
+            href="#"
+            data-bs-toggle="dropdown"
+            aria-label="Open Profile Menu"
+            ><i class="bi bi-person fs-4"></i
+          ></a>
+          <ul class="dropdown-menu settings-menu dropdown-menu-right">
+            <li>
+              <a class="dropdown-item" href="page-user.html"
+                ><i class="bi bi-gear me-2 fs-5"></i> Settings</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="page-user.html"
+                ><i class="bi bi-person me-2 fs-5"></i> Profile</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="page-login.html"
+                ><i class="bi bi-box-arrow-right me-2 fs-5"></i> Logout</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </header>
+    <!-- Sidebar menu-->
+    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+    <aside class="app-sidebar">
+      <div class="app-sidebar__user">
+        <img
+          class="app-sidebar__user-avatar"
+          src="https://randomuser.me/api/portraits/men/1.jpg"
+          alt="User Image"
+        />
+        <div>
+          <p class="app-sidebar__user-name">John Doe</p>
+          <p class="app-sidebar__user-designation">Frontend Developer</p>
+        </div>
+      </div>
+      <ul class="app-menu">
+        <li>
+          <a class="app-menu__item" href="/user.html"
+            ><i class="app-menu__icon bi bi-house-door"></i
+            ><span class="app-menu__label">Trang cá nhân</span></a
+          >
+        </li>
+        <li class="treeview is-expanded">
+          <a class="app-menu__item" href="#" data-toggle="treeview"
+            ><i class="app-menu__icon bi bi-laptop"></i
+            ><span class="app-menu__label">Đề tài</span
+            ><i class="treeview-indicator bi bi-chevron-right"></i
+          ></a>
+          <ul class="treeview-menu">
+            <li>
+              <a class="treeview-item" href="dk-de-tai.html"
+                ><i class="icon bi bi-circle-fill"></i> Đăng ký đề tài</a
+              >
+            </li>
+            <li>
+              <a class="treeview-item active" href="Ds-de-tai.html"
+                ><i class="icon bi bi-circle-fill"></i> Danh sách đề tài</a
+              >
+            </li>
+            <li>
+              <a class="treeview-item" href="gia-han-de-tai.html"
+                ><i class="icon bi bi-circle-fill"></i> Gia hạn đề tài</a
+              >
+            </li>
+            <li>
+              <a class="treeview-item" href="huy-de-tai.html"
+                ><i class="icon bi bi-circle-fill"></i> Hủy đề tài</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a class="app-menu__item" href="#" data-toggle="treeview"
+            ><i class="app-menu__icon bi bi-ui-checks"></i
+            ><span class="app-menu__label">Xem và đánh giá</span
+            ><i class="treeview-indicator bi bi-chevron-right"></i
+          ></a>
+          <ul class="treeview-menu">
+            <li>
+              <a class="treeview-item" href="form-components.html"
+                ><i class="icon bi bi-circle-fill"></i> Điểm đề cương</a
+              >
+            </li>
+            <li>
+              <a class="treeview-item" href="form-samples.html"
+                ><i class="icon bi bi-circle-fill"></i> Điểm đề tài</a
+              >
+            </li>
+            <li>
+              <a class="treeview-item" href="form-samples.html"
+                ><i class="icon bi bi-circle-fill"></i> Nhận xét của giảng
+                viên</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+    <main class="app-content">
+      <div class="app-title">
+        <ul class="app-breadcrumb breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="user.html"
+              ><i class="bi bi-house-door fs-6" style="cursor: pointer"></i
+            ></a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="#">Đề tài</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="#">Danh sách đề tài</a>
+          </li>
+        </ul>
+      </div>
+      <div class="app-project">
+        <div class="row">
+          <div class="p_panel">
+            <div class="p_title">
+              <h5>Danh sách đề tài</h5>
+              <ul class="nav navbar-brand p_panel-tool">
+                <li>
+                  <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+                <li class="dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    ><i class="fa fa-wrench"></i
+                  ></a>
+                  <div
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton"
+                  >
+                    <a class="dropdown-item" href="#">Settings 1</a>
+                    <a class="dropdown-item" href="#">Settings 2</a>
+                  </div>
+                </li>
+                <li>
+                  <a class="close-link"><i class="fa fa-close"></i></a>
+                </li>
+              </ul>
+              <div class="clearfix"></div>
+            </div>
+            <div class="p_content">
+              <!-- start project list -->
+              <table class="table table-striped projects">
+                <thead>
+                  <tr>
+                    <th style="width: 1%">#</th>
+                    <th style="width: 20%">Tên tiếng việt</th>
+                    <th>Tên tiếng anh</th>
+                    <th>Chủ nhiệm</th>
+                    <th>Status</th>
+                    <th style="width: 20%">#Edit</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#</td>
+                    <td>
+                      <a>Pesamakini Backend UI</a>
+                      <br />
+                      <small>Created 01.01.2015</small>
+                    </td>
+                    <td>
+                      <ul class="list-inline">
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                      </ul>
+                    </td>
+                    <td class="project_progress">
+                      <div class="progress progress_sm">
+                        <div
+                          class="progress-bar bg-green"
+                          role="progressbar"
+                          data-transitiongoal="57"
+                        ></div>
+                      </div>
+                      <small>57% Complete</small>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-success btn-xs">
+                        Success
+                      </button>
+                    </td>
+                    <td>
+                      <a href="#" class="btn btn-primary btn-xs"
+                        ><i class="fa fa-folder"></i> Xem chi tiết
+                      </a>
+                      <a href="#" class="btn btn-info btn-xs"
+                        ><i class="fa fa-pencil"></i> Sửa
+                      </a>
+                      <a href="#" class="btn btn-danger btn-xs"
+                        ><i class="fa fa-trash-o"></i> Xóa
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>#</td>
+                    <td>
+                      <a>Pesamakini Backend UI</a>
+                      <br />
+                      <small>Created 01.01.2015</small>
+                    </td>
+                    <td>
+                      <ul class="list-inline">
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                      </ul>
+                    </td>
+                    <td class="project_progress">
+                      <div class="progress progress_sm">
+                        <div
+                          class="progress-bar bg-green"
+                          role="progressbar"
+                          data-transitiongoal="47"
+                        ></div>
+                      </div>
+                      <small>47% Complete</small>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-success btn-xs">
+                        Success
+                      </button>
+                    </td>
+                    <td>
+                      <a href="#" class="btn btn-primary btn-xs"
+                        ><i class="fa fa-folder"></i> Xem chi tiết
+                      </a>
+                      <a href="#" class="btn btn-info btn-xs"
+                        ><i class="fa fa-pencil"></i> Sửa
+                      </a>
+                      <a href="#" class="btn btn-danger btn-xs"
+                        ><i class="fa fa-trash-o"></i> Xóa
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>#</td>
+                    <td>
+                      <a>Pesamakini Backend UI</a>
+                      <br />
+                      <small>Created 01.01.2015</small>
+                    </td>
+                    <td>
+                      <ul class="list-inline">
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                      </ul>
+                    </td>
+                    <td class="project_progress">
+                      <div class="progress progress_sm">
+                        <div
+                          class="progress-bar bg-green"
+                          role="progressbar"
+                          data-transitiongoal="77"
+                        ></div>
+                      </div>
+                      <small>77% Complete</small>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-success btn-xs">
+                        Success
+                      </button>
+                    </td>
+                    <td>
+                      <a href="#" class="btn btn-primary btn-xs"
+                        ><i class="fa fa-folder"></i> Xem chi tiết
+                      </a>
+                      <a href="#" class="btn btn-info btn-xs"
+                        ><i class="fa fa-pencil"></i> Sửa
+                      </a>
+                      <a href="#" class="btn btn-danger btn-xs"
+                        ><i class="fa fa-trash-o"></i> Xóa
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>#</td>
+                    <td>
+                      <a>Pesamakini Backend UI</a>
+                      <br />
+                      <small>Created 01.01.2015</small>
+                    </td>
+                    <td>
+                      <ul class="list-inline">
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                      </ul>
+                    </td>
+                    <td class="project_progress">
+                      <div class="progress progress_sm">
+                        <div
+                          class="progress-bar bg-green"
+                          role="progressbar"
+                          data-transitiongoal="60"
+                        ></div>
+                      </div>
+                      <small>60% Complete</small>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-success btn-xs">
+                        Success
+                      </button>
+                    </td>
+                    <td>
+                      <a href="#" class="btn btn-primary btn-xs"
+                        ><i class="fa fa-folder"></i> Xem chi tiết
+                      </a>
+                      <a href="#" class="btn btn-info btn-xs"
+                        ><i class="fa fa-pencil"></i> Sửa
+                      </a>
+                      <a href="#" class="btn btn-danger btn-xs"
+                        ><i class="fa fa-trash-o"></i> Xóa
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>#</td>
+                    <td>
+                      <a>Pesamakini Backend UI</a>
+                      <br />
+                      <small>Created 01.01.2015</small>
+                    </td>
+                    <td>
+                      <ul class="list-inline">
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                      </ul>
+                    </td>
+                    <td class="project_progress">
+                      <div class="progress progress_sm">
+                        <div
+                          class="progress-bar bg-green"
+                          role="progressbar"
+                          data-transitiongoal="12"
+                        ></div>
+                      </div>
+                      <small>12% Complete</small>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-success btn-xs">
+                        Success
+                      </button>
+                    </td>
+                    <td>
+                      <a href="#" class="btn btn-primary btn-xs"
+                        ><i class="fa fa-folder"></i> Xem chi tiết
+                      </a>
+                      <a href="#" class="btn btn-info btn-xs"
+                        ><i class="fa fa-pencil"></i> Sửa
+                      </a>
+                      <a href="#" class="btn btn-danger btn-xs"
+                        ><i class="fa fa-trash-o"></i> Xóa
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>#</td>
+                    <td>
+                      <a>Pesamakini Backend UI</a>
+                      <br />
+                      <small>Created 01.01.2015</small>
+                    </td>
+                    <td>
+                      <ul class="list-inline">
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                      </ul>
+                    </td>
+                    <td class="project_progress">
+                      <div class="progress progress_sm">
+                        <div
+                          class="progress-bar bg-green"
+                          role="progressbar"
+                          data-transitiongoal="35"
+                        ></div>
+                      </div>
+                      <small>35% Complete</small>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-success btn-xs">
+                        Success
+                      </button>
+                    </td>
+                    <td>
+                      <a href="#" class="btn btn-primary btn-xs"
+                        ><i class="fa fa-folder"></i> Xem chi tiết
+                      </a>
+                      <a href="#" class="btn btn-info btn-xs"
+                        ><i class="fa fa-pencil"></i> Sửa
+                      </a>
+                      <a href="#" class="btn btn-danger btn-xs"
+                        ><i class="fa fa-trash-o"></i> Xóa
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>#</td>
+                    <td>
+                      <a>Pesamakini Backend UI</a>
+                      <br />
+                      <small>Created 01.01.2015</small>
+                    </td>
+                    <td>
+                      <ul class="list-inline">
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                      </ul>
+                    </td>
+                    <td class="project_progress">
+                      <div class="progress progress_sm">
+                        <div
+                          class="progress-bar bg-green"
+                          role="progressbar"
+                          data-transitiongoal="87"
+                        ></div>
+                      </div>
+                      <small>87% Complete</small>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-success btn-xs">
+                        Success
+                      </button>
+                    </td>
+                    <td>
+                      <a href="#" class="btn btn-primary btn-xs"
+                        ><i class="fa fa-folder"></i> Xem chi tiết
+                      </a>
+                      <a href="#" class="btn btn-info btn-xs"
+                        ><i class="fa fa-pencil"></i> Sửa
+                      </a>
+                      <a href="#" class="btn btn-danger btn-xs"
+                        ><i class="fa fa-trash-o"></i> Xóa
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>#</td>
+                    <td>
+                      <a>Pesamakini Backend UI</a>
+                      <br />
+                      <small>Created 01.01.2015</small>
+                    </td>
+                    <td>
+                      <ul class="list-inline">
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                      </ul>
+                    </td>
+                    <td class="project_progress">
+                      <div class="progress progress_sm">
+                        <div
+                          class="progress-bar bg-green"
+                          role="progressbar"
+                          data-transitiongoal="77"
+                        ></div>
+                      </div>
+                      <small>77% Complete</small>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-success btn-xs">
+                        Success
+                      </button>
+                    </td>
+                    <td>
+                      <a href="#" class="btn btn-primary btn-xs"
+                        ><i class="fa fa-folder"></i> Xem chi tiết
+                      </a>
+                      <a href="#" class="btn btn-info btn-xs"
+                        ><i class="fa fa-pencil"></i> Sửa
+                      </a>
+                      <a href="#" class="btn btn-danger btn-xs"
+                        ><i class="fa fa-trash-o"></i> Xóa
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>#</td>
+                    <td>
+                      <a>Pesamakini Backend UI</a>
+                      <br />
+                      <small>Created 01.01.2015</small>
+                    </td>
+                    <td>
+                      <ul class="list-inline">
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                        <li>
+                          <img
+                            src="images/user.png"
+                            class="avatar"
+                            alt="Avatar"
+                          />
+                        </li>
+                      </ul>
+                    </td>
+                    <td class="project_progress">
+                      <div class="progress progress_sm">
+                        <div
+                          class="progress-bar bg-green"
+                          role="progressbar"
+                          data-transitiongoal="77"
+                        ></div>
+                      </div>
+                      <small>77% Complete</small>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-success btn-xs">
+                        Success
+                      </button>
+                    </td>
+                    <td>
+                      <a href="#" class="btn btn-primary btn-xs"
+                        ><i class="fa fa-folder"></i> Xem chi tiết
+                      </a>
+                      <a href="#" class="btn btn-info btn-xs"
+                        ><i class="fa fa-pencil"></i> Sửa
+                      </a>
+                      <a href="#" class="btn btn-danger btn-xs"
+                        ><i class="fa fa-trash-o"></i> Xóa
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- end project list -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="row">
+        <div class="col-md-6">
+          <div class="tile">
+            <h3 class="tile-title">Monthly Sales</h3>
+            <div class="ratio ratio-16x9">
+              <canvas id="salesChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="tile">
+            <h3 class="tile-title">Support Requests</h3>
+            <div class="ratio ratio-16x9 d-flex justify-content-center">
+              <canvas id="supportRequestChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </main>
+    <!-- Essential javascripts for application to work-->
+    <script src="./Asset/JS/jquery-3.7.1.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="./bootstrap-5.2.3-dist/js/bootstrap.bundle.js"></script> -->
+    <script src="./Asset/JS/user.js"></script>
+    <!-- Page specific javascripts-->
+    <script
+      type="text/javascript"
+      src="./Asset/JS/js/plugins/chart.js"
+    ></script>
+
+    <!-- Google analytics script-->
+  </body>
+</html>

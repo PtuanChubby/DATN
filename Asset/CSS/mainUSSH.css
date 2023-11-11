@@ -1,0 +1,152 @@
+.card-grouptv {
+  display: flex;
+  margin-bottom: 8px;
+}
+.ttv1 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.add-member-btn {
+  border: none;
+  margin: 0 0 8px 8px;
+  background-color: #ffffff;
+  color: #1851fb;
+  font-size: 20px;
+}
+.delete-member-btn {
+  border: none;
+  margin: 0 0 8px 8px;
+  background-color: #ffffff;
+  color: #ff0000;
+  font-size: 20px;
+}
+
+
+
+
+.input-group .info-ht,
+.input-group .info-mssv,
+.input-group .info-khoa, 
+.input-group .info-email
+ {
+  margin-bottom: 10px;
+}
+.input-group-show .info-ht,
+.input-group-show .info-mssv,
+.input-group-show .info-khoa, 
+.input-group-show .info-email
+ {
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+.project {
+}
+.p_panel {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #dadada;
+  opacity: 1;
+}
+.p_title {
+  margin-bottom: 10px;
+  padding: 8px;
+  justify-content: space-between;
+}
+.p_title h5 {
+  margin: 5px 0 6px;
+  float: left;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.p_panel-tool {
+  float: right;
+  min-width: 70px;
+}
+.p_panel-tool > li > a {
+  padding: 5px;
+}
+.clearfix:after,
+form:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.error-message {
+  color: red;
+  font-size: 12px;
+}
+.member-group {
+  margin-bottom: 10px;
+}
+.member-group:not(:first-child) .input-group-text {
+  display: none;
+}
+.border-0:focus {
+  box-shadow: none;
+}
+.required-star {
+  font-weight: 900;
+  color: red;
+}
+.indent-label {
+  margin-left: 5px;
+}
+.list-disc {
+  list-style-type: disc !important;
+}
+.title-tv {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+.title-tv .ht,
+.title-tv .mssv,
+.title-tv .khoa {
+  border: 1px solid black;
+  width: 100%;
+}
+.title-tv .ht h6,
+.title-tv .mssv h6,
+.title-tv .khoa h6 {
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+.card-body .form-table {
+  overflow-x: auto;
+}
+.card-body .form-table table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+thead, th {
+  background-color: #f8f9fa;
+}
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+.field {
+  margin: 0 !important;
+}
+.float {
+  position: sticky;
+  top: 0;
+  right: -1px;
+  z-index: 2;
+}
+.td.float {
+  background-color: #fff;
+}

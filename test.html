@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trang nhập và xuất dữ liệu</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.40.2/docxtemplater.js"
+      integrity="sha512-/tldC9utdAOHqcVZrmkZfxcx2C/Z54v2J6mEEBsgYauYcIX0yrOjfKlE58c7deCvH0zYFRe0dO+55/AQtALR4A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"
+      integrity="sha512-XMVd28F1oH/O71fzwBnV7HucLxVwtxf26XV8P4wPk26EDxuGZ91N8bsOttmnomcCD3CS5ZMRL50H0GgOHvegtg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+      integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <h1>Trang nhập và xuất dữ liệu</h1>
+
+    <div>
+      <label for="titleInput">Tiêu đề:</label>
+      <input type="text" id="titleInput" />
+    </div>
+
+    <div>
+      <label for="contentInput">Nội dung:</label>
+      <textarea id="contentInput"></textarea>
+    </div>
+
+    <div>
+      <button onclick="previewData()">Xem lại dữ liệu</button>
+      <button onclick="exportToWord()">Xuất ra Word</button>
+      <button onclick="exportToPdf()">Xuất ra PDF</button>
+    </div>
+
+    <div id="previewContainer"></div>
+
+    <script>
+      function previewData() {
+        var title = document.getElementById("titleInput").value;
+        var content = document.getElementById("contentInput").value;
+
+        var previewHtml =
+          "<h2>Tiêu đề:</h2><p>" +
+          title +
+          "</p><h2>Nội dung:</h2><p>" +
+          content +
+          "</p>";
+
+        document.getElementById("previewContainer").innerHTML = previewHtml;
+      }
+
+      function exportToWord() {
+        var title = document.getElementById("titleInput").value;
+        var content = document.getElementById("contentInput").value;
+
+        var template = "<h1>{{title}}</h1><p>{{content}}</p>";
+
+        var doc = new window.Docxtemplater().loadFromHtml(template);
+        doc.setData({ title: title, content: content });
+        doc.render();
+
+        var blob = doc.getBlob();
+        var url = URL.createObjectURL(blob);
+
+        var link = document.createElement("a");
+        link.href = url;
+        link.download = "document.docx";
+        link.click();
+      }
+
+      function exportToPdf() {
+        var title = document.getElementById("titleInput").value;
+        var content = document.getElementById("contentInput").value;
+
+        var doc = new window.jspdf.jsPDF();
+        doc.setFontSize(18);
+        doc.text(title, 10, 20);
+        doc.setFontSize(12);
+        doc.text(content, 10, 30);
+
+        doc.save("document.pdf");
+      }
+    </script>
+  </body>
+</html>
