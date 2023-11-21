@@ -26,289 +26,159 @@
     <link rel="stylesheet" href="./Asset/CSS/mainUSSH.css" />
   </head>
   <body>
-    <div class="card-grouptv">
-      <div class="ttv1">
-        <h6 class="title-ttv">A5. Thêm thành viên</h6>
-      </div>
-    </div>
-    <div class="form-table">
-      <table class="mb-2">
-        <thead>
+    <div class="container mt-5">
+      <div class="from-group">
+        <table class="table">
           <tr>
-            <th class="text-center" style="min-width: 50px; width: 50px">TT</th>
-            <th class="text-center" style="min-width: 200px; width: 30%">
-              Học hàm, Học vị, Họ và tên
-            </th>
-            <th class="text-center" style="min-width: 200px; width: 33%">
-              Đơn vị công tác
-            </th>
-            <th class="text-center" style="min-width: 200px; width: 33%">
-              Phân công (chủ trì hoặc tham gia)
-            </th>
-            <th class="float text-center" style="min-width: 80px; width: 80px">
-              Thao tác
-            </th>
+            <th>Các khoản chi phí</th>
+            <th>Từ ĐHQG-HCM (đ)</th>
+            <th>Từ nguồn huy động (đ)</th>
+            <th>Tổng kinh phí (đ)</th>
           </tr>
-        </thead>
-        <tbody>
-          <tr class="font-bold">
-            <td colspan="6">
-              <div><span>Chủ nhiệm</span></div>
-            </td>
-          </tr>
-          <tr>
-            <td class="text-center"></td>
-            <td>
-              ĐH. TUẤN PHẠM VĂN<span class="ml-2"
-                ><i
-                  class="researcher-owner pi pi-exclamation-circle"
-                  data-pr-tooltip="Chưa đăng tải lý lịch khoa học"
-                  data-pr-position="right"
-                  data-pr-at=""
-                  style="color: var(--red-600); font-size: 15px"
-                ></i
-              ></span>
-            </td>
-            <td>Trường Đại học Khoa học Xã hội và Nhân văn</td>
-            <td>
-              <div class="field text-input">
-                <div class="">
-                  <input
-                    id="general.owner.assignedTask"
-                    type="text"
-                    placeholder=""
-                    class="input-group-text"
-                    value=""
-                  />
-                </div>
-              </div>
-            </td>
-            <td class="float"></td>
-          </tr>
-          <tr class="font-bold">
-            <td colspan="6">
-              <div>
-                <span>Thư ký khoa học</span
-                ><button
-                  class="add-member-btn"
-                  data-bs-toggle="modal"
-                  data-bs-target="#member-modal"
-                >
-                  <i class="bi bi-person-plus-fill"></i>
-                </button>
-              </div>
-            </td>
-            <div id="member-list"></div>
-          </tr>
-          <tr class="font-bold">
-            <td colspan="6">
-              <div>
-                <span>Thành viên chính</span
-                ><button
-                  class="add-member-btn"
-                  data-bs-toggle="modal"
-                  data-bs-target="#member-modal"
-                >
-                  <i class="bi bi-person-plus-fill"></i>
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr class="font-bold">
-            <td colspan="6">
-              <div>
-                <span>Thành viên</span
-                ><button
-                  class="add-member-btn"
-                  data-bs-toggle="modal"
-                  data-bs-target="#member-modal"
-                >
-                  <i class="bi bi-person-plus-fill"></i>
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr class="font-bold">
-            <td colspan="6">
-              <div>
-                <span>Kỹ thuật viên, nhân viên hỗ trợ</span
-                ><button
-                  class="add-member-btn"
-                  data-bs-toggle="modal"
-                  data-bs-target="#member-modal"
-                >
-                  <i class="bi bi-person-plus-fill"></i>
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr class="font-bold">
-            <td colspan="6">
-              <div>
-                <span>Chuyên gia trong nước</span
-                ><button
-                  class="add-member-btn"
-                  data-bs-toggle="modal"
-                  data-bs-target="#member-modal"
-                >
-                  <i class="bi bi-person-plus-fill"></i>
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr class="font-bold">
-            <td colspan="6">
-              <div>
-                <span>Chuyên gia ngoài nước</span
-                ><button
-                  class="add-member-btn"
-                  data-bs-toggle="modal"
-                  data-bs-target="#member-modal"
-                >
-                  <i class="bi bi-person-plus-fill"></i>
-                </button>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
 
-    <div id="member-list"></div>
-    <div
-      class="modal fade"
-      id="member-modal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="member-modal-label"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="member-modal-label">
-              Thông tin thành viên
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form id="member-form">
-              <div class="input-group">
-                <div class="info-email required">
-                  <label for="input-text-email" class="mb-1">
-                    Email <span class="required-star">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    placeholder="Email"
-                    id="input-email"
-                    required
-                  />
-                </div>
-                <div class="info-ht required">
-                  <label for="input-text-name" class="mb-1">
-                    Họ và tên <span class="required-star">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Họ và tên"
-                    id="input-name"
-                    required
-                  />
-                </div>
-                <div class="info-mssv required">
-                  <label for="input-text-mssv" class="mb-1">
-                    Mã số sinh viên
-                    <span class="required-star">*</span>
-                  </label>
-                  <input
-                    type="number"
-                    class="form-control"
-                    placeholder="MSSV"
-                    id="input-mssv"
-                    required
-                  />
-                </div>
-                <div class="info-khoa required">
-                  <label for="input-text-khoa" class="mb-1">
-                    Khoa <span class="required-star">*</span>
-                  </label>
-                  <select
-                    id="input-khoa"
-                    class="form-control"
-                    placeholder="Khoa"
-                    required
-                  >
-                    <option selected="" disabled="">Chọn khoa</option>
-                    <option>Báo chí và Truyền thông</option>
-                    <option>Công tác xã hội</option>
-                    <option>Du lịch</option>
-                    <option>Địa lý</option>
-                    <option>Đô thị học</option>
-                    <option>Đông phương học</option>
-                    <option>Giáo dục</option>
-                    <option>Hàn Quốc học</option>
-                    <option>Khoa học liên ngành</option>
-                    <option>Lịch sử</option>
-                    <option>Lưu trữ học - Quản trị văn phòng</option>
-                    <option>Ngôn ngữ học</option>
-                    <option>Ngữ văn Anh</option>
-                    <option>Ngữ văn Đức</option>
-                    <option>Ngữ văn Nga</option>
-                    <option>Ngữ văn Pháp</option>
-                    <option>Ngữ văn Tây Ban Nha - Italia</option>
-                    <option>Ngữ văn Trung Quốc</option>
-                    <option>Nhân học</option>
-                    <option>Nhật Bản học</option>
-                    <option>Quan hệ Quốc tế</option>
-                    <option>Tâm lý học</option>
-                    <option>Thư viện - Thông tin học</option>
-                    <option>Triết học</option>
-                    <option>Văn hoá học</option>
-                    <option>Văn học</option>
-                    <option>Việt Nam học</option>
-                    <option>Xã hội học</option>
-                  </select>
-                </div>
-                <div class="info-cvu required">
-                  <label for="input-text-office"
-                    >Phân công (chủ trì hoặc tham gia)
-                    <span class="required-star">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Chức vụ"
-                    id="input-name"
-                    required
-                  />
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Đóng
-            </button>
-            <button type="button" class="btn btn-primary" id="add-member-btn">
-              Thêm
-            </button>
-          </div>
-        </div>
+          <tr>
+            <th>Khoản Tiền công lao động trực tiếp và thuê chuyên gia</th>
+            <td>
+              <input
+                class="form-control"
+                type="number"
+                id="input2_1_dhqgHCM"
+                min="0"
+                placeholder="0"
+              />
+            </td>
+            <td>
+              <input
+                class="form-control"
+                type="number"
+                id="input2_1_huyDong"
+                min="0"
+                placeholder="0"
+              />
+            </td>
+            <td><span class="fw-bold" id="total-tienCong">0</span></td>
+          </tr>
+          <tr>
+            <th>Khoản 1.1: Lao động trong ĐHQG</th>
+            <td>
+              <input
+                class="form-control"
+                type="number"
+                id="input3_1_dhqgHCM"
+                min="0"
+                placeholder="0"
+              />
+            </td>
+            <td>
+              <input
+                class="form-control"
+                type="number"
+                id="input3_1_huyDong"
+                min="0"
+                placeholder="0"
+              />
+            </td>
+            <td><span class="fw-bold" id="total-khoan1_1">0</span></td>
+          </tr>
+          <tr>
+            <th>Khoản 1.2: Lao động ngoài ĐHQG (trong nước)</th>
+            <td>
+              <input
+                class="form-control"
+                type="number"
+                id="input3_2_dhqgHCM"
+                min="0"
+                placeholder="0"
+              />
+            </td>
+            <td>
+              <input
+                class="form-control"
+                type="number"
+                id="input3_2_huyDong"
+                min="0"
+                placeholder="0"
+              />
+            </td>
+            <td><span class="fw-bold" id="total-khoan1_2">0</span></td>
+          </tr>
+          <tr>
+            <th>Khoản 1.3: Lao động ngoài ĐHQG (ngoài nước)</th>
+            <td>
+              <input
+                class="form-control"
+                type="number"
+                id="input3_3_dhqgHCM"
+                min="0"
+                placeholder="0"
+              />
+            </td>
+            <td>
+              <input
+                class="form-control"
+                type="number"
+                id="input3_3_huyDong"
+                min="0"
+                placeholder="0"
+              />
+            </td>
+            <td><span class="fw-bold" id="total-khoan1_3">0</span></td>
+          </tr>
+          <tr>
+            <th>Tổng kinh phí</th>
+            <td><span class="fw-bold" id="total-all-dhqgHCM">0</span></td>
+            <td><span class="fw-bold" id="total-all-huyDong">0</span></td>
+            <td><span class="fw-bold" id="total-all">0</span></td>
+          </tr>
+        </table>
       </div>
     </div>
 
+    <script>
+      function calculateTotal() {
+        const inputFields = document.querySelectorAll('input[type="number"]');
+        let total_tienCong = 0;
+        let total_khoan1_1 = 0;
+        let total_khoan1_2 = 0;
+        let total_khoan1_3 = 0;
+        let total_all_dhqgHCM = 0;
+        let total_all_huyDong = 0;
+        inputFields.forEach((input) => {
+          const value = parseInt(input.value) || 0;
+          const id = input.getAttribute("id");
+          if (value > 0) {
+            if (id === "input2_1_dhqgHCM" || id === "input2_1_huyDong") {
+              total_tienCong += value;
+            } else if (id === "input3_1_dhqgHCM" || id === "input3_1_huyDong") {
+              total_khoan1_1 += value;
+            } else if (id === "input3_2_dhqgHCM" || id === "input3_2_huyDong") {
+              total_khoan1_2 += value;
+            } else if (id === "input3_3_dhqgHCM" || id === "input3_3_huyDong") {
+              total_khoan1_3 += value;
+            }
+            if (id.includes("dhqgHCM")) {
+              total_all_dhqgHCM += value;
+            } else if (id.includes("huyDong")) {
+              total_all_huyDong += value;
+            }
+          }
+        });
+        document.getElementById("total-tienCong").textContent = total_tienCong;
+        document.getElementById("total-khoan1_1").textContent = total_khoan1_1;
+        document.getElementById("total-khoan1_2").textContent = total_khoan1_2;
+        document.getElementById("total-khoan1_3").textContent = total_khoan1_3;
+        document.getElementById("total-all-dhqgHCM").textContent =
+          total_all_dhqgHCM;
+        document.getElementById("total-all-huyDong").textContent =
+          total_all_huyDong;
+        document.getElementById("total-all").textContent =
+          total_all_dhqgHCM + total_all_huyDong;
+      }
+      const inputFields = document.querySelectorAll('input[type="number"]');
+      inputFields.forEach((input) => {
+        input.addEventListener("input", calculateTotal);
+      });
+    </script>
     <!-- Essential javascripts for application to work-->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

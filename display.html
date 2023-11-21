@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Đơn đăng ký đề tài| USSH-VNUHCM</title>
+    <link rel="icon" href="./Asset/IMG/Logo USSH.jpg" />
+    <script
+      src="https://kit.fontawesome.com/4ced78dcc2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="./bootstrap-5.3.2-dist/css/bootstrap.min.css"
+    />
+    <!-- Font-icon css-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <!-- <link rel="stylesheet" href="./Asset/CSS/theme.css"> -->
+    <!-- Main CSS-->
+    <link rel="stylesheet" href="./Asset/CSS/mainUSSH.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/vfs_fonts.js"></script>
+  </head>
+  <body>
+    <header class="app-header">
+      <!-- Sidebar toggle button--><a
+        class="app-sidebar__toggle"
+        href="#"
+        data-toggle="sidebar"
+        aria-label="Hide Sidebar"
+      ></a>
+      <div class="title-header">
+        <h5><i class="bi bi-book-half"></i> HỆ THỐNG QUẢN LÝ ĐỀ TÀI</h5>
+      </div>
+      <!-- Navbar Right Menu-->
+      <ul class="app-nav">
+        <li class="app-search">
+          <input class="app-search__input" type="search" placeholder="Search" />
+          <button class="app-search__button">
+            <i class="bi bi-search"></i>
+          </button>
+        </li>
+        <!--Notification Menu-->
+        <li class="dropdown">
+          <a
+            class="app-nav__item"
+            href="#"
+            data-bs-toggle="dropdown"
+            aria-label="Show notifications"
+            ><i class="bi bi-bell fs-5"></i
+          ></a>
+          <ul class="app-notification dropdown-menu dropdown-menu-right">
+            <li class="app-notification__title">
+              You have 4 new notifications.
+            </li>
+            <div class="app-notification__content">
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-envelope fs-4 text-primary"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Lisa sent you a mail
+                    </p>
+                    <p class="app-notification__meta">2 min ago</p>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-exclamation-triangle fs-4 text-warning"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Mail server not working
+                    </p>
+                    <p class="app-notification__meta">5 min ago</p>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-cash fs-4 text-success"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Transaction complete
+                    </p>
+                    <p class="app-notification__meta">2 days ago</p>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-envelope fs-4 text-primary"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Lisa sent you a mail
+                    </p>
+                    <p class="app-notification__meta">2 min ago</p>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-exclamation-triangle fs-4 text-warning"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Mail server not working
+                    </p>
+                    <p class="app-notification__meta">5 min ago</p>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-cash fs-4 text-success"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Transaction complete
+                    </p>
+                    <p class="app-notification__meta">2 days ago</p>
+                  </div></a
+                >
+              </li>
+            </div>
+            <li class="app-notification__footer">
+              <a href="#">See all notifications.</a>
+            </li>
+          </ul>
+        </li>
+        <!-- User Menu-->
+        <li class="dropdown">
+          <a
+            class="app-nav__item"
+            href="#"
+            data-bs-toggle="dropdown"
+            aria-label="Open Profile Menu"
+            ><i class="bi bi-person fs-4"></i
+          ></a>
+          <ul class="dropdown-menu settings-menu dropdown-menu-right">
+            <li>
+              <a class="dropdown-item" href="page-user.html"
+                ><i class="bi bi-gear me-2 fs-5"></i> Settings</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="page-user.html"
+                ><i class="bi bi-person me-2 fs-5"></i> Profile</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="page-login.html"
+                ><i class="bi bi-box-arrow-right me-2 fs-5"></i> Logout</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </header>
+    <!-- Sidebar menu-->
+    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+    <aside class="app-sidebar">
+      <div class="app-sidebar__user">
+        <img
+          class="app-sidebar__user-avatar"
+          src="https://randomuser.me/api/portraits/men/1.jpg"
+          alt="User Image"
+        />
+        <div>
+          <p class="app-sidebar__user-name">Phạm Văn Tuấn</p>
+          <p class="app-sidebar__user-designation"></p>
+        </div>
+      </div>
+      <ul class="app-menu">
+        <li>
+          <a class="app-menu__item" href="/user.html"
+            ><i class="app-menu__icon bi bi-house-door"></i
+            ><span class="app-menu__label">Trang cá nhân</span></a
+          >
+        </li>
+        <li class="treeview is-expanded">
+          <a class="app-menu__item" href="#" data-toggle="treeview"
+            ><i class="app-menu__icon bi bi-laptop"></i
+            ><span class="app-menu__label">Đề tài</span
+            ><i class="treeview-indicator bi bi-chevron-right"></i
+          ></a>
+          <ul class="treeview-menu">
+            <li>
+              <a class="treeview-item active" href="dk-de-tai.html"
+                ><i class="icon bi bi-circle-fill"></i> Đăng ký đề tài</a
+              >
+            </li>
+            <li>
+              <a class="treeview-item" href="Ds-de-tai.html"
+                ><i class="icon bi bi-circle-fill"></i> Danh sách đề tài</a
+              >
+            </li>
+            <li>
+              <a class="treeview-item" href="gia-han-de-tai.html"
+                ><i class="icon bi bi-circle-fill"></i> Gia hạn đề tài</a
+              >
+            </li>
+            <li>
+              <a class="treeview-item" href="huy-de-tai.html"
+                ><i class="icon bi bi-circle-fill"></i> Hủy đề tài</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a class="app-menu__item" href="#" data-toggle="treeview"
+            ><i class="app-menu__icon bi bi-ui-checks"></i
+            ><span class="app-menu__label">Xem và đánh giá</span
+            ><i class="treeview-indicator bi bi-chevron-right"></i
+          ></a>
+          <ul class="treeview-menu">
+            <li>
+              <a class="treeview-item" href="form-components.html"
+                ><i class="icon bi bi-circle-fill"></i> Điểm đề cương</a
+              >
+            </li>
+            <li>
+              <a class="treeview-item" href="form-samples.html"
+                ><i class="icon bi bi-circle-fill"></i> Điểm đề tài</a
+              >
+            </li>
+            <li>
+              <a class="treeview-item" href="form-samples.html"
+                ><i class="icon bi bi-circle-fill"></i> Nhận xét của giảng
+                viên</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+    <main class="app-content">
+      <div class="app-title">
+        <ul class="app-breadcrumb breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="user.html"
+              ><i class="bi bi-house-door fs-6" style="cursor: pointer"></i
+            ></a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="#">Đề tài</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="#">Đăng ký đề tài</a>
+          </li>
+        </ul>
+      </div>
+      <div class="app-form-button">
+        <div class="d-flex justify-content-end gap-2">
+          <button
+            aria-label="Tải hồ sơ đề tài"
+            type="button"
+            class="btn btn-warning d-block w-auto h-25"
+          >
+            <span class="button-icon me-lg-2">
+              <i class="fa-solid fa-download"></i>
+            </span>
+            <span class="fw-bold">Tải hồ sơ đề tài</span>
+            <span role="presentation" class="btn-link"></span>
+          </button>
+          <button
+            aria-label="Xuất file Word"
+            type="button"
+            class="btn btn-info d-block w-auto h-25"
+          >
+            <span class="button-icon me-lg-2">
+              <i class="fa-regular fa-file-word"></i>
+            </span>
+            <span class="fw-bold">Xuất file Word</span>
+            <span role="presentation" class="btn-link"></span>
+          </button>
+          <button
+            aria-label="Xuất file PDF"
+            type="button"
+            class="btn btn-danger d-block w-auto h-25"
+          >
+            <span class="button-icon me-lg-2">
+              <i class="fa-regular fa-file-pdf"></i>
+            </span>
+            <span class="fw-bold">Xuất file PDF</span>
+            <span role="presentation" class="btn-link"></span>
+          </button>
+          <div class="d-flex flex-column align-items-end">
+            <button
+              aria-label="In PDF"
+              type="button"
+              class="btn btn-primary d-block w-auto"
+            >
+              <span class="button-icon me-lg-2">
+                <i class="fa-solid fa-print"></i>
+              </span>
+              <span class="fw-bold">In PDF</span>
+              <span role="presentation" class="btn-link"></span>
+            </button>
+            <span class="cursor-pointer fs-7 text-blue mt-1"
+              >Hướng dẫn in PDF
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        id="projectProposalDetail"
+        class="m-0 bg-white p-5 p-fluid detail-info-project-proposal"
+      >
+        <style>
+          @page {
+            margin: 0.5in 0.5in 0.2in 0.2in !important;
+          }
+        </style>
+        <div class="mb-5 d-flex justify-content-between align-items-center">
+          <img
+            src="./Asset/IMG/Logo USSH.jpg"
+            alt="VNU-HCM logo"
+            height="75px"
+            class="ml-3"
+          />
+          <div>
+            <table class="text-black-alpha-90">
+              <tbody>
+                <tr>
+                  <td colspan="2" class="p-1">Mẫu R01 - Cập nhật 2022</td>
+                </tr>
+                <tr>
+                  <td class="border-dotted border-1 p-1 w-10rem">
+                    Ngày nhận hồ sơ
+                  </td>
+                  <td class="border-dotted border-1 p-1 w-8rem"></td>
+                </tr>
+                <tr>
+                  <td class="border-dotted border-1 p-1 w-10rem">
+                    Mã số đề tài
+                  </td>
+                  <td class="border-dotted border-1 p-1 w-8rem"></td>
+                </tr>
+                <tr>
+                  <td
+                    colspan="2"
+                    class="border-dotted border-1 p-1 text-center"
+                  >
+                    <span class="font-italic">(Do CQ quản lý ghi)</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <h3 class="mb-5 lh-base fs-2 text-center fw-bold">
+          THUYẾT MINH<br /><span class="fw-normal"
+            >ĐỀ TÀI NGHIÊN CỨU KHOA HỌC SINH VIÊN CẤP TRƯỜNG/ KHOA</span
+          >
+        </h3>
+
+        <div
+          class="flex flex-column align-items-end py-5 pr-5"
+          style="gap: 9rem"
+        >
+          <div class="flex justify-content-between" style="gap: 9rem">
+            <div class="text-center">
+              <p class="m-0 font-italic text-xl">
+                Ngày .... tháng .... năm ......
+              </p>
+              <p class="m-0 font-semibold text-xl">Chủ nhiệm</p>
+              <p class="m-0 font-italic text-xl">(Họ tên và chữ ký)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <button onclick="exportToPDF()">Xuất dữ liệu thành PDF</button>
+
+    <script>
+      function exportToPDF() {
+        var data = JSON.parse(
+          decodeURIComponent(window.location.search.substr(1).split("=")[1])
+        );
+
+        var docDefinition = {
+          content: [
+            { text: "A1.Tên đề tài", style: "header" }, // Thêm tiêu đề H1 trong content
+            { text: "Tên tiếng việt", style: "header" },
+            { text: data.nameTV, style: "content" },
+            { text: "Tên tiếng anh:", style: "header" },
+            { text: data.nameTA, style: "content" },
+          ],
+          styles: {
+            header: {
+              fontSize: 18,
+              bold: true,
+              margin: [0, 0, 0, 10],
+            },
+            content: {
+              fontSize: 14,
+              margin: [0, 0, 0, 5],
+            },
+          },
+          pageMargins: [40, 60, 40, 60], // Căn lề trang (trên, phải, dưới, trái)
+        };
+
+        pdfMake.createPdf(docDefinition).download("data.pdf");
+      }
+
+      function displayData() {
+        var data = JSON.parse(
+          decodeURIComponent(window.location.search.substr(1).split("=")[1])
+        );
+
+        var dataHtml =
+          "<style>" +
+          "@page {" +
+          "margin: 0.5in 0.5in 0.2in 0.2in !important;z" +
+          "}" +
+          " </style>" +
+          '<div class="mb-5 d-flex justify-content-between align-items-center">' +
+          " <img" +
+          ' src="./Asset/IMG/Logo USSH.jpg"' +
+          ' alt="VNU-HCM logo"' +
+          ' height="75px"' +
+          'class="ml-3"' +
+          " />" +
+          "<div>" +
+          '<table class="text-black-alpha-90">' +
+          "<tbody>" +
+          "<tr>" +
+          '<td colspan="2" class="p-1">Mẫu R01 - Cập nhật 2022</td>' +
+          "</tr>" +
+          "<tr>" +
+          '<td class="border-dotted border-1 p-1 w-10rem">' +
+          "Ngày nhận hồ sơ" +
+          "</td>" +
+          '<td class="border-dotted border-1 p-1 w-8rem"></td>' +
+          " </tr>" +
+          "<tr>" +
+          '<td class="border-dotted border-1 p-1 w-10rem">' +
+          "Mã số đề tài" +
+          "</td>" +
+          '<td class="border-dotted border-1 p-1 w-8rem"></td>' +
+          "</tr>" +
+          "<tr>" +
+          "<td" +
+          ' colspan="2"' +
+          'class="border-dotted border-1 p-1 text-center"' +
+          ">" +
+          '<span class="font-italic">(Do CQ quản lý ghi)</span>' +
+          "</td>" +
+          "</tr>" +
+          "</tbody>" +
+          "</table>" +
+          "</div>" +
+          "</div>" +
+          '<h3 class="mb-5 lh-base fs-2 text-center fw-bold">' +
+          'THUYẾT MINH<br /><span class="fw-normal"' +
+          ">ĐỀ TÀI NGHIÊN CỨU KHOA HỌC SINH VIÊN CẤP TRƯỜNG/ KHOA</span" +
+          ">" +
+          "</h3>" +
+          '<div class="ms-sm-4">' +
+          '<div class="pb-sm-2">' +
+          "<h4>A. THÔNG TIN CHUNG</h4>" +
+          '<h4 class="mb-2">A1. Tên và loại đề tài</h4>' +
+          '<div class="ms-sm-5 fs-6">' +
+          '<div class="d-flex mb-1">' +
+          '<div class="me-sm-2 fw-semibold">Tên tiếng Việt:</div>' +
+          '<div class="flex-fill">' +
+          data.nameTV +
+          "</div>" +
+          "</div>" +
+          '<div class="d-flex mb-1">' +
+          '<div class="me-sm-2 fw-semibold">Tên tiếng Anh:</div>' +
+          '<div class="flex-fill">' +
+          data.nameTA +
+          "</div>" +
+          "</div>" +
+          "</div>" +
+          '<div class="row">' +
+          '<div class="d-flex">' +
+          '<div class="col-md-6">' +
+          "<h4>A2. Thuộc ngành/nhóm ngành</h4>" +
+          '<div class="form-check fs-6">' +
+          "<input" +
+          'class="form-check-input"' +
+          'type="checkbox"' +
+          'id="checkbox1"' +
+          'name="group1"' +
+          'onclick="handleCheckboxChange' +
+          "(event, 'checkbox2')" +
+          "/>" +
+          '<label class="form-check-label" for="checkbox1"' +
+          ">Khoa học Xã hội</label" +
+          ">" +
+          "</div>" +
+          '<div class="form-check fs-6">' +
+          "<input" +
+          'class="form-check-input"' +
+          'type="checkbox"' +
+          'id="checkbox2"' +
+          ' name="group1"' +
+          'onclick="handleCheckboxChange' +
+          "(event, 'checkbox1')" +
+          "/>" +
+          '<label class="form-check-label" for="checkbox2"' +
+          ">Khoa học Nhân văn</label" +
+          ">" +
+          "</div>" +
+          '<div class="col-md-6">' +
+          "<h4>Chương trình đào tạo</h4>" +
+          '<div class="form-check fs-6">' +
+          "<input" +
+          'class="form-check-input"' +
+          'type="checkbox"' +
+          'id="checkbox3"' +
+          'name="group2"' +
+          'onclick="handleCheckboxChange' +
+          "(event, 'checkbox4')" +
+          "/>" +
+          '<label class="form-check-label" for="checkbox3"' +
+          ">Chương trình chuẩn</label" +
+          ">" +
+          "</div>" +
+          '<div class="form-check fs-6">' +
+          "<input" +
+          'class="form-check-input"' +
+          'type="checkbox"' +
+          'id="checkbox4"' +
+          ' name="group2"' +
+          'onclick="handleCheckboxChange' +
+          "(event, 'checkbox3')" +
+          "/>" +
+          '<label class="form-check-label" for="checkbox4"' +
+          ">Chương trình chất lượng cao</label" +
+          ">" +
+          "</div>" +
+          "</div>" +
+          "</div>" +
+          '<div class="d-flex mb-1 fs-6">' +
+          '<div class="me-sm-2">Chuyên ngành hẹp:</div>' +
+          '<div class="flex-fill"></div>' +
+          "</div>" +
+          "</div>" +
+          '<div class="d-flex fs-6 mt-2 flex-sm-column">' +
+          "<h4>A3. Chủ nhiệm</h4>" +
+          '<div class="d-flex ms-sm-5 flex-sm-column">' +
+          '<div class="d-flex flex-wrap">' +
+          '<div class="w-50 mb-2">' +
+          '<span class="fw-semibold">Họ tên: </span><span>' +
+          data.nameHT +
+          "</span>" +
+          "</div>" +
+          '<div class="mb-2">' +
+          '<span class="fw-semibold">MSSV: </span><span>' +
+          data.mssv_cn +
+          "</span>" +
+          "</div>" +
+          "</div>" +
+          '<div class="mb-2">' +
+          '<span class="fw-semibold">Ngày tháng năm sinh: </span><span>' +
+          data.birthday +
+          "</span>" +
+          "</div>" +
+          '<div class="mb-2">' +
+          '<span class="fw-semibold">Nam/Nữ: </span><span>' +
+          data.gioitinh +
+          "</span>" +
+          "</div>" +
+          '<div class="d-flex flex-wrap">' +
+          '<div class="w-50 mb-2">' +
+          '<span class="fw-semibold">Số CCCD: </span><span></span>' +
+          "</div>" +
+          '<div class="w-25 mb-2">' +
+          '<span class="fw-semibold">Nơi cấp: </span><span></span>' +
+          "</div>" +
+          '<div class="mb-2">' +
+          '<span class="fw-semibold">Ngày cấp: </span><span></span>' +
+          "</div>" +
+          "</div>" +
+          '<div class="d-flex flex-wrap">' +
+          '<div class="w-50 mb-2">' +
+          '<span class="fw-semibold">Số tài khoản: </span><span></span>' +
+          "</div>" +
+          '<div class="w-50 mb-2">' +
+          '<span class="fw-semibold">Tại ngân hàng: </span><span></span>' +
+          "</div>" +
+          '<div class="mb-2">' +
+          '<span class="fw-semibold">Chi nhánh: </span><span></span>' +
+          "</div>" +
+          "</div>" +
+          '<div class="d-flex flex-wrap">' +
+          '<div class="mb-2">' +
+          '<span class="fw-semibold">Địa chỉ liên hệ:</span><span></span>' +
+          "</div>" +
+          "</div>" +
+          '<div class="d-flex flex-wrap">' +
+          '<div class="w-50 mb-2">' +
+          '<span class="fw-semibold">Điện thoại di động: </span><span></span>' +
+          "</div>" +
+          '<div class="mb-2">' +
+          '<span class="fw-semibold">Email: </span><span></span>' +
+          "</div>" +
+          "</div>" +
+          "</div>" +
+          "</div>" +
+          '<div class="fs-6 mt-2">' +
+          "<h4>A4. Thời gian thực hiện</h4>" +
+          '<p class="flex-1 ml-5 mt-1">' +
+          '<span class="font-semibold">Thời gian thực hiện (số tháng): </span>1' +
+          "</p>" +
+          "</div>" +
+          "</div>" +
+          "</div>";
+
+        document.getElementById("projectProposalDetail").innerHTML = dataHtml;
+      }
+
+      displayData();
+    </script>
+  </body>
+</html>

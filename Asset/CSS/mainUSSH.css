@@ -22,21 +22,16 @@
   font-size: 20px;
 }
 
-
-
-
 .input-group .info-ht,
 .input-group .info-mssv,
-.input-group .info-khoa, 
-.input-group .info-email
- {
+.input-group .info-khoa,
+.input-group .info-email {
   margin-bottom: 10px;
 }
 .input-group-show .info-ht,
 .input-group-show .info-mssv,
-.input-group-show .info-khoa, 
-.input-group-show .info-email
- {
+.input-group-show .info-khoa,
+.input-group-show .info-email {
   margin-bottom: 10px;
   margin-right: 20px;
 }
@@ -130,7 +125,8 @@ form:after {
   width: 100%;
   border: 1px solid #ddd;
 }
-thead, th {
+thead,
+th {
   background-color: #f8f9fa;
 }
 th,
@@ -150,3 +146,26 @@ td {
 .td.float {
   background-color: #fff;
 }
+.detail-info-project-proposal,
+.detail-info-project-proposal .form-check-label {
+  font-family: "Times New Roman", Times, serif !important;
+}
+
+.detail-info-project-proposal h4 {
+  color: blue;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 7px;
+  margin-top: 7px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+

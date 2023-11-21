@@ -410,6 +410,7 @@ table {
   caption-side: bottom;
   border-collapse: collapse;
 }
+
 caption {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -1788,6 +1789,7 @@ progress {
   margin-bottom: 1rem;
   vertical-align: top;
   border-color: var(--bs-table-border-color);
+  border-color: none;
 }
 .table > :not(caption) > * > * {
   padding: 0.5rem 0.5rem;
@@ -2007,10 +2009,10 @@ progress {
   color: var(--bs-secondary-color);
 }
 .app-form,
+.app-form-button,
 .app-project {
   margin-top: 63px;
 }
-
 
 .form-control {
   width: 100%;
@@ -2606,7 +2608,7 @@ textarea.form-control-lg {
   flex-wrap: wrap;
   align-items: stretch;
   width: 100%;
-} 
+}
 .input-group-show {
   position: relative;
   display: flex;
@@ -3039,34 +3041,34 @@ fieldset:disabled .btn {
   --bs-btn-disabled-border-color: #198754;
 }
 .btn-info {
-  --bs-btn-color: #000;
+  --bs-btn-color: #fff;
   --bs-btn-bg: #0dcaf0;
   --bs-btn-border-color: #0dcaf0;
-  --bs-btn-hover-color: #000;
+  --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #31d2f2;
   --bs-btn-hover-border-color: #25cff2;
   --bs-btn-focus-shadow-rgb: 11, 172, 204;
-  --bs-btn-active-color: #000;
+  --bs-btn-active-color: #fff;
   --bs-btn-active-bg: #3dd5f3;
   --bs-btn-active-border-color: #25cff2;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #0dcaf0;
   --bs-btn-disabled-border-color: #0dcaf0;
 }
 .btn-warning {
-  --bs-btn-color: #000;
+  --bs-btn-color: #fff;
   --bs-btn-bg: #ffc107;
   --bs-btn-border-color: #ffc107;
-  --bs-btn-hover-color: #000;
+  --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #ffca2c;
   --bs-btn-hover-border-color: #ffc720;
   --bs-btn-focus-shadow-rgb: 217, 164, 6;
-  --bs-btn-active-color: #000;
+  --bs-btn-active-color: #fff;
   --bs-btn-active-bg: #ffcd39;
   --bs-btn-active-border-color: #ffc720;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #ffc107;
   --bs-btn-disabled-border-color: #ffc107;
 }
@@ -5376,7 +5378,6 @@ fieldset:disabled .btn {
   width: auto;
   margin: var(--bs-modal-margin);
   pointer-events: none;
-  
 }
 .modal.fade .modal-dialog {
   transition: transform 0.3s ease-out;
@@ -7665,6 +7666,9 @@ fieldset:disabled .btn {
 .w-25 {
   width: 25% !important;
 }
+.w-33 {
+  width: 33% !important;
+}
 .w-50 {
   width: 50% !important;
 }
@@ -7676,6 +7680,36 @@ fieldset:disabled .btn {
 }
 .w-auto {
   width: auto !important;
+}
+.w-1rem {
+  width: 1rem !important;
+}
+.w-2rem {
+  width: 2rem !important;
+}
+.w-3rem {
+  width: 3rem !important;
+}
+.w-4rem {
+  width: 4rem !important;
+}
+.w-5rem {
+  width: 5rem !important;
+}
+.w-6rem {
+  width: 6rem !important;
+}
+.w-7rem {
+  width: 7rem !important;
+}
+.w-8rem {
+  width: 8rem !important;
+}
+.w-9rem {
+  width: 9rem !important;
+}
+.w-10rem {
+  width: 10rem !important;
 }
 .mw-100 {
   max-width: 100% !important;
@@ -7974,6 +8008,10 @@ fieldset:disabled .btn {
   margin-bottom: 1.5rem !important;
 }
 .mb-5 {
+  margin-bottom: 2rem !important;
+}
+
+.mb-6 {
   margin-bottom: 3rem !important;
 }
 .mb-auto {
@@ -8219,6 +8257,9 @@ fieldset:disabled .btn {
 .fs-6 {
   font-size: 1rem !important;
 }
+.fs-7 {
+  font-size: 0.875rem !important;
+}
 .fst-italic {
   font-style: italic !important;
 }
@@ -8347,6 +8388,13 @@ fieldset:disabled .btn {
   --bs-text-opacity: 1;
   color: rgba(0, 0, 0, 0.5) !important;
 }
+.text-blue {
+  --bs-text-opacity: 1;
+  color: var(--bs-blue) !important;
+}
+.text-blue:hover {
+  color: var(--bs-link-hover-color) !important;
+}
 .text-white-50 {
   --bs-text-opacity: 1;
   color: rgba(255, 255, 255, 0.5) !important;
@@ -8403,6 +8451,7 @@ fieldset:disabled .btn {
 .text-dark-emphasis {
   color: var(--bs-dark-text-emphasis) !important;
 }
+
 .link-opacity-10 {
   --bs-link-opacity: 0.1;
 }
@@ -9270,6 +9319,9 @@ fieldset:disabled .btn {
     margin-left: 1.5rem !important;
   }
   .ms-sm-5 {
+    margin-left: 2rem !important;
+  }
+  .ms-sm-6 {
     margin-left: 3rem !important;
   }
   .ms-sm-auto {
@@ -12374,7 +12426,9 @@ fieldset:disabled .btn {
   margin-right: 5px;
   vertical-align: middle;
 }
-
+.cursor-pointer {
+  cursor: pointer;
+}
 .btn {
   cursor: pointer;
 }
@@ -13345,4 +13399,11 @@ fieldset:disabled .btn {
 }
 .user .user-settings label {
   color: #666;
+}
+.border-dotted {
+  border-style: dotted !important;
+}
+.border-1 {
+  border-width: 1px !important;
+  border-style: solid;
 }
