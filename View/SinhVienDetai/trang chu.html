@@ -4,18 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Trang cá nhân | USSH-VNUHCM</title>
-    <link href="./Asset/IMG/Logo USSH.jpg" rel="icon" />
-    <!-- <script
-      src="https://kit.fontawesome.com/4ced78dcc2.js"
-      crossorigin="anonymous"
-    ></script> -->
+    <link href="/Asset/IMG/Logo USSH.jpg" rel="icon" />
+   
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
-      href="./bootstrap-5.3.2-dist/css/bootstrap.min.css"
+      href="/bootstrap-5.3.2-dist/css/bootstrap.min.css"
     />
     <!-- Main CSS-->
     <!-- <link rel="stylesheet" type="text/css" href="./Asset/CSS/css/main.css" /> -->
@@ -24,8 +21,12 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     />
+    <script
+      src="https://kit.fontawesome.com/4ced78dcc2.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- Admin CSS -->
-    <link rel="stylesheet" href="./Asset/CSS/user.css" />
+    <link rel="stylesheet" href="/Asset/CSS/mainUSSH.css" />
   </head>
   <body class="app sidebar-mini">
     <!-- Navbar-->
@@ -42,7 +43,6 @@
       </div>
       <!-- Navbar Right Menu-->
       <ul class="app-nav">
-        
         <!--Notification Menu-->
         <li class="dropdown">
           <a
@@ -180,15 +180,15 @@
           alt="User Image"
         />
         <div>
-          <p class="app-sidebar__user-name">John Doe</p>
-          <p class="app-sidebar__user-designation">Frontend Developer</p>
+          <p class="app-sidebar__user-name">Phạm Văn Tuấn</p>
+          <p class="app-sidebar__user-designation"></p>
         </div>
       </div>
       <ul class="app-menu">
         <li>
-          <a class="app-menu__item active" href="/user.html"
-            ><i class="app-menu__icon bi bi-house-door"></i
-            ><span class="app-menu__label">Trang cá nhân</span></a
+          <a class="app-menu__item active" href="/user.html">
+            <i class="app-menu__icon fa-solid fa-house"></i>
+            <span class="app-menu__label">Trang cá nhân</span></a
           >
         </li>
         <li class="treeview">
@@ -250,217 +250,61 @@
     <main class="app-content">
       <div class="app-title">
         <div>
-          <h1><i class="bi bi-person-vcard"></i> Lý lịch sinh viên</h1>
+          <h1><i class="bi bi-person-vcard"></i> Trang cá nhân</h1>
         </div>
       </div>
       <div class="app-form">
-        <div class="tile">
-          <h3 class="tile-title">Thông tin cơ bản</h3>
-          <div class="tile-body">
-            <div class="row">
-              <div class="col-md-6 border-right">
-                <div class="p-3">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <h6 class="lables">Họ tên</h6>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="first name"
-                        readonly
-                        value="Phạm Văn Tuấn"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12">
-                      <h6 class="lables">Mã số sinh viên</h6>
-                      <input
-                        type="text"
-                        class="form-control"
-                        readonly
-                        value="2056210120"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12">
-                      <h6 class="labels">Ngày sinh</h6>
-                      <input
-                        type="text"
-                        class="form-control"
-                        readonly
-                        placeholder="Ngày sinh"
-                        value="30/06/2001"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12">
-                      <h6 class="labels">GIới tính</h6>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="GIới tính"
-                        value="Nam"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12">
-                      <h6 class="labels">Số điện thoại</h6>
-                      <input
-                        name="sSDT"
-                        type="text"
-                        class="form-control"
-                        placeholder="Số điện thoại"
-                        value="0363110621"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12">
-                      <h6 class="labels">Địa chỉ</h6>
-                      <input
-                        name="sDiachi"
-                        type="text"
-                        class="form-control"
-                        placeholder="Địa chỉ"
-                        value="Thanh Hóa"
-                      />
-                    </div>
-                  </div>
-                  <div class="mt-5 text-center">
-                    <button
-                      class="btn btn-primary profile-button"
-                      type="submit"
-                    >
-                      Chỉnh sửa thông tin
-                    </button>
-                  </div>
-                </div>
+        <div class="row">
+          <div
+            href="#"
+            class="col-md-6 col-lg-4"
+            style="cursor: pointer"
+            onclick="redirectToUserPage()"
+          >
+            <div class="widget-small primary coloured-icon">
+              <i class="icon bi bi-people fs-1"></i>
+              <div class="info">
+                <h6>Thông tin sinh viên</h6>
               </div>
-              <div class="col-md-6">
-                <div class="p-3">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <h6 class="lables">Khoa</h6>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Khoa"
-                        readonly
-                        value="Thư viện - thông tin học"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12">
-                      <h6 class="lables">Ngành</h6>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Chuyên ngành"
-                        readonly
-                        value="Quản lý thông tin"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12">
-                      <h6 class="labels">Lớp</h6>
-                      <input
-                        type="text"
-                        class="form-control"
-                        readonly
-                        placeholder="Lớp"
-                        value="20621"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12">
-                      <h6 class="labels">Hệ đào tạo</h6>
-                      <input
-                        name="sHDT"
-                        type="text"
-                        class="form-control"
-                        placeholder="Hệ đào tạo"
-                        value="Chính quy"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12">
-                      <h6 class="labels">Niên khóa</h6>
-                      <input
-                        name="sNK"
-                        type="text"
-                        class="form-control"
-                        placeholder="Niên khóa"
-                        value="2020-2024"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12">
-                      <h6 class="labels">Quốc tịch</h6>
-                      <input
-                        name="sCSDT"
-                        type="text"
-                        class="form-control"
-                        placeholder="Quốc tịch"
-                        value="Việt Nam"
-                      />
-                    </div>
-                  </div>
-
-                  <div class="mt-5 text-center">
-                    <button
-                      class="btn btn-success profile-button"
-                      type="submit"
-                    >
-                      Lưu thông tin
-                    </button>
-                  </div>
-                </div>
+            </div>
+          </div>
+          <div
+            href="#"
+            class="col-md-6 col-lg-4"
+            style="cursor: pointer"
+            onclick="redirectToRegisterTopic()"
+          >
+            <div class="widget-small info coloured-icon">
+              <i class="icon bi bi-folder2 fs-1"></i>
+              <div class="info">
+                <h6>Đăng ký đề tài</h6>
+              </div>
+            </div>
+          </div>
+          <div href="#" class="col-md-6 col-lg-4" style="cursor: pointer">
+            <div class="widget-small warning coloured-icon">
+              <i class="icon bi bi-bell fs-1"></i>
+              <div class="info">
+                <h6>Thông báo</h6>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <a
-        class="btn btn-secondary"
-        href="/user.html"
-        style="
-          position: fixed;
-          bottom: 10px;
-          z-index: 1000;
-          border-radius: 50%;
-          width: 50px;
-          height: 50px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        "
-      >
-        <i class="bi bi-reply-fill" style="margin-top: 2px"></i>
-      </a>
     </main>
     <!-- Essential javascripts for application to work-->
-    <script src="./Asset/JS/jquery-3.7.1.min.js"></script>
+    <script src="/Asset/JS/jquery-3.7.1.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <!-- <script src="./bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script> -->
-    <script src="./Asset/JS/user.js"></script>
+    <!-- <script src="./bootstrap-5.2.3-dist/js/bootstrap.bundle.js"></script> -->
+    <script src="/Asset/JS/user.js"></script>
     <!-- Page specific javascripts-->
     <script
       type="text/javascript"
-      src="./Asset/JS/js/plugins/chart.js"
+      src="/Asset/JS/js/plugins/chart.js"
     ></script>
     <script type="text/javascript">
       const salesData = {
@@ -501,30 +345,5 @@
       new Chart(supportChartCtx, supportRequests);
     </script>
     <!-- Google analytics script-->
-    <script type="text/javascript">
-      if (document.location.hostname == "pratikborsadiya.in") {
-        (function (i, s, o, g, r, a, m) {
-          i["GoogleAnalyticsObject"] = r;
-          (i[r] =
-            i[r] ||
-            function () {
-              (i[r].q = i[r].q || []).push(arguments);
-            }),
-            (i[r].l = 1 * new Date());
-          (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-          a.async = 1;
-          a.src = g;
-          m.parentNode.insertBefore(a, m);
-        })(
-          window,
-          document,
-          "script",
-          "//www.google-analytics.com/analytics.js",
-          "ga"
-        );
-        ga("create", "UA-72504830-1", "auto");
-        ga("send", "pageview");
-      }
-    </script>
   </body>
 </html>
