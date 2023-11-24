@@ -114,34 +114,20 @@ $(document).ready(function () {
     });
 });
 
-function formatCurrency(number) {
-  const formattedNumber = number.toLocaleString("vi-VN", {
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  });
-  return formattedNumber.replace(/,/g, ".");
-}
-
-function handleInputChange(event) {
-  const input = event.target;
-  const value = parseInt(input.value.replace(/\D/g, "")) || 0;
-  const formattedValue = formatCurrency(value);
-  input.value = formattedValue;
-}
-
 function calculateTotal() {
-  const inputFields = document.querySelectorAll('input[type="text"]');
+  const inputFields = document.querySelectorAll('input[type="number"]');
   let total_tienCong = 0;
   let total_khoan1_1 = 0;
   let total_khoan1_2 = 0;
+
   let total_khoan1_3 = 0;
   let total_all_dhqgHCM = 0;
   let total_all_huyDong = 0;
   inputFields.forEach((input) => {
-    const value = parseInt(input.value.replace(/\D/g, "")) || 0;
+    const value = parseFloat(input.value) || 0;
     const id = input.getAttribute("id");
     if (value > 0) {
-      if (id === "input1_dhqg" || id === "input2_1_huyDong") {
+      if (id === "input2_1_dhqgHCM" || id === "input2_1_huyDong") {
         total_tienCong += value;
       } else if (id === "input3_1_dhqgHCM" || id === "input3_1_huyDong") {
         total_khoan1_1 += value;
@@ -150,7 +136,7 @@ function calculateTotal() {
       } else if (id === "input3_3_dhqgHCM" || id === "input3_3_huyDong") {
         total_khoan1_3 += value;
       }
-      if (id.includes("dhqg")) {
+      if (id.includes("dhqgHCM")) {
         total_all_dhqgHCM += value;
       } else if (id.includes("huyDong")) {
         total_all_huyDong += value;
@@ -173,11 +159,14 @@ function calculateTotal() {
     formatCurrency(total_all_dhqgHCM + total_all_huyDong) + "đ";
 }
 
-const inputFields = document.querySelectorAll('input[type="text"]');
+const inputFields = document.querySelectorAll('input[type="number"]');
 inputFields.forEach((input) => {
-  input.addEventListener("input", handleInputChange);
   input.addEventListener("input", calculateTotal);
 });
+
+function formatCurrency(value) {
+  return value.toLocaleString("vi-VN");
+}
 const tooltipTriggerList = document.querySelectorAll(
   '[data-bs-toggle="tooltip"]'
 );

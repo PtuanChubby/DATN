@@ -281,26 +281,26 @@
                         <h6 for="inputName">A1.Tên đề tài</h6>
                       </div>
                       <div class="form-group required">
-                        <label for="inputName" class="mb-1"
+                        <label for="inputNameTV" class="mb-1"
                           >Tên tiếng việt<span class="required-star ms-1 mb-4"
                             >*</span
                           ></label
                         >
                         <input
                           type="text"
-                          id="inputName"
+                          id="inputNameTV"
                           class="form-control"
                         />
                       </div>
                       <div class="form-group required mt-2">
-                        <label for="inputName" class="mb-1"
+                        <label for="inputNameTA" class="mb-1"
                           >Tên tiếng anh<span class="required-star ms-1"
                             >*</span
                           ></label
                         >
                         <input
                           type="text"
-                          id="inputName"
+                          id="inputNameTA"
                           class="form-control"
                         />
                       </div>
@@ -391,7 +391,7 @@
                           >
                           <input
                             type="text"
-                            id="inputName"
+                            id="inputNameHT"
                             class="form-control"
                           />
                         </div>
@@ -914,9 +914,7 @@
                             </tr>
 
                             <tr>
-                              <th>
-                                Khoản1
-                              </th>
+                              <th>Khoản1</th>
                               <td>
                                 <input
                                   class="form-control"
@@ -968,9 +966,7 @@
                               </td>
                             </tr>
                             <tr>
-                              <th>
-                                Khoản 3
-                              </th>
+                              <th>Khoản 3</th>
                               <td>
                                 <input
                                   class="form-control"
@@ -996,9 +992,7 @@
                               </td>
                             </tr>
                             <tr>
-                              <th>
-                                Khoản 4
-                              </th>
+                              <th>Khoản 4</th>
                               <td>
                                 <input
                                   class="form-control"
@@ -1133,12 +1127,11 @@
                 <a href="user.html" style="color: white">Đóng</a>
               </button>
               <button
+                onclick="exportToNewPage()"
                 class="btn btn-success profile-button float-end"
                 type="submit"
               >
-                <a href="don-dk-detai.html" style="color: white"
-                  >Xem đơn đăng ký</a
-                >
+                Xem đơn đăng ký
               </button>
             </div>
           </div>
@@ -1172,6 +1165,29 @@
         } else {
           siblingCheckbox.disabled = false;
         }
+      }
+      function exportToNewPage() {
+        var nameTV = document.getElementById("inputNameTV").value;
+        var nameTA = document.getElementById("inputNameTA").value;
+        var nameHT = document.getElementById("inputNameHT").value;
+        var mssv_cn = document.getElementById("input-mssv-cn").value;
+        var birthday = document.getElementById("birthday").value;
+        var gioitinh = document.getElementById("inputGioitinh").value;
+
+        var data = {
+          nameTV: nameTV,
+          nameTA: nameTA,
+          nameHT: nameHT,
+          mssv_cn: mssv_cn,
+          birthday: birthday,
+          gioitinh: gioitinh,
+        };
+
+        var url = "don-dk-detai.html";
+        var encodedData = encodeURIComponent(JSON.stringify(data));
+        var newPageUrl = url + "?data=" + encodedData;
+
+        window.open(newPageUrl, "_blank");
       }
     </script>
   </body>

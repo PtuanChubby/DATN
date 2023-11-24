@@ -140,11 +140,12 @@
         let total_tienCong = 0;
         let total_khoan1_1 = 0;
         let total_khoan1_2 = 0;
+
         let total_khoan1_3 = 0;
         let total_all_dhqgHCM = 0;
         let total_all_huyDong = 0;
         inputFields.forEach((input) => {
-          const value = parseInt(input.value) || 0;
+          const value = parseFloat(input.value) || 0;
           const id = input.getAttribute("id");
           if (value > 0) {
             if (id === "input2_1_dhqgHCM" || id === "input2_1_huyDong") {
@@ -163,21 +164,30 @@
             }
           }
         });
-        document.getElementById("total-tienCong").textContent = total_tienCong;
-        document.getElementById("total-khoan1_1").textContent = total_khoan1_1;
-        document.getElementById("total-khoan1_2").textContent = total_khoan1_2;
-        document.getElementById("total-khoan1_3").textContent = total_khoan1_3;
+        document.getElementById("total-tienCong").textContent =
+          formatCurrency(total_tienCong) + "đ";
+        document.getElementById("total-khoan1_1").textContent =
+          formatCurrency(total_khoan1_1) + "đ";
+        document.getElementById("total-khoan1_2").textContent =
+          formatCurrency(total_khoan1_2) + "đ";
+        document.getElementById("total-khoan1_3").textContent =
+          formatCurrency(total_khoan1_3) + "đ";
         document.getElementById("total-all-dhqgHCM").textContent =
-          total_all_dhqgHCM;
+          formatCurrency(total_all_dhqgHCM) + "đ";
         document.getElementById("total-all-huyDong").textContent =
-          total_all_huyDong;
+          formatCurrency(total_all_huyDong) + "đ";
         document.getElementById("total-all").textContent =
-          total_all_dhqgHCM + total_all_huyDong;
+          formatCurrency(total_all_dhqgHCM + total_all_huyDong) + "đ";
       }
+
       const inputFields = document.querySelectorAll('input[type="number"]');
       inputFields.forEach((input) => {
         input.addEventListener("input", calculateTotal);
       });
+
+      function formatCurrency(value) {
+        return value.toLocaleString("vi-VN");
+      }
     </script>
     <!-- Essential javascripts for application to work-->
     <script
