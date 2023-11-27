@@ -99,11 +99,11 @@
   --bs-tertiary-bg: #f8f9fa;
   --bs-tertiary-bg-rgb: 248, 249, 250;
   --bs-heading-color: inherit;
-  --bs-link-color: #0d6efd;
-  --bs-link-color-rgb: 13, 110, 253;
+  --bs-link-color: #fe5401;
+  --bs-link-color-rgb: 254, 84, 1;
   --bs-link-decoration: underline;
-  --bs-link-hover-color: #0a58ca;
-  --bs-link-hover-color-rgb: 10, 88, 202;
+  --bs-link-hover-color: #d72f00;
+  --bs-link-hover-color-rgb: 215, 47, 0;
   --bs-code-color: #d63384;
   --bs-highlight-color: #212529;
   --bs-highlight-bg: #fff3cd;
@@ -2322,8 +2322,8 @@ textarea.form-control-lg {
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 .form-check-input:checked {
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background-color: #fe5401;
+  border-color: #fe5401;
 }
 .form-check-input:checked[type="checkbox"] {
   --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
@@ -2332,8 +2332,8 @@ textarea.form-control-lg {
   --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
 }
 .form-check-input[type="checkbox"]:indeterminate {
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background-color: #fe5401;
+  border-color: #fe5401;
   --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e");
 }
 .form-check-input:disabled {
@@ -3008,6 +3008,22 @@ fieldset:disabled .btn {
   --bs-btn-disabled-bg: #0d6efd;
   --bs-btn-disabled-border-color: #0d6efd;
 }
+.btn-primary2 {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #fe5401;
+  --bs-btn-border-color: #fe5401;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #0b5ed7;
+  --bs-btn-hover-border-color: #0a58ca;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #0a58ca;
+  --bs-btn-active-border-color: #0a53be;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #fe5401;
+  --bs-btn-disabled-border-color: #fe5401;
+}
 .btn-secondary {
   --bs-btn-color: #fff;
   --bs-btn-bg: #6c757d;
@@ -3134,6 +3150,22 @@ fieldset:disabled .btn {
   --bs-btn-disabled-color: #0d6efd;
   --bs-btn-disabled-bg: transparent;
   --bs-btn-disabled-border-color: #0d6efd;
+  --bs-gradient: none;
+}
+.btn-outline-primary {
+  --bs-btn-color: #fe5401;
+  --bs-btn-border-color: #fe5401;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #fe5401;
+  --bs-btn-hover-border-color: #fe5401;
+  --bs-btn-focus-shadow-rgb: 13, 110, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #fe5401;
+  --bs-btn-active-border-color: #fe5401;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fe5401;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #fe5401;
   --bs-gradient: none;
 }
 .btn-outline-secondary {
@@ -13053,40 +13085,80 @@ fieldset:disabled .btn {
 }
 
 .login-content {
+  position: absolute;
+  left: calc(50% - 180px);
+  width: 360px;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  -ms-flex-pack: center;
+  flex-direction: column;
+  -ms-flex-align: center;
+  justify-content: center;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  -ms-flex-direction: column;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
+}
+.login_header {
+  gap: 24px;
+  display: flex;
+  color: #212529;
+  font-size: 32px;
+  overflow: hidden;
+  align-self: stretch;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: "Inter", sans-serif;
 }
-.login-content .logo {
-  margin-bottom: 40px;
-  font-family: "Niconne";
-  color: #fff;
-}
-.login-content .logo h1,
-.login-content .logo .h1 {
+
+.login_header .logo .logo-TVTTH {
+  width: 48px;
+  height: 38.3px;
   font-size: 52px;
   font-weight: 400;
+  overflow: hidden;
+  position: relative;
+}
+.login_header .logo_heading {
+  gap: 12px;
+  display: flex;
+  overflow: hidden; /* Xử lý nội dụng bị tràn sẽ ẩn đi*/
+  align-self: stretch; /* Điều chỉnh vị trí dọc của phần tử con sễ được kéo dãn để lấp đầy không gian của thẻ cha*/
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  justify-content: flex-start;
+}
+.login_header .logo_heading h2,
+.login_header .logo_heading .h2 {
+  line-height: 120%;
+  font-weight: 500;
+}
+.login_header .logo_heading p,
+.login_header .logo_heading .p {
+  display: flex;
+  font-size: 16px;
+  line-height: 150%;
+  position: relative;
+  color: var(--bs-gray);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 .login-content .login-box {
   position: relative;
   min-width: 350px;
-  min-height: 390px;
+  min-height: 450px;
   background-color: #fff;
-  -webkit-box-shadow: 0px 29px 147.5px 102.5px rgba(0, 0, 0, 0.05),
-    0px 29px 95px 0px rgba(0, 0, 0, 0.16);
-  box-shadow: 0px 29px 147.5px 102.5px rgba(0, 0, 0, 0.05),
-    0px 29px 95px 0px rgba(0, 0, 0, 0.16);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+  rgb(209, 213, 219) 0px 0px 0px 1px inset;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+    rgb(209, 213, 219) 0px 0px 0px 1px inset;
   -webkit-perspective: 800px;
   perspective: 800px;
   -webkit-transition: all 0.5s ease-in-out;
