@@ -11,7 +11,13 @@
   border: none;
   margin: 0 0 8px 8px;
   background-color: #ffffff;
-  color: #1851fb;
+  font-size: 20px;
+}
+.log-out__icon {
+  border: none;
+  margin: 0 0 8px 45px;
+  background-color: #ffffff;
+  
   font-size: 20px;
 }
 .delete-member-btn {

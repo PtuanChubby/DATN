@@ -28,7 +28,153 @@
   </head>
   <body class="app sidebar-mini">
     <!-- Navbar-->
-
+    <header class="app-header">
+      <!-- Sidebar toggle button-->
+      <a
+        class="app-sidebar__toggle"
+        href="#"
+        data-toggle="sidebar"
+        aria-label="Hide Sidebar"
+        
+      ><i class="icon fa-solid fa-bars" style="font-size: 26px;"></i></a>
+      <!-- <div class="title-header">
+        <h5><i class="bi bi-book-half"></i> HỆ THỐNG QUẢN LÝ ĐỀ TÀI</h5>
+      </div> -->
+      <!-- Navbar Right Menu-->
+      <ul class="app-nav">
+        <li class="app-search">
+          <input class="app-search__input" type="search" placeholder="Search" />
+          <button class="app-search__button">
+            <i class="bi bi-search"></i>
+          </button>
+        </li>
+        <!--Notification Menu-->
+        <li class="dropdown">
+          <a
+            class="app-nav__item"
+            href="#"
+            data-bs-toggle="dropdown"
+            aria-label="Show notifications"
+            ><i class="bi bi-bell fs-5"></i
+          ></a>
+          <ul class="app-notification dropdown-menu dropdown-menu-right">
+            <li class="app-notification__title">
+              You have 4 new notifications.
+            </li>
+            <div class="app-notification__content">
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-envelope fs-4 text-primary"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Lisa sent you a mail
+                    </p>
+                    <p class="app-notification__meta">2 min ago</p>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-exclamation-triangle fs-4 text-warning"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Mail server not working
+                    </p>
+                    <p class="app-notification__meta">5 min ago</p>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-cash fs-4 text-success"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Transaction complete
+                    </p>
+                    <p class="app-notification__meta">2 days ago</p>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-envelope fs-4 text-primary"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Lisa sent you a mail
+                    </p>
+                    <p class="app-notification__meta">2 min ago</p>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-exclamation-triangle fs-4 text-warning"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Mail server not working
+                    </p>
+                    <p class="app-notification__meta">5 min ago</p>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-cash fs-4 text-success"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Transaction complete
+                    </p>
+                    <p class="app-notification__meta">2 days ago</p>
+                  </div></a
+                >
+              </li>
+            </div>
+            <li class="app-notification__footer">
+              <a href="#">See all notifications.</a>
+            </li>
+          </ul>
+        </li>
+        <!-- User Menu-->
+        <li class="dropdown">
+          <a
+            class="app-nav__item"
+            href="#"
+            data-bs-toggle="dropdown"
+            aria-label="Open Profile Menu"
+            ><i class="bi bi-person fs-4"></i
+          ></a>
+          <ul class="dropdown-menu settings-menu dropdown-menu-right">
+            <li>
+              <a class="dropdown-item" href="page-user.html"
+                ><i class="bi bi-gear me-2 fs-5"></i> Settings</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="page-user.html"
+                ><i class="bi bi-person me-2 fs-5"></i> Profile</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="page-login.html"
+                ><i class="bi bi-box-arrow-right me-2 fs-5"></i> Logout</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </header>
     <!-- Sidebar menu-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
@@ -45,88 +191,67 @@
       </div>
       <ul class="app-menu">
         <li>
-          <a class="app-menu__item active" href="trangchu.html">
+          <a class="app-menu__item" href="#">
             <i class="app-menu__icon fa-solid fa-house"></i>
-            <span class="app-menu__label">Trang cá nhân</span></a
+            <span class="app-menu__label">Trang chủ</span></a
+          >
+        </li>
+        <li class="my-md-3">
+          <span class="app-sidebar-title fw-semibold">ĐỀ TÀI</span>
+        </li>
+        <li>
+          <a class="app-menu__item ps-4" href="#">
+            <i class="app-menu__icon fa-solid fa-list"></i>
+            <span class="app-menu__label">Danh mục đề tài</span></a
+          >
+          <a class="app-menu__item ps-4" href="#">
+            <i class="app-menu__icon fa-solid fa-folder-open"></i>
+            <span class="app-menu__label">Đăng ký</span></a
+          >
+          <a class="app-menu__item ps-4" href="#">
+            <i class="app-menu__icon fa-solid fa-file"></i>
+            <span class="app-menu__label">Đề cương</span></a
+          >
+        </li>
+        <li class="my-md-3">
+          <span class="app-sidebar-title fw-semibold">ĐÁNH GIÁ</span>
+        </li>
+        <li>
+          <a class="app-menu__item ps-4" href="#">
+            <i class="app-menu__icon fa-solid fa-list"></i>
+            <span class="app-menu__label">Nhận xét của giảng viên</span></a
+          >
+          <a class="app-menu__item ps-4" href="#">
+            <i class="app-menu__icon fa-solid fa-folder-open"></i>
+            <span class="app-menu__label">Điểm đề tài</span></a
           >
         </li>
         <li class="my-md-2">
-          <span>Quản lý đề tài</span>
+          <span class="app-sidebar-title fw-semibold">TÀI KHOẢN</span>
         </li>
-        <li class="treeview">
-          
-          <a class="app-menu__item" href="#" data-toggle="treeview"
-            ><i class="app-menu__icon bi bi-laptop"></i
-            ><span class="app-menu__label">Đề tài</span
-            ><i class="treeview-indicator bi bi-chevron-right"></i
-          ></a>
-          <ul class="treeview-menu">
-            <li>
-              <a class="treeview-item" href="dk-de-tai.html"
-                ><i class="icon bi bi-circle-fill"></i> Đăng ký đề tài</a
-              >
-            </li>
-            <li>
-              <a class="treeview-item" href="Ds-de-tai.html"
-                ><i class="icon bi bi-circle-fill"></i> Danh sách đề tài</a
-              >
-            </li>
-            <li>
-              <a class="treeview-item" href="gia-han-de-tai.html"
-                ><i class="icon bi bi-circle-fill"></i> Gia hạn đề tài</a
-              >
-            </li>
-            <li>
-              <a class="treeview-item" href="huy-de-tai.html"
-                ><i class="icon bi bi-circle-fill"></i> Hủy đề tài</a
-              >
-            </li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a class="app-menu__item" href="#" data-toggle="treeview"
-            ><i class="app-menu__icon bi bi-ui-checks"></i
-            ><span class="app-menu__label">Xem và đánh giá</span
-            ><i class="treeview-indicator bi bi-chevron-right"></i
-          ></a>
-          <ul class="treeview-menu">
-            <li>
-              <a class="treeview-item" href="form-components.html"
-                ><i class="icon bi bi-circle-fill"></i> Điểm đề cương</a
-              >
-            </li>
-            <li>
-              <a class="treeview-item" href="form-samples.html"
-                ><i class="icon bi bi-circle-fill"></i> Điểm đề tài</a
-              >
-            </li>
-            <li>
-              <a class="treeview-item" href="form-samples.html"
-                ><i class="icon bi bi-circle-fill"></i> Nhận xét của giảng
-                viên</a
-              >
-            </li>
-          </ul>
+        <li>
+          <a class="app-menu__item ps-4" href="#">
+            <i class="app-menu__icon fa-solid fa-user"></i>
+            <span class="app-menu__label">Thông tin tài khoản</span></a
+          >
         </li>
       </ul>
-      <div class="app-sidebar-footer__user">
+      
+      <div class="app-footer__user">
         <img
-          class="app-sidebar-footer__user-avatar"
+          class="app-footer__user-avatar"
           src="/Asset/IMG/PNGH.jpg"
           alt="User Image"
         />
         <div>
-          <b class="app-sidebar-footer__user-name">Phạm Ngọc Gia Hân</b>
-          <p class="app-sidebar-footer__user-designation">Sinh viên</p>
+          <b class="app-footer__user-name">Phạm Ngọc Gia Hân</b>
+          <p class="app-footer__user-designation">Sinh viên</p>
         </div>
+        <button class="log-out__icon">
+          <a href="#"><i class="fa-solid fa-right-to-bracket"></i></a>
+        </button>
       </div>
     </aside>
-    <a
-        class="app-sidebar__toggle"
-        href="#"
-        data-toggle="sidebar"
-        aria-label="Hide Sidebar"
-      ></a>
 
     <!-- Essential javascripts for application to work-->
     <script src="/Asset/JS/jquery-3.7.1.min.js"></script>
