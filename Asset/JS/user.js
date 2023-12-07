@@ -172,4 +172,38 @@ const tooltipTriggerList = document.querySelectorAll(
 );
 const tooltipList = [...tooltipTriggerList].map(
   (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
-)
+);
+
+document.addEventListener("DOMContentLoaded", function () {
+  const tabs = document.querySelectorAll(".tab");
+  const tabContents = document.querySelectorAll(".tab-content");
+  const tabIndicator = document.querySelector(".tab-indicator div");
+
+  function changeTab(tabIndex) {
+    tabs.forEach(function (tab, index) {
+      if (index === tabIndex) {
+        tab.classList.add("active-tab");
+      } else {
+        tab.classList.remove("active-tab");
+      }
+    });
+
+    tabContents.forEach(function (content, index) {
+      if (index === tabIndex) {
+        content.classList.add("active-tab-content");
+      } else {
+        content.classList.remove("active-tab-content");
+      }
+    });
+
+    const tabWidth = tabs[0].offsetWidth;
+    const translateXValue = tabIndex * tabWidth;
+    tabIndicator.style.transform = "translateX(" + translateXValue + "px)";
+  }
+
+  tabs.forEach(function (tab, tabIndex) {
+    tab.addEventListener("click", function () {
+      changeTab(tabIndex);
+    });
+  });
+});

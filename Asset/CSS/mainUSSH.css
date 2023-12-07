@@ -15,7 +15,7 @@
 }
 .log-out__icon {
   border: none;
-  margin: 0 0 8px 45px;
+  margin: 0 0 8px 10px;
   background-color: #ffffff;
   
   font-size: 20px;
@@ -41,38 +41,250 @@
   margin-bottom: 10px;
   margin-right: 20px;
 }
-.project {
+
+.app-project {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  background-color: #ffffff;
+  border: 3px solid #F8F9FA;
+  padding: 20px;
+  border-radius: 8px;
 }
-.p_panel {
-  position: relative;
+
+.project-panel {
+  
+}
+.panel-title {
+
+}
+
+.panel-heading {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.panel-subtitle {
+  font-size: 14px;
+  color: #888;
+}
+
+.tab-header,
+.tab-body {
+  margin: 0 auto;
   width: 100%;
   margin-bottom: 10px;
-  padding: 10px 10px;
+}
+.tab-header {
+  display: flex;
+  position: relative;
+  width: 100%;
+  z-index: 3;
+  align-items: center;
+}
+.tab {
+  width: 15%;
+  text-align: center;
+  padding: 15px 0px;
+  color: #2c3e50;
+  font-size: 14px;
+  cursor: pointer;
+}
+.tab.active-tab {
+  color: #fe5401;
+}
+.tab-indicator {
+  height: 40px;
+  margin-top: -58px;
+  position: relative;
+}
+.tab-indicator div {
+  position: absolute;
+  left: 0;
+  width: 15%;
+  height: 100%;
   background-color: #fff;
-  border-radius: 8px;
-  border: 1px solid #dadada;
-  opacity: 1;
+  border-radius: 4px 4px 4px 0px;
+  padding: 8px 16px;
+  transition: all 300ms ease-in-out;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  z-index: 2;
 }
-.p_title {
-  margin-bottom: 10px;
-  padding: 8px;
-  justify-content: space-between;
+
+.tab-body {
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-right: none;
+  border-left: none;
+  overflow: auto;
+  padding: 16px 10px;
+  /* border-radius: 8px; */
 }
-.p_title h5 {
-  margin: 5px 0 6px;
-  float: left;
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active-tab-content {
+  border: 1px solid #ddd;
   display: block;
-  text-overflow: ellipsis;
+  border-radius: 8px;
+
+}
+
+.header_table {
+  /* background-color: rgba(255, 255, 255, 0); */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px 12px;
+  background-color: #e9ecef;
+  border-radius: 8px 8px 0 0;
+}
+.body-table {
+  align-self: stretch;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.text-header_cell {
+  font-weight: bold;
+  position: relative;
+}
+
+.table_check-box {
+  font-size: 15px;
+  align-self: stretch;
+  width: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cell-stt {
+  background-color: rgba(255, 255, 255, 0);
+  width: 5%;
   overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8px 8px 9px;
+  box-sizing: border-box;
+}
+
+.cell-ttv,
+.cell-tta {
+  position: relative;
+  align-self: stretch;
+  width: 25%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8px 8px 9px;
+  box-sizing: border-box;
+}
+.cell-time {
+  position: relative;
+  align-self: stretch;
+  width: 20%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8px 8px 9px;
+  box-sizing: border-box;
+}
+.cell-cn {
+  position: relative;
+  align-self: stretch;
+  width: 15%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8px 8px 9px;
+  box-sizing: border-box;
+}
+.cell-action {
+  position: relative;
+  align-self: stretch;
+  width: 10%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8px 8px 9px;
+  box-sizing: border-box;
+}
+.icon-action {
+  position: relative;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+}
+@media (max-width: 768px) {
+  .icon-action {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+/* CSS cho các nút chỉnh sửa */
+.btn-xs {
+  border: none;
+  
+  background-color: #ffffff;
+  font-size: 15px;
+}
+.btn-sua {
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 3px;
+  color: #0DCAF0;
+}
+.btn-xoa {
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 3px;
+  color: #DC3545;
+}
+
+.project-name,
+.project-name-en,
+.project-leader,
+.project-duration {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
-.p_panel-tool {
-  float: right;
-  min-width: 70px;
+
+.clearfix {
+  clear: both;
 }
-.p_panel-tool > li > a {
-  padding: 5px;
-}
+
+
+
 .clearfix:after,
 form:after {
   content: ".";
@@ -174,4 +386,65 @@ input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
-
+.pagination,
+.button,
+.number_links,
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  right: 0;
+  padding: 0px;
+  border-radius: 8px;
+  column-gap: 12px;
+  padding: 12px;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .pagination {
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+}
+.button {
+  border: none;
+}
+.button i {
+  pointer-events: none;
+}
+.button:disabled {
+  color: #b3b3b3;
+  pointer-events: none;
+}
+.button,
+.link {
+  height: 30px;
+  width: 30px;
+  font-size: 12px;
+  color: #fe5401;
+  background-color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+}
+.number_links {
+  column-gap: 12px;
+}
+.link {
+  font-weight: 500;
+  text-decoration: none;
+}
+.button:hover,
+.link:hover {
+  color: #fff;
+  background: #fe5401;
+}
+.link.active {
+  color: #fff;
+  background: #fe5401;
+}

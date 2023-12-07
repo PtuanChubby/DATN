@@ -409,6 +409,7 @@ svg {
 table {
   caption-side: bottom;
   border-collapse: collapse;
+  border-radius: 8px;
 }
 
 caption {
@@ -1781,7 +1782,7 @@ progress {
   --bs-table-border-color: var(--bs-border-color);
   --bs-table-accent-bg: transparent;
   --bs-table-striped-color: var(--bs-emphasis-color);
-  --bs-table-striped-bg: rgba(var(--bs-emphasis-color-rgb), 0.05);
+  --bs-table-striped-bg: rgba(var(--bs-body-bg-rgb), 0.05);
   --bs-table-active-color: var(--bs-emphasis-color);
   --bs-table-active-bg: rgba(var(--bs-emphasis-color-rgb), 0.1);
   --bs-table-hover-color: var(--bs-emphasis-color);
@@ -1833,6 +1834,7 @@ progress {
 .table-striped > tbody > tr:nth-of-type(odd) > * {
   --bs-table-color-type: var(--bs-table-striped-color);
   --bs-table-bg-type: var(--bs-table-striped-bg);
+  cursor: pointer;
 }
 .table-striped-columns > :not(caption) > tr > :nth-child(2n) {
   --bs-table-color-type: var(--bs-table-striped-color);
@@ -2010,8 +2012,7 @@ progress {
   color: var(--bs-secondary-color);
 }
 .app-form,
-.app-form-button,
-.app-project {
+.app-form-button {
   margin-top: 63px;
 }
 
@@ -11842,7 +11843,7 @@ fieldset:disabled .btn {
     margin-left: 0;
   }
   .app.sidenav-toggled .app-sidebar {
-    left: -280px;
+    left: -240px;
   }
   .app.sidenav-toggled .app-sidebar__overlay {
     visibility: hidden;
@@ -11853,14 +11854,14 @@ fieldset:disabled .btn {
     overflow-x: hidden;
   }
   .app .app-sidebar {
-    left: -280px;
+    left: -240px;
   }
   .app .app-sidebar__overlay {
     visibility: hidden;
   }
   .app.sidenav-toggled .app-header,
   .app.sidenav-toggled .app-content {
-    margin-left: 280px;
+    margin-left: 240px;
   }
   .app.sidenav-toggled .app-sidebar {
     left: 0;
@@ -11874,7 +11875,7 @@ fieldset:disabled .btn {
   min-height: calc(100vh - 50px);
   margin-top: 50px;
   padding: 30px;
-  background-color: #e5e5e5;
+  background-color: #fafbfc;
   -webkit-transition: margin-left 0.3s ease;
   transition: margin-left 0.3s ease;
   z-index: 1;
@@ -11882,7 +11883,7 @@ fieldset:disabled .btn {
 }
 @media (min-width: 768px) {
   .app-content {
-    margin-left: 280px;
+    margin-left: 240px;
   }
 }
 @media (max-width: 767px) {
@@ -11903,7 +11904,9 @@ fieldset:disabled .btn {
     background-color: #fff;
   }
 }
-
+.app-project {
+  margin-top: 15px;
+}
 .light-text {
   font-weight: 300 !important;
 }
@@ -11927,14 +11930,16 @@ fieldset:disabled .btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #581c1c;
+  background-color: #ffffff;
   z-index: 1030;
   transition: margin-left 0.3s ease;
-  padding: 14px 24px;
+  padding: 16px 24px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 @media (min-width: 768px) {
   .app-header {
-    margin-left: 280px;
+    margin-left: 240px;
   }
 }
 @media print {
@@ -12014,7 +12019,7 @@ fieldset:disabled .btn {
   justify-content: center;
   padding: 0 15px;
   font-family: bootstrap-icons !important;
-  color: #fff;
+  color: #000000;
   line-height: 2.4;
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
@@ -12033,7 +12038,7 @@ fieldset:disabled .btn {
 }
 .app-sidebar__toggle:focus,
 .app-sidebar__toggle:hover {
-  color: #fff;
+  color: #000000;
   /* background-color: #059bb4; */
   text-decoration: none;
 }
@@ -12061,7 +12066,6 @@ fieldset:disabled .btn {
   left: 2rem;
   align-items: center;
   margin-right: 2rem;
-
 }
 @media (min-width: 768px) {
   .app-nav {
@@ -12073,18 +12077,16 @@ fieldset:disabled .btn {
 
 .app-nav__item {
   display: block;
-  padding: 15px;
+  padding: 0 15px;
   line-height: 20px;
-  color: #fff;
+  color: #000000;
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
-  border-radius: 50%;
 }
 .app-nav__item:hover,
 .app-nav__item:focus {
-  background: rgba(0, 0, 0, 0.1);
-  color: #f6f6f6;
-  border-radius: 50%;
+  color: #000000;
+  text-decoration: none;
 }
 
 .app-search {
@@ -12095,8 +12097,9 @@ fieldset:disabled .btn {
   -ms-flex-item-align: center;
   align-self: center;
   margin-right: 15px;
-  padding: 10px 0;
+  /* padding: 10px 0; */
 }
+
 @media (max-width: 480px) {
   .app-search {
     display: none;
@@ -12104,40 +12107,38 @@ fieldset:disabled .btn {
 }
 
 .app-search__input {
-  border: 0;
-  padding: 5px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 6px 12px;
   padding-right: 30px;
-  border-radius: 2px;
-  background-color: rgba(255, 255, 255, 0.8);
+  width: 300px;
+  background-color: rgba(255, 255, 255);
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
 }
-.app-search__input::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.4);
-}
-.app-search__input::-moz-placeholder {
-  color: rgba(0, 0, 0, 0.4);
-}
-.app-search__input:-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.4);
-}
-.app-search__input::-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.4);
-}
-.app-search__input::placeholder {
-  color: rgba(0, 0, 0, 0.4);
+.app-search__input:focus,
+.app-search__input:hover {
+  outline: none;
+  border-color: rgba(0, 48, 73, 0.4);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgb(0 48 73 / 10%);
 }
 
 .app-search__button {
   position: absolute;
   right: 0;
-  top: 10px;
-  bottom: 10px;
-  padding: 0 10px;
+  padding: 6px 10px;
   border: 0;
   color: rgba(0, 0, 0, 0.8);
   background: none;
   cursor: pointer;
+}
+@media (min-width: 768px) {
+  .app-search__button {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 0;
+  }
 }
 
 .app-notification {
@@ -12208,12 +12209,12 @@ fieldset:disabled .btn {
   bottom: 0;
   left: 0;
   padding-top: 16px;
-  width: 280px;
+  width: 240px;
   overflow: auto;
-  z-index: 10;
+  z-index: 1030;
   background-color: var(--bs-white);
-  -webkit-box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   -webkit-transition: left 0.3s ease, width 0.3s ease;
   transition: left 0.3s ease, width 0.3s ease;
 }
@@ -12252,7 +12253,7 @@ fieldset:disabled .btn {
   padding: 10px;
   color: #fff;
   background-color: var(--bs-white);
-  width: 280px;
+  width: 240px;
   border-top: 1px solid #ddd;
 }
 @media (max-height: 400px) {
