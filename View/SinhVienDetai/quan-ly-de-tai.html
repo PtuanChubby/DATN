@@ -277,29 +277,29 @@
 
       <div class="app-step">
         <div id="smartwizard">
-          <ul class="nav">
+          <ul class="nav nav-progress">
             <li class="nav-item">
               <a class="nav-link" href="#step-1">
-                <div class="num">1</div>
-                Step Title
+                <span class="num">1</span>
+                <span class="step-title">Thông tin chung</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#step-2">
                 <span class="num">2</span>
-                Step Title
+                <span class="step-title">Mô tả nghiên cứu</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#step-3">
                 <span class="num">3</span>
-                Step Title
+                <span class="step-title">Đăng ký sản phẩm</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#step-4">
                 <span class="num">4</span>
-                Step Title
+                <span class="step-title">Xem hồ sơ</span>
               </a>
             </li>
           </ul>
@@ -311,8 +311,7 @@
               role="tabpanel"
               aria-labelledby="step-1"
             >
-            <div class="app-form">
-              <div class="form-control">
+              <form action="" class="form-horizontal">
                 <div class="row">
                   <div class="col-md-12 mt-2">
                     <div class="card">
@@ -323,11 +322,14 @@
                         <div class="card-group">
                           <div class="col-12 mt-2">
                             <div class="title-group">
-                              <h6 for="inputName">A1.Tên đề tài</h6>
+                              <h5 for="inputName">
+                                A1.Tên đề tài và loại đề tài
+                              </h5>
                             </div>
                             <div class="form-group required">
                               <label for="inputNameTV" class="mb-1"
-                                >Tên tiếng việt<span class="required-star ms-1 mb-4"
+                                >Tên tiếng việt<span
+                                  class="required-star ms-1 mb-4"
                                   >*</span
                                 ></label
                               >
@@ -349,13 +351,33 @@
                                 class="form-control"
                               />
                             </div>
+                            <div class="form-group required mt-2">
+                              <label for="inputNameTA" class="mb-1"
+                                >Loại đề tài<span class="required-star ms-1"
+                                  >*</span
+                                ></label
+                              >
+                              <select
+                                id="inputLoaidetai"
+                                class="form-control"
+                                required
+                              >
+                                <option selected="" disabled="">
+                                  Loại đề tài
+                                </option>
+                                <option>Cấp khoa</option>
+                                <option>Cấp trường</option>
+                              </select>
+                            </div>
                           </div>
                         </div>
                         <div class="card-group">
                           <div class="col-12">
                             <div class="row">
                               <div class="col-md-6">
-                                <h6 for="inputName">A2. Thuộc ngành/nhóm ngành</h6>
+                                <h5 for="inputName">
+                                  A2. Thuộc ngành/nhóm ngành
+                                </h5>
                                 <div class="form-check">
                                   <input
                                     class="form-check-input"
@@ -364,7 +386,9 @@
                                     name="group1"
                                     onclick="handleCheckboxChange(event, 'checkbox2')"
                                   />
-                                  <label class="form-check-label" for="checkbox1"
+                                  <label
+                                    class="form-check-label"
+                                    for="checkbox1"
                                     >Khoa học Xã hội</label
                                   >
                                 </div>
@@ -376,13 +400,15 @@
                                     name="group1"
                                     onclick="handleCheckboxChange(event, 'checkbox1')"
                                   />
-                                  <label class="form-check-label" for="checkbox2"
+                                  <label
+                                    class="form-check-label"
+                                    for="checkbox2"
                                     >Khoa học Nhân văn</label
                                   >
                                 </div>
                               </div>
                               <div class="col-md-6">
-                                <h6 for="inputName">Chương trình đào tạo</h6>
+                                <h6 for="inputName">Hệ đào tạo</h6>
                                 <div class="form-check">
                                   <input
                                     class="form-check-input"
@@ -391,8 +417,10 @@
                                     name="group2"
                                     onclick="handleCheckboxChange(event, 'checkbox4')"
                                   />
-                                  <label class="form-check-label" for="checkbox3"
-                                    >Chương trình chuẩn</label
+                                  <label
+                                    class="form-check-label"
+                                    for="checkbox3"
+                                    >Chương trình đại trà</label
                                   >
                                 </div>
                                 <div class="form-check">
@@ -403,7 +431,9 @@
                                     name="group2"
                                     onclick="handleCheckboxChange(event, 'checkbox3')"
                                   />
-                                  <label class="form-check-label" for="checkbox4"
+                                  <label
+                                    class="form-check-label"
+                                    for="checkbox4"
                                     >Chương trình chất lượng cao</label
                                   >
                                 </div>
@@ -411,7 +441,8 @@
                             </div>
                           </div>
                           <label for="inputName" class="mb-1"
-                            >Chuyên nghành hẹp<span class="required-star ms-1 mb-4"
+                            >Chuyên nghành hẹp<span
+                              class="required-star ms-1 mb-4"
                               >*</span
                             ></label
                           >
@@ -426,11 +457,12 @@
                         </div>
                         <div class="card-group">
                           <div class="col-12">
-                            <h6 for="inputName">A3. Chủ nhiệm đề tài</h6>
+                            <h5 for="inputName">A3. Chủ nhiệm đề tài</h5>
                             <div class="row">
                               <div class="form-group required col-md-6">
                                 <label for="inputName" class="mb-1"
-                                  >Họ và tên<span class="required-star ms-1 mb-4"
+                                  >Họ và tên<span
+                                    class="required-star ms-1 mb-4"
                                     >*</span
                                   ></label
                                 >
@@ -457,7 +489,8 @@
                               <div class="form-group required col-md-6">
                                 <label
                                   class="col-form-label col-md-3 col-sm-3 label-align"
-                                  >Ngày sinh <span class="required-star ms-1">*</span>
+                                  >Ngày sinh
+                                  <span class="required-star ms-1">*</span>
                                 </label>
                                 <input
                                   id="birthday"
@@ -480,11 +513,13 @@
                                   }
                                 </script>
                               </div>
-      
+
                               <div class="form-group required col-md-6">
                                 <label
                                   class="col-form-label col-md-3 col-sm-3 label-align"
-                                  >Giới tính<span class="required-star ms-1">*</span>
+                                  >Giới tính<span class="required-star ms-1"
+                                    >*</span
+                                  >
                                 </label>
                                 <select
                                   id="inputGioitinh"
@@ -502,7 +537,9 @@
                               <div class="form-group required col-md-6">
                                 <label
                                   class="col-form-label col-md-3 col-sm-3 label-align"
-                                  >Số CCCD<span class="required-star ms-1">*</span>
+                                  >Số CCCD<span class="required-star ms-1"
+                                    >*</span
+                                  >
                                 </label>
                                 <input
                                   type="number"
@@ -572,7 +609,8 @@
                                 <label
                                   for="inputCNNH"
                                   class="col-form-label label-align"
-                                  >Chi nhánh ngân hàng<span class="required-star ms-1"
+                                  >Chi nhánh ngân hàng<span
+                                    class="required-star ms-1"
                                     >*</span
                                   ></label
                                 >
@@ -605,7 +643,8 @@
                                 <label
                                   for="inputSDT"
                                   class="col-form-label col-md-3 col-sm-3 label-align"
-                                  >Điện thoại<span class="required-star ms-1 mb-4"
+                                  >Điện thoại<span
+                                    class="required-star ms-1 mb-4"
                                     >*</span
                                   ></label
                                 >
@@ -634,7 +673,7 @@
                         </div>
                         <div class="card-group">
                           <div class="col-12">
-                            <h6 for="inputName">A4. Thời gian thực hiện</h6>
+                            <h5 for="inputName">A4. Thời gian thực hiện</h5>
                             <div class="row">
                               <div class="form-group required col-md-6">
                                 <label for="input-tg" class="mb-1"
@@ -654,7 +693,7 @@
                         </div>
                         <div class="card-group">
                           <div class="col-12">
-                            <h6 for="inputName">A5. Thêm thành viên</h6>
+                            <h5 for="inputName">A5. Thêm thành viên</h5>
                             <div class="row">
                               <div class="form-table">
                                 <table class="mb-2">
@@ -702,7 +741,9 @@
                                             data-bs-toggle="modal"
                                             data-bs-target="#member-modal"
                                           >
-                                            <i class="bi bi-person-plus-fill"></i>
+                                            <i
+                                              class="bi bi-person-plus-fill"
+                                            ></i>
                                           </button>
                                         </div>
                                       </td>
@@ -716,7 +757,9 @@
                                             data-bs-toggle="modal"
                                             data-bs-target="#member-modal"
                                           >
-                                            <i class="bi bi-person-plus-fill"></i>
+                                            <i
+                                              class="bi bi-person-plus-fill"
+                                            ></i>
                                           </button>
                                         </div>
                                       </td>
@@ -730,7 +773,9 @@
                                             data-bs-toggle="modal"
                                             data-bs-target="#member-modal"
                                           >
-                                            <i class="bi bi-person-plus-fill"></i>
+                                            <i
+                                              class="bi bi-person-plus-fill"
+                                            ></i>
                                           </button>
                                         </div>
                                       </td>
@@ -744,7 +789,9 @@
                                             data-bs-toggle="modal"
                                             data-bs-target="#member-modal"
                                           >
-                                            <i class="bi bi-person-plus-fill"></i>
+                                            <i
+                                              class="bi bi-person-plus-fill"
+                                            ></i>
                                           </button>
                                         </div>
                                       </td>
@@ -752,13 +799,17 @@
                                     <tr class="font-bold">
                                       <td colspan="6">
                                         <div>
-                                          <span>Kỹ thuật viên, nhân viên hỗ trợ</span
+                                          <span
+                                            >Kỹ thuật viên, nhân viên hỗ
+                                            trợ</span
                                           ><button
                                             class="add-member-btn"
                                             data-bs-toggle="modal"
                                             data-bs-target="#member-modal"
                                           >
-                                            <i class="bi bi-person-plus-fill"></i>
+                                            <i
+                                              class="bi bi-person-plus-fill"
+                                            ></i>
                                           </button>
                                         </div>
                                       </td>
@@ -772,7 +823,9 @@
                                             data-bs-toggle="modal"
                                             data-bs-target="#member-modal"
                                           >
-                                            <i class="bi bi-person-plus-fill"></i>
+                                            <i
+                                              class="bi bi-person-plus-fill"
+                                            ></i>
                                           </button>
                                         </div>
                                       </td>
@@ -786,7 +839,9 @@
                                             data-bs-toggle="modal"
                                             data-bs-target="#member-modal"
                                           >
-                                            <i class="bi bi-person-plus-fill"></i>
+                                            <i
+                                              class="bi bi-person-plus-fill"
+                                            ></i>
                                           </button>
                                         </div>
                                       </td>
@@ -810,7 +865,10 @@
                               >
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h5 class="modal-title" id="member-modal-label">
+                                    <h5
+                                      class="modal-title"
+                                      id="member-modal-label"
+                                    >
                                       Thông tin thành viên
                                     </h5>
                                     <button
@@ -824,8 +882,12 @@
                                     <form id="member-form">
                                       <div class="input-group">
                                         <div class="info-email required">
-                                          <label for="input-text-email" class="mb-1">
-                                            Email <span class="required-star">*</span>
+                                          <label
+                                            for="input-text-email"
+                                            class="mb-1"
+                                          >
+                                            Email
+                                            <span class="required-star">*</span>
                                           </label>
                                           <input
                                             type="email"
@@ -836,7 +898,10 @@
                                           />
                                         </div>
                                         <div class="info-ht required">
-                                          <label for="input-text-name" class="mb-1">
+                                          <label
+                                            for="input-text-name"
+                                            class="mb-1"
+                                          >
                                             Họ và tên
                                             <span class="required-star">*</span>
                                           </label>
@@ -849,7 +914,10 @@
                                           />
                                         </div>
                                         <div class="info-mssv required">
-                                          <label for="input-text-mssv" class="mb-1">
+                                          <label
+                                            for="input-text-mssv"
+                                            class="mb-1"
+                                          >
                                             Mã số sinh viên
                                             <span class="required-star">*</span>
                                           </label>
@@ -862,8 +930,12 @@
                                           />
                                         </div>
                                         <div class="info-khoa required">
-                                          <label for="input-text-khoa" class="mb-1">
-                                            Khoa <span class="required-star">*</span>
+                                          <label
+                                            for="input-text-khoa"
+                                            class="mb-1"
+                                          >
+                                            Khoa
+                                            <span class="required-star">*</span>
                                           </label>
                                           <select
                                             id="input-khoa"
@@ -874,7 +946,9 @@
                                             <option selected="" disabled="">
                                               Chọn khoa
                                             </option>
-                                            <option>Báo chí và Truyền thông</option>
+                                            <option>
+                                              Báo chí và Truyền thông
+                                            </option>
                                             <option>Công tác xã hội</option>
                                             <option>Du lịch</option>
                                             <option>Địa lý</option>
@@ -900,7 +974,9 @@
                                             <option>Nhật Bản học</option>
                                             <option>Quan hệ Quốc tế</option>
                                             <option>Tâm lý học</option>
-                                            <option>Thư viện - Thông tin học</option>
+                                            <option>
+                                              Thư viện - Thông tin học
+                                            </option>
                                             <option>Triết học</option>
                                             <option>Văn hoá học</option>
                                             <option>Văn học</option>
@@ -947,7 +1023,7 @@
                         </div>
                         <div class="card-group">
                           <div class="col-12">
-                            <h6 for="inputName">A6. Kinh phí</h6>
+                            <h5 for="inputName">A6. Kinh phí</h5>
                             <div class="row">
                               <div class="from-group">
                                 <table class="table">
@@ -957,7 +1033,7 @@
                                     <th>Từ nguồn huy động (đ)</th>
                                     <th>Tổng kinh phí (đ)</th>
                                   </tr>
-      
+
                                   <tr>
                                     <th>Khoản1</th>
                                     <td>
@@ -1065,17 +1141,23 @@
                                   <tr>
                                     <th>Tổng kinh phí</th>
                                     <td>
-                                      <span class="fw-bold" id="total-all-dhqgHCM"
+                                      <span
+                                        class="fw-bold"
+                                        id="total-all-dhqgHCM"
                                         >0</span
                                       >
                                     </td>
                                     <td>
-                                      <span class="fw-bold" id="total-all-huyDong"
+                                      <span
+                                        class="fw-bold"
+                                        id="total-all-huyDong"
                                         >0</span
                                       >
                                     </td>
                                     <td>
-                                      <span class="fw-bold" id="total-all">0</span>
+                                      <span class="fw-bold" id="total-all"
+                                        >0</span
+                                      >
                                     </td>
                                   </tr>
                                 </table>
@@ -1086,89 +1168,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-12 mt-2">
-                    <div class="card">
-                      <div class="card-header">
-                        <h5 class="card-title">B. MÔ TẢ NGHIÊN CỨU</h5>
-                      </div>
-                      <div class="card-body">
-                        <h5>Đăng tải file Mô tả nghiên cứu gồm các mục sau:</h5>
-                        <ul class="list-disc">
-                          <li>
-                            <span class="font-normal text-lg"
-                              >B1. Lý do chọn đề tài</span
-                            >
-                          </li>
-                          <li>
-                            <span class="font-normal text-lg"
-                              >B2. Tổng quan tình hình nghiên cứu</span
-                            >
-                          </li>
-                          <li>
-                            <span class="font-normal text-lg"
-                              >B3. Mục tiêu nghiên cứu</span
-                            >
-                          </li>
-                          <li>
-                            <span class="font-normal text-lg"
-                              >B4. Đối tượng và phạm vi nghiên cứu</span
-                            >
-                          </li>
-                          <li>
-                            <span class="font-normal text-lg"
-                              >B5. Phương pháp nghiên cứu</span
-                            >
-                          </li>
-                          <li>
-                            <span class="font-normal text-lg"
-                              >B6. Ý nghĩa khoa học và thực tiễn</span
-                            >
-                          </li>
-                          <li>
-                            <span class="font-normal text-lg">B7. Bố cục đề tài</span>
-                          </li>
-                          <li>
-                            <span class="font-normal text-lg"
-                              >B8. Đăng ký sản phẩm khoa học của đề tài
-                            </span>
-                          </li>
-                        </ul>
-                        <div class="ps-sm-3">
-                          <div class="mt-sm-4">
-                            <span class="fs-5 fw-semibold"
-                              >File mẫu Mô tả nghiên cứu:</span
-                            >
-                            <a
-                              href="./File/R01_Thuyet-minh-VNU-cap-nhat 2022-kh4-Muc-B.docx"
-                              class="fs-5 fw-medium fst-italic"
-                              download=""
-                            >
-                              Tải về <i class="bi bi-download"></i>
-                            </a>
-                            <div class="mb-3">
-                              <label class="form-label" for="exampleInputFile"
-                                >Chọn file</label
-                              >
-                              <input
-                                class="form-control"
-                                id="exampleInputFile"
-                                type="file"
-                                aria-describedby="fileHelp"
-                                accept=".pdf"
-                              />
-                              <div class="form-text text-muted">
-                                Chỉ chấp nhận tải file pdf
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-                
-              </div>
-            </div>
+              </form>
             </div>
             <div
               id="step-2"
@@ -1176,7 +1177,89 @@
               role="tabpanel"
               aria-labelledby="step-2"
             >
-              Step content
+              <div class="row">
+                <div class="col-md-12 mt-2">
+                  <div class="card">
+                    <div class="card-header">
+                      <h5 class="card-title">B. MÔ TẢ NGHIÊN CỨU</h5>
+                    </div>
+                    <div class="card-body">
+                      <h5>Đăng tải file Mô tả nghiên cứu gồm các mục sau:</h5>
+                      <ul class="list-disc">
+                        <li>
+                          <span class="font-normal text-lg"
+                            >B1. Lý do chọn đề tài</span
+                          >
+                        </li>
+                        <li>
+                          <span class="font-normal text-lg"
+                            >B2. Tổng quan tình hình nghiên cứu</span
+                          >
+                        </li>
+                        <li>
+                          <span class="font-normal text-lg"
+                            >B3. Mục tiêu nghiên cứu</span
+                          >
+                        </li>
+                        <li>
+                          <span class="font-normal text-lg"
+                            >B4. Đối tượng và phạm vi nghiên cứu</span
+                          >
+                        </li>
+                        <li>
+                          <span class="font-normal text-lg"
+                            >B5. Phương pháp nghiên cứu</span
+                          >
+                        </li>
+                        <li>
+                          <span class="font-normal text-lg"
+                            >B6. Ý nghĩa khoa học và thực tiễn</span
+                          >
+                        </li>
+                        <li>
+                          <span class="font-normal text-lg"
+                            >B7. Bố cục đề tài</span
+                          >
+                        </li>
+                        <li>
+                          <span class="font-normal text-lg"
+                            >B8. Đăng ký sản phẩm khoa học của đề tài
+                          </span>
+                        </li>
+                      </ul>
+                      <div class="ps-sm-3">
+                        <div class="mt-sm-4">
+                          <span class="fs-5 fw-semibold"
+                            >File mẫu Mô tả nghiên cứu:</span
+                          >
+                          <a
+                            href="./File/R01_Thuyet-minh-VNU-cap-nhat 2022-kh4-Muc-B.docx"
+                            class="fs-5 fw-medium fst-italic"
+                            download=""
+                          >
+                            Tải về <i class="bi bi-download"></i>
+                          </a>
+                          <div class="mb-3">
+                            <label class="form-label" for="exampleInputFile"
+                              >Chọn file</label
+                            >
+                            <input
+                              class="form-control"
+                              id="exampleInputFile"
+                              type="file"
+                              aria-describedby="fileHelp"
+                              accept=".pdf"
+                            />
+                            <div class="form-text text-muted">
+                              Chỉ chấp nhận tải file pdf
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div
               id="step-3"
@@ -1209,8 +1292,6 @@
           </div>
         </div>
       </div>
-
-
     </main>
     <!-- Essential javascripts for application to work-->
     <script src="/Asset/JS/jquery-3.7.1.min.js"></script>

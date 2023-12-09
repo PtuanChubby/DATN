@@ -97,21 +97,6 @@ $(document).ready(function () {
 
     return memberForm;
   }
-
-  $(".collapse-link").on("click", function () {
-    var e = $(this).closest(".p_panel"),
-      a = $(this).find("i"),
-      t = e.find(".p_content");
-    e.attr("style")
-      ? t.slideToggle(200, function () {
-          e.removeAttr("style");
-        })
-      : (t.slideToggle(200), e.css("height", "auto")),
-      a.toggleClass("fa-chevron-up fa-chevron-down");
-  }),
-    $(".close-link").click(function () {
-      $(this).closest(".p_panel").remove();
-    });
 });
 
 function calculateTotal() {
@@ -279,3 +264,15 @@ function setupSlidePage() {
 // Call the function to setup the slide page functionality
 setupSlidePage();
 // End Multi Step Form
+// Checkbox
+function handleCheckboxChange(event, siblingCheckboxId) {
+  const checkbox = event.target;
+  const siblingCheckbox = document.getElementById(siblingCheckboxId);
+
+  if (checkbox.checked) {
+    siblingCheckbox.disabled = true;
+  } else {
+    siblingCheckbox.disabled = false;
+  }
+}
+// End Checkbox
