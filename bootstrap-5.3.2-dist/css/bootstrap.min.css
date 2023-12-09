@@ -12517,10 +12517,10 @@ fieldset:disabled .btn {
 
 .app-title {
   width: 100%;
-  z-index: 3;
+  z-index: 105;
   display: flex;
   position: fixed;
-  padding: 20px 30px;
+  padding: 5px 15px;
   flex-direction: row;
   align-items: center;
   display: -webkit-box;
@@ -12529,7 +12529,7 @@ fieldset:disabled .btn {
   -ms-flex-align: center;
   -ms-flex-pack: justify;
   -ms-flex-direction: row;
-  margin: -30px -30px 30px;
+  margin: -15px -30px 30px;
   -webkit-box-align: center;
   -webkit-box-pack: justify;
   -webkit-box-direction: normal;
@@ -12587,6 +12587,25 @@ fieldset:disabled .btn {
     margin-top: 10px;
   }
 }
+.breadcrumb-item a {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  text-decoration: none;
+}
+.app-content .app-step {
+  width: 100%;
+  border-radius: 8px;
+  /* border: 1px solid #ddd; */
+  margin: 106px 0 20px 0;
+  display: flex;
+  user-select: none;
+  
+}
+
 
 .tile {
   position: relative;

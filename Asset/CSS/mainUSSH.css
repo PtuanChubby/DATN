@@ -111,12 +111,11 @@
 }
 
 .tab-body {
-  width: 100%;
   background-color: #ffffff;
   border: 1px solid #ddd;
   border-right: none;
   border-left: none;
-  overflow: auto;
+  
   padding: 16px 10px;
   /* border-radius: 8px; */
 }
@@ -386,6 +385,7 @@ input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
+/* pagination */
 .pagination,
 .button,
 .number_links,
@@ -448,3 +448,9 @@ input[type="number"] {
   color: #fff;
   background: #fe5401;
 }
+/* pagination */
+/* Begin-Multi-Step */
+.app-step {
+  
+}
+/* End-Multi-Step */
