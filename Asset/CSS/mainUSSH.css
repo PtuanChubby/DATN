@@ -11,32 +11,24 @@
   border: none;
   margin: 0 0 8px 8px;
   background-color: #ffffff;
-  font-size: 20px;
+  font-size: 16px;
 }
 .log-out__icon {
   border: none;
   margin: 0 0 8px 10px;
   background-color: #ffffff;
-  
-  font-size: 20px;
-}
-.delete-member-btn {
-  border: none;
-  margin: 0 0 8px 8px;
-  background-color: #ffffff;
-  color: #ff0000;
   font-size: 20px;
 }
 
 .input-group .info-ht,
 .input-group .info-mssv,
-.input-group .info-khoa,
+.input-group .info-nganh,
 .input-group .info-email {
   margin-bottom: 10px;
 }
 .input-group-show .info-ht,
 .input-group-show .info-mssv,
-.input-group-show .info-khoa,
+.input-group-show .info-nganh,
 .input-group-show .info-email {
   margin-bottom: 10px;
   margin-right: 20px;
@@ -51,6 +43,7 @@
 }
 
 .project-panel {
+
   
 }
 .panel-title {
@@ -59,6 +52,7 @@
 
 .panel-heading {
   font-size: 28px;
+  font-weight: 600;
   margin-bottom: 5px;
 }
 
@@ -323,13 +317,13 @@ form:after {
 }
 .title-tv .ht,
 .title-tv .mssv,
-.title-tv .khoa {
+.title-tv .nganh {
   border: 1px solid black;
   width: 100%;
 }
 .title-tv .ht h6,
 .title-tv .mssv h6,
-.title-tv .khoa h6 {
+.title-tv .nganh h6 {
   margin-bottom: 10px;
   margin-left: 5px;
 }
@@ -449,8 +443,110 @@ input[type="number"] {
   background: #fe5401;
 }
 /* pagination */
-/* Begin-Multi-Step */
-.app-step {
-  
+/* A5. Thông tin nhóm nghiên cứu */
+.form-table {
+  position: relative;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  border-radius: 8px;
+  padding: 10px;
 }
-/* End-Multi-Step */
+.form-table .header_table-tv {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px 12px;
+  background-color: #e9ecef;
+  border-radius: 8px 8px 0 0;
+}
+.form-table .body_table-tv {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  font-size: 15px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border-radius: 8px 8px 0 0;
+}
+.header_table-tv .text__header {
+  font-weight: bold;
+  position: relative;
+}
+.stt_tv {
+  background-color: rgba(255, 255, 255, 0);
+  width: 10%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 8px 9px;
+  box-sizing: border-box;
+}
+
+.hvt_tv,
+.mssv_tv {
+  position: relative;
+  align-self: stretch;
+  width: 25%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8px 8px 9px;
+  box-sizing: border-box;
+}
+.phancong_tv {
+  position: relative;
+  align-self: stretch;
+  width: 25%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8px 8px 9px;
+  box-sizing: border-box;
+}
+
+.action_tv {
+  position: relative;
+  align-self: stretch;
+  width: 10%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8px 8px 9px;
+  box-sizing: border-box;
+}
+.icon-action {
+  position: relative;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+}
+@media (max-width: 768px) {
+  .icon-action {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* End A5. Thông tin nhớm nghiên cứu */

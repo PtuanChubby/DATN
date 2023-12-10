@@ -27,9 +27,11 @@ function redirectToUserPage() {
 function redirectToRegisterTopic() {
   window.location.href = "dk-de-tai.html";
 }
+// thêm thành viên
 $(document).ready(function () {
   var memberCount = 0;
   var maxMemberCount = 5;
+  var editingMemberIndex = -1; // Biến lưu chỉ số thành viên đang được sửa (-1 nếu không có thành viên nào đang được sửa)
 
   $("#add-member-btn").click(function () {
     if (memberCount >= maxMemberCount) {
@@ -37,60 +39,94 @@ $(document).ready(function () {
       return;
     }
 
-    var email = $("#input-email").val();
     var name = $("#input-name").val();
     var mssv = $("#input-mssv").val();
-    var khoa = $("#input-khoa").val();
+    var chucvu = $("#input-cvu").val();
 
-    if (email === "" || name === "" || mssv === "" || khoa === "") {
+    if (name === "" || mssv === "" || chucvu === "") {
       alert("Vui lòng nhập đầy đủ thông tin thành viên.");
       return;
     }
 
-    var memberForm = createMemberForm(email, name, mssv, khoa);
-    $("#member-list").append(memberForm);
+    if (editingMemberIndex === -1) {
+      // Thêm thành viên mới
+      var memberForm = createMemberForm(name, mssv, chucvu);
+      $("#member-list").append(memberForm);
+      memberCount++;
+    } else {
+      // Sửa thông tin thành viên đang được chỉnh sửa
+      var editedMemberForm = createMemberForm(name, mssv, chucvu);
+      $("#member-" + editingMemberIndex).replaceWith(editedMemberForm);
+      editingMemberIndex = -1; // Đặt lại giá trị biến editingMemberIndex
+    }
 
     $("#member-modal").modal("hide");
 
-    $("#input-email").val("");
     $("#input-name").val("");
     $("#input-mssv").val("");
-    $("#input-khoa").val("");
-
-    memberCount++;
+    $("#input-cvu").val("");
   });
 
   $(document).on("click", ".delete-member-btn", function () {
-    $(this).closest(".member-group").remove();
+    $(this).closest(".body_table-tv").remove();
     memberCount--;
+
+    // Cập nhật số thứ tự của các thành viên còn lại
+    $(".body_table-tv .stt_tv .text__header").each(function (index) {
+      var formattedCount = (index + 1).toString().padStart(2, "0");
+      $(this).text(formattedCount);
+    });
   });
 
-  function createMemberForm(email, name, mssv, khoa) {
+  $(document).on("click", ".edit-member-btn", function () {
+    var $member = $(this).closest(".body_table-tv");
+    var $name = $member.find(".hvt_tv .text__header");
+    var $mssv = $member.find(".mssv_tv .text__header");
+    var $chucvu = $member.find(".phancong_tv .text__header");
+
+    var name = $name.text();
+    var mssv = $mssv.text();
+    var chucvu = $chucvu.text();
+
+    $("#input-name").val(name);
+    $("#input-mssv").val(mssv);
+    $("#input-cvu").val(chucvu);
+
+    editingMemberIndex = $member.attr("id").split("-")[1]; // Lấy chỉ số thành viên đang được sửa
+    $("#member-modal").modal("show");
+  });
+
+  function createMemberForm(name, mssv, chucvu) {
+    var formattedCount = (memberCount + 1).toString().padStart(2, "0");
+
     var memberForm =
-      '<div class="member-group">' +
-      '<div class="row">' +
-      '<div class="input-group-show">' +
-      '<div class="info-email">' +
-      '<input type="email" class="form-control" placeholder="Email" readonly value="' +
-      email +
-      '" />' +
+      '<div class="body_table-tv" id="member-' +
+      memberCount +
+      '">' +
+      '<div class="stt_tv">' +
+      '<span class="text__header">' +
+      formattedCount +
+      "</span>" +
       "</div>" +
-      '<div class="info-ht">' +
-      '<input type="text" class="form-control" placeholder="Họ và tên" readonly value="' +
+      '<div class="hvt_tv">' +
+      '<span class="text__header">' +
       name +
-      '" />' +
+      "</span>" +
       "</div>" +
-      '<div class="info-mssv">' +
-      '<input type="text" class="form-control" placeholder="MSSV" readonly value="' +
+      '<div class="mssv_tv">' +
+      '<span class="text__header">' +
       mssv +
-      '" />' +
+      "</span>" +
       "</div>" +
-      '<div class="info-khoa">' +
-      '<input type="text" class="form-control" placeholder="Khoa" readonly value="' +
-      khoa +
-      '" />' +
+      '<div class="phancong_tv">' +
+      '<span class="text__header">' +
+      chucvu +
+      "</span>" +
       "</div>" +
-      '<button class="delete-member-btn"><i class="bi bi-trash3-fill"></i></button>' +
+      '<div class="action_tv">' +
+      '<div class="icon-action">' +
+      '<button class="edit-member-btn btn-xs btn-sua"><i class="bi bi-pencil-fill"></i></button>' + // Thêm nút "Sửa"
+      '<button class="delete-member-btn btn-xs btn-xoa"><i class="bi bi-trash3-fill"></i></button>' +
       "</div>" +
       "</div>" +
       "</div>";
@@ -102,10 +138,10 @@ $(document).ready(function () {
 function calculateTotal() {
   const inputFields = document.querySelectorAll('input[type="number"]');
   let total_tienCong = 0;
-  let total_khoan1_1 = 0;
-  let total_khoan1_2 = 0;
+  let total_nganhn1_1 = 0;
+  let total_nganhn1_2 = 0;
 
-  let total_khoan1_3 = 0;
+  let total_nganhn1_3 = 0;
   let total_all_dhqgHCM = 0;
   let total_all_huyDong = 0;
   inputFields.forEach((input) => {
@@ -115,11 +151,11 @@ function calculateTotal() {
       if (id === "input2_1_dhqgHCM" || id === "input2_1_huyDong") {
         total_tienCong += value;
       } else if (id === "input3_1_dhqgHCM" || id === "input3_1_huyDong") {
-        total_khoan1_1 += value;
+        total_nganhn1_1 += value;
       } else if (id === "input3_2_dhqgHCM" || id === "input3_2_huyDong") {
-        total_khoan1_2 += value;
+        total_nganhn1_2 += value;
       } else if (id === "input3_3_dhqgHCM" || id === "input3_3_huyDong") {
-        total_khoan1_3 += value;
+        total_nganhn1_3 += value;
       }
       if (id.includes("dhqgHCM")) {
         total_all_dhqgHCM += value;
@@ -130,12 +166,12 @@ function calculateTotal() {
   });
   document.getElementById("total-tienCong").textContent =
     formatCurrency(total_tienCong) + "đ";
-  document.getElementById("total-khoan1_1").textContent =
-    formatCurrency(total_khoan1_1) + "đ";
-  document.getElementById("total-khoan1_2").textContent =
-    formatCurrency(total_khoan1_2) + "đ";
-  document.getElementById("total-khoan1_3").textContent =
-    formatCurrency(total_khoan1_3) + "đ";
+  document.getElementById("total-nganhn1_1").textContent =
+    formatCurrency(total_nganhn1_1) + "đ";
+  document.getElementById("total-nganhn1_2").textContent =
+    formatCurrency(total_nganhn1_2) + "đ";
+  document.getElementById("total-nganhn1_3").textContent =
+    formatCurrency(total_nganhn1_3) + "đ";
   document.getElementById("total-all-dhqgHCM").textContent =
     formatCurrency(total_all_dhqgHCM) + "đ";
   document.getElementById("total-all-huyDong").textContent =

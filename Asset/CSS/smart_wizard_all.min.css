@@ -9,6 +9,7 @@
 * https://github.com/techlab/jquery-smartwizard/blob/master/LICENSE
 */
 :root {
+  --sw-black:#000000;
   --sw-border-color: #eeeeee;
   --sw-toolbar-btn-color: #ffffff;
   --sw-toolbar-btn-background-color: #fe5401;
@@ -536,12 +537,13 @@
   }
 }
 .sw-theme-dots > .nav .nav-link > .num {
-  font-size: 1.5em;
+  font-size: 20px;
+  font-weight: 600;
   position: absolute;
   display: block;
   left: 0;
   right: 0;
-  top: -31px;
+  top: -30px;
   margin-left: auto;
   margin-right: auto;
   z-index: 100;
@@ -578,8 +580,8 @@
 }
 .sw-theme-dots > .nav .nav-link.active > .step-title {
   font-size: 15px;
-  font-weight: 700;
-  color: var(--sw-anchor-active-primary-color) !important;
+  font-weight: 600;
+  color: var(--sw-black) !important;
 }
 .sw-theme-dots > .nav .nav-link.active::after {
   

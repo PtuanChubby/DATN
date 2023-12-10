@@ -496,22 +496,9 @@
                                   id="birthday"
                                   class="form-control"
                                   placeholder="dd-mm-yyyy"
-                                  type="text"
+                                  type="date"
                                   required="required"
-                                  type="text"
-                                  onfocus="this.type='date'"
-                                  onmouseover="this.type='date'"
-                                  onclick="this.type='date'"
-                                  onblur="this.type='text'"
-                                  onmouseout="timeFunctionLong(this)"
                                 />
-                                <script>
-                                  function timeFunctionLong(input) {
-                                    setTimeout(function () {
-                                      input.type = "text";
-                                    }, 60000);
-                                  }
-                                </script>
                               </div>
 
                               <div class="form-group required col-md-6">
@@ -557,22 +544,9 @@
                                   id="dateofissua"
                                   class="form-control"
                                   placeholder="dd-mm-yyyy"
-                                  type="text"
+                                  type="date"
                                   required="required"
-                                  type="text"
-                                  onfocus="this.type='date'"
-                                  onmouseover="this.type='date'"
-                                  onclick="this.type='date'"
-                                  onblur="this.type='text'"
-                                  onmouseout="timeFunctionLong(this)"
                                 />
-                                <script>
-                                  function timeFunctionLong(input) {
-                                    setTimeout(function () {
-                                      input.type = "text";
-                                    }, 60000);
-                                  }
-                                </script>
                               </div>
                             </div>
                             <div class="row">
@@ -663,7 +637,7 @@
                                   ></label
                                 >
                                 <input
-                                  type="text"
+                                  type="email"
                                   id="inputEmail"
                                   class="form-control"
                                 />
@@ -693,164 +667,43 @@
                         </div>
                         <div class="card-group">
                           <div class="col-12">
-                            <h5 for="inputName">A5. Thêm thành viên</h5>
+                            <div class="title-form">
+                              <h5 for="inputName">
+                                A5. Thông tin nhóm nghiên cứu
+                              </h5>
+                              <button
+                                class="add-member-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#member-modal"
+                              >
+                                <i class="fa-solid fa-user-plus"></i>
+                              </button>
+                            </div>
                             <div class="row">
                               <div class="form-table">
-                                <table class="mb-2">
-                                  <thead>
-                                    <tr>
-                                      <th
-                                        class="text-center"
-                                        style="min-width: 50px; width: 50px"
-                                      >
-                                        TT
-                                      </th>
-                                      <th
-                                        class="text-center"
-                                        style="min-width: 200px; width: 30%"
-                                      >
-                                        Họ và tên
-                                      </th>
-                                      <th
-                                        class="text-center"
-                                        style="min-width: 200px; width: 33%"
-                                      >
-                                        Niên khóa
-                                      </th>
-                                      <th
-                                        class="text-center"
-                                        style="min-width: 200px; width: 33%"
-                                      >
-                                        Phân công (chủ trì hoặc tham gia)
-                                      </th>
-                                      <th
-                                        class="float text-center"
-                                        style="min-width: 80px; width: 80px"
-                                      >
-                                        Thao tác
-                                      </th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr class="font-bold">
-                                      <td colspan="6">
-                                        <div>
-                                          <span>Chủ nhiệm</span
-                                          ><button
-                                            class="add-member-btn"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#member-modal"
-                                          >
-                                            <i
-                                              class="bi bi-person-plus-fill"
-                                            ></i>
-                                          </button>
-                                        </div>
-                                      </td>
-                                    </tr>
-                                    <tr class="font-bold">
-                                      <td colspan="6">
-                                        <div>
-                                          <span>Thư ký khoa học</span
-                                          ><button
-                                            class="add-member-btn"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#member-modal"
-                                          >
-                                            <i
-                                              class="bi bi-person-plus-fill"
-                                            ></i>
-                                          </button>
-                                        </div>
-                                      </td>
-                                    </tr>
-                                    <tr class="font-bold">
-                                      <td colspan="6">
-                                        <div>
-                                          <span>Thành viên chính</span
-                                          ><button
-                                            class="add-member-btn"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#member-modal"
-                                          >
-                                            <i
-                                              class="bi bi-person-plus-fill"
-                                            ></i>
-                                          </button>
-                                        </div>
-                                      </td>
-                                    </tr>
-                                    <tr class="font-bold">
-                                      <td colspan="6">
-                                        <div>
-                                          <span>Thành viên</span
-                                          ><button
-                                            class="add-member-btn"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#member-modal"
-                                          >
-                                            <i
-                                              class="bi bi-person-plus-fill"
-                                            ></i>
-                                          </button>
-                                        </div>
-                                      </td>
-                                    </tr>
-                                    <tr class="font-bold">
-                                      <td colspan="6">
-                                        <div>
-                                          <span
-                                            >Kỹ thuật viên, nhân viên hỗ
-                                            trợ</span
-                                          ><button
-                                            class="add-member-btn"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#member-modal"
-                                          >
-                                            <i
-                                              class="bi bi-person-plus-fill"
-                                            ></i>
-                                          </button>
-                                        </div>
-                                      </td>
-                                    </tr>
-                                    <tr class="font-bold">
-                                      <td colspan="6">
-                                        <div>
-                                          <span>Chuyên gia trong nước</span
-                                          ><button
-                                            class="add-member-btn"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#member-modal"
-                                          >
-                                            <i
-                                              class="bi bi-person-plus-fill"
-                                            ></i>
-                                          </button>
-                                        </div>
-                                      </td>
-                                    </tr>
-                                    <tr class="font-bold">
-                                      <td colspan="6">
-                                        <div>
-                                          <span>Chuyên gia ngoài nước</span
-                                          ><button
-                                            class="add-member-btn"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#member-modal"
-                                          >
-                                            <i
-                                              class="bi bi-person-plus-fill"
-                                            ></i>
-                                          </button>
-                                        </div>
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
+                                <div class="header_table-tv">
+                                  <div class="stt_tv">
+                                    <span class="text__header">STT</span>
+                                  </div>
+                                  <div class="hvt_tv">
+                                    <span class="text__header">Họ và tên</span>
+                                  </div>
+                                  <div class="mssv_tv">
+                                    <span class="text__header">Mã số sinh viên</span>
+                                  </div>
+                                  <div class="phancong_tv">
+                                    <span class="text__header">Phân công</span>
+                                  </div>
+                                  <div class="action_tv">
+                                    <span class="text__header">Thao tác</span>
+                                  </div>
+                                </div>
+                                <div id="member-list">
+                                  
+                                </div>
                               </div>
                             </div>
-                            <div id="member-list"></div>
+                            
                             <div
                               class="modal fade"
                               id="member-modal"
@@ -929,59 +782,28 @@
                                             required
                                           />
                                         </div>
-                                        <div class="info-khoa required">
+                                        <div class="info-nganh required">
                                           <label
-                                            for="input-text-khoa"
+                                            for="input-text-nganh"
                                             class="mb-1"
                                           >
-                                            Khoa
+                                            Ngành
                                             <span class="required-star">*</span>
                                           </label>
                                           <select
-                                            id="input-khoa"
+                                            id="input-nganh"
                                             class="form-control"
-                                            placeholder="Khoa"
+                                            placeholder="Ngành"
                                             required
                                           >
                                             <option selected="" disabled="">
-                                              Chọn khoa
+                                              Chọn chuyên ngành
                                             </option>
                                             <option>
-                                              Báo chí và Truyền thông
+                                              Thông tin thư viện
                                             </option>
-                                            <option>Công tác xã hội</option>
-                                            <option>Du lịch</option>
-                                            <option>Địa lý</option>
-                                            <option>Đô thị học</option>
-                                            <option>Đông phương học</option>
-                                            <option>Giáo dục</option>
-                                            <option>Hàn Quốc học</option>
-                                            <option>Khoa học liên ngành</option>
-                                            <option>Lịch sử</option>
-                                            <option>
-                                              Lưu trữ học - Quản trị văn phòng
-                                            </option>
-                                            <option>Ngôn ngữ học</option>
-                                            <option>Ngữ văn Anh</option>
-                                            <option>Ngữ văn Đức</option>
-                                            <option>Ngữ văn Nga</option>
-                                            <option>Ngữ văn Pháp</option>
-                                            <option>
-                                              Ngữ văn Tây Ban Nha - Italia
-                                            </option>
-                                            <option>Ngữ văn Trung Quốc</option>
-                                            <option>Nhân học</option>
-                                            <option>Nhật Bản học</option>
-                                            <option>Quan hệ Quốc tế</option>
-                                            <option>Tâm lý học</option>
-                                            <option>
-                                              Thư viện - Thông tin học
-                                            </option>
-                                            <option>Triết học</option>
-                                            <option>Văn hoá học</option>
-                                            <option>Văn học</option>
-                                            <option>Việt Nam học</option>
-                                            <option>Xã hội học</option>
+                                            <option>Quản lý thông tin</option>
+                                            
                                           </select>
                                         </div>
                                         <div class="info-cvu required">
@@ -993,7 +815,7 @@
                                             type="text"
                                             class="form-control"
                                             placeholder="Chức vụ"
-                                            id="input-name"
+                                            id="input-cvu"
                                             required
                                           />
                                         </div>
@@ -1177,81 +999,83 @@
               role="tabpanel"
               aria-labelledby="step-2"
             >
-              <div class="row">
-                <div class="col-md-12 mt-2">
-                  <div class="card">
-                    <div class="card-header">
-                      <h5 class="card-title">B. MÔ TẢ NGHIÊN CỨU</h5>
-                    </div>
-                    <div class="card-body">
-                      <h5>Đăng tải file Mô tả nghiên cứu gồm các mục sau:</h5>
-                      <ul class="list-disc">
-                        <li>
-                          <span class="font-normal text-lg"
-                            >B1. Lý do chọn đề tài</span
-                          >
-                        </li>
-                        <li>
-                          <span class="font-normal text-lg"
-                            >B2. Tổng quan tình hình nghiên cứu</span
-                          >
-                        </li>
-                        <li>
-                          <span class="font-normal text-lg"
-                            >B3. Mục tiêu nghiên cứu</span
-                          >
-                        </li>
-                        <li>
-                          <span class="font-normal text-lg"
-                            >B4. Đối tượng và phạm vi nghiên cứu</span
-                          >
-                        </li>
-                        <li>
-                          <span class="font-normal text-lg"
-                            >B5. Phương pháp nghiên cứu</span
-                          >
-                        </li>
-                        <li>
-                          <span class="font-normal text-lg"
-                            >B6. Ý nghĩa khoa học và thực tiễn</span
-                          >
-                        </li>
-                        <li>
-                          <span class="font-normal text-lg"
-                            >B7. Bố cục đề tài</span
-                          >
-                        </li>
-                        <li>
-                          <span class="font-normal text-lg"
-                            >B8. Đăng ký sản phẩm khoa học của đề tài
-                          </span>
-                        </li>
-                      </ul>
-                      <div class="ps-sm-3">
-                        <div class="mt-sm-4">
-                          <span class="fs-5 fw-semibold"
-                            >File mẫu Mô tả nghiên cứu:</span
-                          >
-                          <a
-                            href="./File/R01_Thuyet-minh-VNU-cap-nhat 2022-kh4-Muc-B.docx"
-                            class="fs-5 fw-medium fst-italic"
-                            download=""
-                          >
-                            Tải về <i class="bi bi-download"></i>
-                          </a>
-                          <div class="mb-3">
-                            <label class="form-label" for="exampleInputFile"
-                              >Chọn file</label
+              <form action="" class="form-horizontal">
+                <div class="row">
+                  <div class="col-md-12 mt-2">
+                    <div class="card">
+                      <div class="card-header">
+                        <h5 class="card-title">B. MÔ TẢ NGHIÊN CỨU</h5>
+                      </div>
+                      <div class="card-body">
+                        <h5>Đăng tải file Mô tả nghiên cứu gồm các mục sau:</h5>
+                        <ul class="list-disc">
+                          <li>
+                            <span class="font-normal text-lg"
+                              >B1. Lý do chọn đề tài</span
                             >
-                            <input
-                              class="form-control"
-                              id="exampleInputFile"
-                              type="file"
-                              aria-describedby="fileHelp"
-                              accept=".pdf"
-                            />
-                            <div class="form-text text-muted">
-                              Chỉ chấp nhận tải file pdf
+                          </li>
+                          <li>
+                            <span class="font-normal text-lg"
+                              >B2. Tổng quan tình hình nghiên cứu</span
+                            >
+                          </li>
+                          <li>
+                            <span class="font-normal text-lg"
+                              >B3. Mục tiêu nghiên cứu</span
+                            >
+                          </li>
+                          <li>
+                            <span class="font-normal text-lg"
+                              >B4. Đối tượng và phạm vi nghiên cứu</span
+                            >
+                          </li>
+                          <li>
+                            <span class="font-normal text-lg"
+                              >B5. Phương pháp nghiên cứu</span
+                            >
+                          </li>
+                          <li>
+                            <span class="font-normal text-lg"
+                              >B6. Ý nghĩa khoa học và thực tiễn</span
+                            >
+                          </li>
+                          <li>
+                            <span class="font-normal text-lg"
+                              >B7. Bố cục đề tài</span
+                            >
+                          </li>
+                          <li>
+                            <span class="font-normal text-lg"
+                              >B8. Đăng ký sản phẩm khoa học của đề tài
+                            </span>
+                          </li>
+                        </ul>
+                        <div class="ps-sm-3">
+                          <div class="mt-sm-4">
+                            <span class="fs-5 fw-semibold"
+                              >File mẫu Mô tả nghiên cứu:</span
+                            >
+                            <a
+                              href="./File/R01_Thuyet-minh-VNU-cap-nhat 2022-kh4-Muc-B.docx"
+                              class="fs-5 fw-medium fst-italic"
+                              download=""
+                            >
+                              Tải về <i class="bi bi-download"></i>
+                            </a>
+                            <div class="mb-3">
+                              <label class="form-label" for="exampleInputFile"
+                                >Chọn file</label
+                              >
+                              <input
+                                class="form-control"
+                                id="exampleInputFile"
+                                type="file"
+                                aria-describedby="fileHelp"
+                                accept=".pdf"
+                              />
+                              <div class="form-text text-muted">
+                                Chỉ chấp nhận tải file pdf
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -1259,7 +1083,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
             <div
               id="step-3"

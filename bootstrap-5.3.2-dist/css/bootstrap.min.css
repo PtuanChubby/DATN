@@ -12621,8 +12621,6 @@ fieldset:disabled .btn {
   user-select: none;
   
 }
-
-
 .tile {
   position: relative;
   background: #ffffff;
@@ -12676,6 +12674,12 @@ fieldset:disabled .btn {
   margin-bottom: 20px;
   font-size: 1.5rem;
   font-weight: bold;
+}
+.title-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
 }
 .tile .tile-title-w-btn {
   display: -webkit-box;
