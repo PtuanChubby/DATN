@@ -37,17 +37,14 @@
 .app-project {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   background-color: #ffffff;
-  border: 3px solid #F8F9FA;
+  border: 3px solid #f8f9fa;
   padding: 20px;
   border-radius: 8px;
 }
 
 .project-panel {
-
-  
 }
 .panel-title {
-
 }
 
 .panel-heading {
@@ -61,7 +58,7 @@
   color: #888;
 }
 
-.tab-header,
+/* .tab-header,
 .tab-body {
   margin: 0 auto;
   width: 100%;
@@ -109,21 +106,16 @@
   border: 1px solid #ddd;
   border-right: none;
   border-left: none;
-  
+
   padding: 16px 10px;
-  /* border-radius: 8px; */
-}
+  border-radius: 8px;
+} */
 
-.tab-content {
-  display: none;
-}
-
-.tab-content.active-tab-content {
+/* .tab-content.active-tab-content {
   border: 1px solid #ddd;
   display: block;
   border-radius: 8px;
-
-}
+} */
 
 .header_table {
   /* background-color: rgba(255, 255, 255, 0); */
@@ -245,7 +237,7 @@
 /* CSS cho các nút chỉnh sửa */
 .btn-xs {
   border: none;
-  
+
   background-color: #ffffff;
   font-size: 15px;
 }
@@ -253,13 +245,13 @@
   font-size: 16px;
   line-height: 1.5;
   border-radius: 3px;
-  color: #0DCAF0;
+  color: #0dcaf0;
 }
 .btn-xoa {
   font-size: 16px;
   line-height: 1.5;
   border-radius: 3px;
-  color: #DC3545;
+  color: #dc3545;
 }
 
 .project-name,
@@ -275,8 +267,6 @@
 .clearfix {
   clear: both;
 }
-
-
 
 .clearfix:after,
 form:after {
@@ -466,13 +456,16 @@ input[type="number"] {
   width: 100%;
   display: flex;
   flex: 1;
-  font-size: 15px;
   flex-direction: row;
+  font-size: 15px;
   align-items: center;
   justify-content: flex-start;
-  padding: 8px 12px;
   background-color: #ffffff;
-  border-radius: 8px 8px 0 0;
+  border: 0.5px solid #e9ecef;
+  border-top: none;
+}
+.form-table .body_table-tv #member-last {
+  border-radius: 0 0 0 8px;
 }
 .header_table-tv .text__header {
   font-weight: bold;
@@ -550,3 +543,11 @@ input[type="number"] {
 }
 
 /* End A5. Thông tin nhớm nghiên cứu */
+/* input-name textarea */
+.input-name__detai {
+  resize: none;
+  overflow: hidden;
+}
+.flex-fill {
+  flex: 1 1 0% !important;
+}

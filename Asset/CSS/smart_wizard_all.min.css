@@ -41,6 +41,7 @@
   box-sizing: border-box;
 }
 .sw > .form-content {
+  height: 100% !important;
   position: relative;
   overflow: hidden;
 }
@@ -484,7 +485,7 @@
   top: 18px;
   left: 0;
   width: 100%;
-  height: 5px;
+  height: 2px;
   background-color: var(--sw-border-color);
   border-radius: 3px;
   z-index: 1;
@@ -524,10 +525,10 @@
   margin-right: auto;
   border-radius: 50%;
   top: -42px;
-  width: 46px;
-  height: 46px;
+  width: 40px;
+  height: 40px;
   z-index: 99;
-  border: 8px solid var(--sw-border-color);
+  /* border: 1px solid var(--sw-border-color); */
   transition: all 0.5s ease-in-out;
 }
 @media screen and (max-width: 640px) {
@@ -543,7 +544,7 @@
   display: block;
   left: 0;
   right: 0;
-  top: -30px;
+  top: -33px;
   margin-left: auto;
   margin-right: auto;
   z-index: 100;
@@ -586,7 +587,7 @@
 .sw-theme-dots > .nav .nav-link.active::after {
   
   background-color: var(--sw-anchor-active-primary-color) !important;
-  box-shadow: 0 1px 7px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 7px 1px rgba(0, 0, 0, 0.2);
 }
 .sw-theme-dots > .nav .nav-link.done {
   color: var(--sw-anchor-done-primary-color);
@@ -633,7 +634,7 @@
   top: 18px;
   left: 0;
   width: var(--sw-progress-width);
-  height: 5px;
+  height: 2px;
   background-color: var(--sw-progress-color);
   border-radius: 3px;
   z-index: 2;
