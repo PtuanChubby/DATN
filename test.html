@@ -20,6 +20,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/smartwizard@6/dist/css/smart_wizard_dots.min.css"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
   </head>
 
   <body>
@@ -52,6 +53,11 @@
               type="text"
               id="inputStep1"
               placeholder="Nhập dữ liệu cho Bước 1"
+            />
+            <input
+              type="file"
+              id="inputStep1File"
+              placeholder="Chọn tệp cho Bước 1"
             />
           </div>
           <div
@@ -88,7 +94,9 @@
             <div id="step4Data">
               Giá trị từ Bước 1: <span id="inputStep1Value"></span><br />
               Giá trị từ Bước 2: <span id="inputStep2Value"></span><br />
-              Giá trị từ Bước 3: <span id="inputStep3Value"></span>
+              Giá trị từ Bước 3: <span id="inputStep3Value"></span><br />
+              Tệp tin từ Bước 1:
+              <a id="inputStep1FileLink" href="#" download>Tải về</a><br />
             </div>
           </div>
         </div>
@@ -143,28 +151,6 @@
             // Ngôn ngữ của nút Previous
             previous: "Previous",
           },
-          // Sự kiện trước khi hiển thị bước
-          onShowStep: function () {
-            var stepNum = $("#smartwizard").smartWizard("getStepIndex");
-            if (stepNum === 4) {
-              // Nếu là bước 4, thay đổi nút "Next" thành nút "Submit"
-              $(".sw-btn-next").addClass("subbmit-button").text("Submit");
-            } else {
-              // Nếu không phải bước 4, đảm bảo nút "Next" hiển thị
-              $(".sw-btn-next").removeClass("subbmit-button").text("Next");
-            }
-          },
-          // Sự kiện khi nhấp vào nút "Next" hoặc "Submit"
-          onNext: function () {
-            var stepNum = $("#smartwizard").smartWizard("getStepIndex");
-            if (stepNum === 3) {
-              // Nếu là bước 4, thực hiện xử lý khi nhấp vào nút "Submit"
-              // Hiển thị thông báo hoàn thành hoặc đã lưu
-              alert("Hoàn thành hoặc đã lưu!");
-            }
-            // Trả về true để cho phép chuyển đến bước tiếp theo
-            return true;
-          },
         });
 
         // Sự kiện khi chuyển đến bước trước đó
@@ -172,6 +158,7 @@
           { id: "inputStep1", outputId: "inputStep1Value" },
           { id: "inputStep2", outputId: "inputStep2Value" },
           { id: "inputStep3", outputId: "inputStep3Value" },
+          { id: "inputStep1File", outputId: "inputStep1FileLink" }, // Thêm đối tượng mới
           // Thêm các trường dữ liệu khác tại đây
         ];
 
@@ -187,13 +174,13 @@
                   break;
                 }
               }
+
               if (stepNumber >= 1) {
                 updateStep4Data();
               }
             }
           }
         );
-
         // Sự kiện khi chuyển đến bước tiếp theo
         $("#smartwizard").on(
           "showStep",
@@ -202,6 +189,23 @@
               for (var i = 0; i < fields.length; i++) {
                 var inputFieldValue = $("#" + fields[i].id).val();
                 $("#" + fields[i].outputId).text(inputFieldValue);
+              }
+            }
+            if (stepNumber === 1) {
+              var inputStep1File = $("#inputStep1File")[0].files[0];
+              var inputStep1FileValue = inputStep1File
+                ? inputStep1File.name
+                : "";
+              var inputStep1FileLink = $("#inputStep1FileLink");
+              inputStep1FileLink.text(inputStep1FileValue);
+
+              if (inputStep1File) {
+                // Tạo một đường dẫn tạm thời cho tệp tin
+                var fileURL = URL.createObjectURL(inputStep1File);
+                inputStep1FileLink.attr("href", fileURL);
+                inputStep1FileLink.attr("download", inputStep1FileValue);
+              } else {
+                inputStep1FileLink.attr("href", "#");
               }
             }
             if (stepNumber >= 1) {
@@ -219,5 +223,249 @@
         }
       });
     </script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upload Files</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .upload-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .file-input-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      .upload-button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        transition: background-color 0.3s ease;
+        font-size: 16px;
+      }
+
+      .upload-button i {
+        margin-right: 10px;
+      }
+
+      .upload-button:hover {
+        background-color: #0056b3;
+      }
+
+      .file-info {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: #333;
+        background-color: #fff;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .file-info strong {
+        font-weight: bold;
+      }
+
+      .file-info .file-name {
+        flex-grow: 1;
+        margin-right: 10px;
+      }
+
+      .file-info .delete-button {
+        color: #ff0000;
+        cursor: pointer;
+      }
+
+      .submit-button {
+        background-color: #28a745;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        transition: background-color 0.3s ease;
+        font-size: 16px;
+        margin-top: 10px;
+        width: 150px;
+      }
+
+      .submit-button i {
+        margin-right: 10px;
+      }
+
+      .submit-button:hover {
+        background-color: #1e7e34;
+      }
+
+      .download-link {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #007bff;
+        list-style-type: disc;
+        padding-left: 20px;
+      }
+
+      .download-link li {
+        margin-bottom: 5px;
+      }
+
+      .download-link a {
+        text-decoration: none;
+      }
+    </style>
+    <script>
+      // Khai báo biến để lưu trữ các tệp tin đã tải lên
+      let uploadedFiles = [];
+
+      // Hàm xử lý việc tải lên tệp tin
+      function handleFileUpload() {
+        // Tạo một phần tử input để cho phép người dùng chọn tệp tin
+        const fileInput = document.createElement("input");
+        fileInput.type = "file";
+        fileInput.multiple = true;
+        fileInput.style.display = "none";
+
+        // Gắn sự kiện lắng nghe cho sự thay đổi trong file input
+        fileInput.addEventListener("change", displayFileInfos);
+
+        // Thêm file input vào phần tử body của tài liệu
+        document.body.appendChild(fileInput);
+
+        // Kích hoạt sự kiện click trên file input để mở hộp thoại chọn tệp tin
+        fileInput.click();
+      }
+
+      // Hàm hiển thị thông tin về các tệp tin đã chọn
+      function displayFileInfos(event) {
+        const fileInput = event.target;
+        const fileDisplay = document.getElementById("file-display");
+
+        // Xử lý từng tệp tin đã chọn
+        for (let i = 0; i < fileInput.files.length; i++) {
+          const file = fileInput.files[i];
+
+          // Lưu trữ tệp tin vào mảng uploadedFiles
+          uploadedFiles.push(file);
+
+          // Tạo các phần tử HTML để hiển thị thông tin về tệp tin
+          const fileInfoContainer = document.createElement("div");
+          fileInfoContainer.className = "file-info";
+
+          const fileNameElement = document.createElement("div");
+          fileNameElement.className = "file-name";
+          fileNameElement.innerHTML = `<strong>File đã tải lên:</strong> ${file.name}`;
+
+          const deleteButton = document.createElement("i");
+          deleteButton.className = "fas fa-times-circle delete-button";
+          deleteButton.setAttribute("title", "Xóa file");
+          deleteButton.addEventListener("click", deleteFile.bind(null, file));
+
+          // Gắn các phần tử vào fileInfoContainer
+          fileInfoContainer.appendChild(fileNameElement);
+          fileInfoContainer.appendChild(deleteButton);
+
+          // Gắn fileInfoContainer vào fileDisplay
+          fileDisplay.appendChild(fileInfoContainer);
+        }
+
+        // Xóa file input khỏi DOM
+        fileInput.remove();
+      }
+
+      // Hàm xóa tệp tin đã chọn
+      function deleteFile(file) {
+        const fileDisplay = document.getElementById("file-display");
+        const fileInfos = fileDisplay.getElementsByClassName("file-info");
+
+        // Xử lý từng phần tử file-info
+        for (let i = 0; i < fileInfos.length; i++) {
+          const fileInfo = fileInfos[i];
+          const fileNameElement = fileInfo.querySelector(".file-name");
+
+          // Kiểm tra xem tên tệp tin có khớp với tên tệp tin cần xóa hay không
+          if (fileNameElement.innerHTML.includes(file.name)) {
+            // Xóa fileInfo khỏi DOM
+            fileInfo.remove();
+
+            // Cập nhật mảng uploadedFiles bằng cách loại bỏ tệp tin có tên tương tự
+            uploadedFiles = uploadedFiles.filter(
+              (uploadedFile) => uploadedFile.name !== file.name
+            );
+
+            // Dừng vòng lặp
+            break;
+          }
+        }
+      }
+
+      // Hàm xử lý khi người dùng gửi biểu mẫu
+      function handleSubmit() {
+        const downloadLinkContainer = document.getElementById(
+          "download-link-container"
+        );
+
+        // Xóa nội dung hiện tại của downloadLinkContainer
+        downloadLinkContainer.innerHTML = "";
+
+        // Xử lý từng tệp tin đã tải lên
+        for (let i = 0; i < uploadedFiles.length; i++) {
+          const file = uploadedFiles[i];
+
+          // Tạo liên kết tải xuống cho mỗi tệp tin
+          const downloadLink = document.createElement("li");
+          downloadLink.innerHTML = `<a href="${URL.createObjectURL(
+            file
+          )}" download="${file.name}">${file.name}</a>`;
+
+          // Gắn downloadLink vào downloadLinkContainer
+          downloadLinkContainer.appendChild(downloadLink);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="upload-container">
+      <div class="file-input-container">
+        <button class="upload-button" onclick="handleFileUpload()">
+          <i class="fas fa-cloud-upload-alt"></i>Tải lên
+        </button>
+      </div>
+      <div id="file-display"></div>
+      <button class="submit-button" onclick="handleSubmit()">
+        <i class="fas fa-download"></i>Tải xuống
+      </button>
+      <ul id="download-link-container" class="download-link"></ul>
+    </div>
   </body>
 </html>

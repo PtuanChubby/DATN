@@ -216,7 +216,7 @@
           >
           <a class="app-menu__item ps-4" href="#">
             <i class="app-menu__icon fa-solid fa-file"></i>
-            <span class="app-menu__label">Đề cương</span></a
+            <span class="app-menu__label">Quản lý đề tài</span></a
           >
         </li>
         <li class="my-md-3">
@@ -406,7 +406,7 @@
                                     Chọn hệ đào tạo
                                   </option>
                                   <option>Chương trình chuẩn</option>
-                                  <option>Chương trình chất lượng cao</option>
+                                  <!-- <option>Chương trình chất lượng cao</option> -->
                                 </select>
                               </div>
                             </div>
@@ -434,11 +434,19 @@
                                     >*</span
                                   ></label
                                 >
-                                <input
-                                  type="text"
+                                <select
+                                  name=""
                                   id="inputchuyennganhhep"
                                   class="form-control"
-                                />
+                                  required
+                                >
+                                  <option selected="" disabled="">
+                                    Chọn Chuyên ngành
+                                  </option>
+                                  <option>Quản lý thông tin</option>
+                                  <option>Thông tin thư viện</option>
+                                </select>
+                                
                               </div>
                             </div>
                             <!-- <div class="row">
@@ -1018,16 +1026,23 @@
                               </a>
                             </div>
                             <div class="mb-3">
-                              <label class="form-label" for="exampleInputFile"
-                                >Chọn file</label
-                              >
-                              <input
-                                class="form-control"
-                                id="exampleInputFile"
-                                type="file"
-                                aria-describedby="fileHelp"
-                                accept=".pdf"
-                              />
+                              <div class="upload-container">
+                                <button
+                                  onclick="handleFileUpload()"
+                                  class="upload-button"
+                                >
+                                  <i class="fas fa-upload"></i>Tải lên tệp
+                                </button>
+                                <input
+                                  type="file"
+                                  id="inputFile"
+                                  class="file-input"
+                                  onchange="displayFileInfo()"
+                                />
+                              </div>
+                              <div id="file-display" class="file-info">
+                                Không có tệp nào được chọn
+                              </div>
                               <div class="form-text text-muted">
                                 Chỉ chấp nhận tải file pdf
                               </div>
@@ -1335,6 +1350,23 @@
                             class="flex-fill"
                             id="inputSotienchuValue"
                           ></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pb-sm-2">
+                    <h4>B. MÔ TẢ NGHIÊN CỨU</h4>
+                    <div class="col-md-12">
+                      <h4 class="mb-2">B1-B7</h4>
+                      <div class="d-flex ms-sm-5 fs-6 flex-sm-column">
+                        <div class="d-flex flex-wrap mb-1">
+                          <div class="me-sm-2 fw-semibold">File đính kèm:</div>
+                          <a
+                            class="flex-fill"
+                            id="inputFileLink"
+                            href="#"
+                            download
+                          ></a>
                         </div>
                       </div>
                     </div>

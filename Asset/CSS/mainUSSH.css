@@ -551,3 +551,62 @@ input[type="number"] {
 .flex-fill {
   flex: 1 1 0% !important;
 }
+
+/* uploadfiel */
+.upload-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.upload-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
+
+.upload-button i {
+  margin-right: 10px;
+}
+
+.upload-button:hover {
+  background-color: #0056b3;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.file-info strong {
+  font-weight: bold;
+}
+
+.delete-icon {
+  color: #999;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.delete-icon:hover {
+  color: #ff0000;
+}

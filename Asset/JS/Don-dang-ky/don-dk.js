@@ -19,8 +19,9 @@ $(document).ready(function () {
     { id: "inputDiachi", outputId: "inputDiachiValue" },
     { id: "inputSDT", outputId: "inputSDTValue" },
     { id: "inputEmail", outputId: "inputEmailValue" },
-    { id: "inputSotienso", outputId: "inputSotiensolValue" },
-    { id: "inputSotienchu", outputId: "inputSotienchulValue" },
+    { id: "inputSotienso", outputId: "inputSotiensoValue" },
+    { id: "inputSotienchu", outputId: "inputSotienchuValue" },
+    { id: "inputFile", outputId: "inputFileLink" },
 
     // Thêm các trường dữ liệu khác tại đây
   ];
@@ -52,6 +53,23 @@ $(document).ready(function () {
         for (var i = 0; i < fields.length; i++) {
           var inputFieldValue = $("#" + fields[i].id).val();
           $("#" + fields[i].outputId).text(inputFieldValue);
+        }
+      }
+      if (stepNumber === 1) {
+        var inputFile = $("#inputFile")[0].files[0];
+        var inputStep1FileValue = inputFile
+          ? inputFile.name
+          : "";
+        var inputFileLink = $("#inputFileLink");
+        inputFileLink.text(inputStep1FileValue);
+
+        if (inputFile) {
+          // Tạo một đường dẫn tạm thời cho tệp tin
+          var fileURL = URL.createObjectURL(inputFile);
+          inputFileLink.attr("href", fileURL);
+          inputFileLink.attr("download", inputStep1FileValue);
+        } else {
+          inputFileLink.attr("href", "#");
         }
       }
       if (stepNumber >= 1) {

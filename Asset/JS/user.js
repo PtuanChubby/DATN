@@ -243,7 +243,9 @@ $(document).ready(function () {
     return memberForm;
   }
 });
+// Định dạng số tiền
 
+// end dinh dang so tien
 
 // tính số tiền
 function calculateTotal() {
@@ -432,46 +434,68 @@ function handleCheckboxChange(event, siblingCheckboxId) {
   }
 }
 // End Checkbox
-(function () {
-  // Khởi tạo SmartWizard
-  // Sự kiện khi chuyển đến bước trước đó
-  $("#smartwizard").on(
-    "leaveStep",
-    function (e, anchorObject, stepNumber, stepDirection) {
-      if (stepDirection === "backward" && stepNumber === 3) {
-        var inputStep3Value = $("#inputStep3").val();
-        $("#inputStep3Value").text(inputStep3Value);
-        updateStep4Data();
-      }
-    }
-  );
+// (function () {
+//   // Khởi tạo SmartWizard
+//   // Sự kiện khi chuyển đến bước trước đó
+//   $("#smartwizard").on(
+//     "leaveStep",
+//     function (e, anchorObject, stepNumber, stepDirection) {
+//       if (stepDirection === "backward" && stepNumber === 3) {
+//         var inputStep3Value = $("#inputStep3").val();
+//         $("#inputStep3Value").text(inputStep3Value);
+//         updateStep4Data();
+//       }
+//     }
+//   );
 
-  // Sự kiện khi chuyển đến bước tiếp theo
-  $("#smartwizard").on(
-    "showStep",
-    function (e, anchorObject, stepNumber, stepDirection) {
-      if (stepDirection === "forward" && stepNumber === 2) {
-        var inputStep1Value = $("#inputStep1").val();
-        var inputStep2Value = $("#inputStep2").val();
-        var inputStep3Value = $("#inputStep3").val();
-        $("#inputStep1Value").text(inputStep1Value);
-        $("#inputStep2Value").text(inputStep2Value);
-        $("#inputStep3Value").text(inputStep3Value);
-      }
-      if (stepNumber === 3) {
-        updateStep4Data();
-      }
-    }
-  );
+//   // Sự kiện khi chuyển đến bước tiếp theo
+//   $("#smartwizard").on(
+//     "showStep",
+//     function (e, anchorObject, stepNumber, stepDirection) {
+//       if (stepDirection === "forward" && stepNumber === 2) {
+//         var inputStep1Value = $("#inputStep1").val();
+//         var inputStep2Value = $("#inputStep2").val();
+//         var inputStep3Value = $("#inputStep3").val();
+//         $("#inputStep1Value").text(inputStep1Value);
+//         $("#inputStep2Value").text(inputStep2Value);
+//         $("#inputStep3Value").text(inputStep3Value);
+//       }
+//       if (stepNumber === 3) {
+//         updateStep4Data();
+//       }
+//     }
+//   );
 
-  // Hàm cập nhật dữ liệu cho Bước 4
-  function updateStep4Data() {
-    var inputStep1Value = $("#inputStep1").val();
-    var inputStep2Value = $("#inputStep2").val();
-    var inputStep3Value = $("#inputStep3").val();
-    $("#inputStep1Value").text(inputStep1Value);
-    $("#inputStep2Value").text(inputStep2Value);
-    $("#inputStep3Value").text(inputStep3Value);
-  }
-});
+//   // Hàm cập nhật dữ liệu cho Bước 4
+//   function updateStep4Data() {
+//     var inputStep1Value = $("#inputStep1").val();
+//     var inputStep2Value = $("#inputStep2").val();
+//     var inputStep3Value = $("#inputStep3").val();
+//     $("#inputStep1Value").text(inputStep1Value);
+//     $("#inputStep2Value").text(inputStep2Value);
+//     $("#inputStep3Value").text(inputStep3Value);
+//   }
+// });
 // End Multi Step Form
+// upload file
+function handleFileUpload() {
+  const fileInput = document.getElementById("inputFile");
+  fileInput.accept = ".pdf"; // Chỉ chấp nhận tệp PDF
+  fileInput.click();
+}
+
+function displayFileInfo() {
+  const fileInput = document.getElementById("inputFile");
+  const fileDisplay = document.getElementById("file-display");
+  const fileName = fileInput.files[0].name;
+
+  fileDisplay.innerHTML = `<strong>File đã tải lên:</strong> ${fileName}<i class="fas fa-times delete-icon" onclick="deleteFile()"></i>`;
+}
+
+function deleteFile() {
+  const fileInput = document.getElementById("inputFile");
+  fileInput.value = "";
+  const fileDisplay = document.getElementById("file-display");
+  fileDisplay.innerHTML = "Không có tệp nào được chọn";
+}
+// end upload file
