@@ -1,471 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Smart Wizard</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      type="text/javascript"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/smartwizard@6/dist/js/jquery.smartWizard.min.js"
-      type="text/javascript"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/smartwizard@6/dist/css/smart_wizard_dots.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
-  </head>
+<html>
+<head>
+  <title>Trang 1 - Smart Wizard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/smartwizard/5.1.0/css/smartwizard.min.css" />
+</head>
+<body>
+  <h1>Trang 1</h1>
+  
+  <div id="smartwizard">
+    <ul class="nav nav-progress">
+      <li class="nav-item">
+        <a class="nav-link" href="#step-1">Bước 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#step-2">Bước 2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#step-3">Bước 3</a>
+      </li>
+    </ul>
 
-  <body>
-    <div class="container">
-      <h2>Smart Wizard</h2>
-      <div id="smartwizard">
-        <ul class="nav nav-progress">
-          <li class="nav-item">
-            <a class="nav-link" href="#step-1">Bước 1</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#step-2">Bước 2</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#step-3">Bước 3</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#step-4">Bước 4</a>
-          </li>
-        </ul>
-
-        <div class="tab-content">
-          <div
-            id="step-1"
-            class="tab-pane"
-            role="tabpanel"
-            aria-labelledby="step-1"
-          >
-            <input
-              type="text"
-              id="inputStep1"
-              placeholder="Nhập dữ liệu cho Bước 1"
-            />
-            <input
-              type="file"
-              id="inputStep1File"
-              placeholder="Chọn tệp cho Bước 1"
-            />
-          </div>
-          <div
-            id="step-2"
-            class="tab-pane"
-            role="tabpanel"
-            aria-labelledby="step-2"
-          >
-            <input
-              type="text"
-              id="inputStep2"
-              placeholder="Nhập dữ liệu cho Bước 2"
-            />
-          </div>
-          <div
-            id="step-3"
-            class="tab-pane"
-            role="tabpanel"
-            aria-labelledby="step-3"
-          >
-            <input
-              type="text"
-              id="inputStep3"
-              placeholder="Nhập dữ liệu cho Bước 3"
-            />
-          </div>
-          <div
-            id="step-4"
-            class="tab-pane"
-            role="tabpanel"
-            aria-labelledby="step-4"
-          >
-            <h2>Bước 4</h2>
-            <div id="step4Data">
-              Giá trị từ Bước 1: <span id="inputStep1Value"></span><br />
-              Giá trị từ Bước 2: <span id="inputStep2Value"></span><br />
-              Giá trị từ Bước 3: <span id="inputStep3Value"></span><br />
-              Tệp tin từ Bước 1:
-              <a id="inputStep1FileLink" href="#" download>Tải về</a><br />
-            </div>
-          </div>
-        </div>
-
-        <div class="progress">
-          <div
-            class="progress-bar"
-            role="progressbar"
-            style="width: 0%"
-            aria-valuenow="0"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          ></div>
+    <div class="tab-content">
+      <div id="step-1" class="tab-pane" role="tabpanel" aria-labelledby="step-1">
+        <input type="text" id="inputStep1" placeholder="Nhập dữ liệu cho Bước 1" />
+      </div>
+      <div id="step-2" class="tab-pane" role="tabpanel" aria-labelledby="step-2">
+        <input type="text" id="inputStep2" placeholder="Nhập dữ liệu cho Bước 2" />
+      </div>
+      <div id="step-3" class="tab-pane" role="tabpanel" aria-labelledby="step-3">
+        <input type="text" id="inputStep3" placeholder="Nhập dữ liệu cho Bước 3" />
+      </div>
+    </div>
+    
+    <div class="toolbar toolbar-bottom">
+      <div class="container">
+        <div class="d-flex justify-content-end">
+          <button class="btn btn-primary sw-btn-next">Next</button>
         </div>
       </div>
     </div>
-    <script>
-      $(document).ready(function () {
-        // Khởi tạo SmartWizard
-        $("#smartwizard").smartWizard({
-          selected: 0, // Chọn bước mặc định (0 là bước đầu tiên)
-          theme: "dots", // Chọn giao diện cho SmartWizard
-          transitionEffect: "fade", // Chọn hiệu ứng chuyển đổi giữa các bước
-          showStepURLhash: false, // Tắt chức năng thay đổi URL khi chuyển bước
-          toolbarSettings: {
-            toolbarPosition: "bottom", // Vị trí hiển thị thanh công cụ ở dưới cùng
-          },
-          // Các tùy chọn khác...
-          anchor: {
-            // Chỉ định các bước bị vô hiệu hóa
-            disabledSteps: [],
-            // Chỉ định các bước bị vô hiệu hóa
-            errorSteps: [],
-            // Chỉ định các bước bị vô hiệu hóa
-            warningSteps: [],
-            // Chỉ định các bước bị ẩn
-            hiddenSteps: [],
-          },
-          toolbar: {
-            // Chỉ định vị trí thanh công cụ
-            position: "bottom",
-            // Hiển thị nút Next
-            showNextButton: true,
-            // Hiển thị nút Previous
-            showPreviousButton: true,
-            // Thêm HTML bổ sung vào thanh công cụ
-            extraHtml: "",
-          },
-          lang: {
-            // Ngôn ngữ của nút Next
-            next: "Next",
-            // Ngôn ngữ của nút Previous
-            previous: "Previous",
-          },
-        });
+  </div>
 
-        // Sự kiện khi chuyển đến bước trước đó
-        var fields = [
-          { id: "inputStep1", outputId: "inputStep1Value" },
-          { id: "inputStep2", outputId: "inputStep2Value" },
-          { id: "inputStep3", outputId: "inputStep3Value" },
-          { id: "inputStep1File", outputId: "inputStep1FileLink" }, // Thêm đối tượng mới
-          // Thêm các trường dữ liệu khác tại đây
-        ];
-
-        // Sự kiện khi chuyển đến bước trước đó
-        $("#smartwizard").on(
-          "leaveStep",
-          function (e, anchorObject, stepNumber, stepDirection) {
-            if (stepDirection === "backward") {
-              for (var i = 0; i < fields.length; i++) {
-                if (stepNumber === i + 1) {
-                  var inputFieldValue = $("#" + fields[i].id).val();
-                  $("#" + fields[i].outputId).text(inputFieldValue);
-                  break;
-                }
-              }
-
-              if (stepNumber >= 1) {
-                updateStep4Data();
-              }
-            }
-          }
-        );
-        // Sự kiện khi chuyển đến bước tiếp theo
-        $("#smartwizard").on(
-          "showStep",
-          function (e, anchorObject, stepNumber, stepDirection) {
-            if (stepDirection === "forward" && stepNumber === 2) {
-              for (var i = 0; i < fields.length; i++) {
-                var inputFieldValue = $("#" + fields[i].id).val();
-                $("#" + fields[i].outputId).text(inputFieldValue);
-              }
-            }
-            if (stepNumber === 1) {
-              var inputStep1File = $("#inputStep1File")[0].files[0];
-              var inputStep1FileValue = inputStep1File
-                ? inputStep1File.name
-                : "";
-              var inputStep1FileLink = $("#inputStep1FileLink");
-              inputStep1FileLink.text(inputStep1FileValue);
-
-              if (inputStep1File) {
-                // Tạo một đường dẫn tạm thời cho tệp tin
-                var fileURL = URL.createObjectURL(inputStep1File);
-                inputStep1FileLink.attr("href", fileURL);
-                inputStep1FileLink.attr("download", inputStep1FileValue);
-              } else {
-                inputStep1FileLink.attr("href", "#");
-              }
-            }
-            if (stepNumber >= 1) {
-              updateStep4Data();
-            }
-          }
-        );
-
-        // Hàm cập nhật dữ liệu cho Bước 4
-        function updateStep4Data() {
-          for (var i = 0; i < fields.length; i++) {
-            var inputFieldValue = $("#" + fields[i].id).val();
-            $("#" + fields[i].outputId).text(inputFieldValue);
-          }
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/smartwizard/5.1.0/js/jquery.smartWizard.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('#smartwizard').smartWizard({
+        theme: 'default',
+        transitionEffect: 'fade',
+        toolbarSettings: {
+          toolbarPosition: 'none' // Ẩn thanh công cụ
+        },
+        onLeaveStep: function(){
+          sendData();
+          return true;
         }
       });
-    </script>
-  </body>
-</html>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Upload Files</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <style>
-      * {
-        box-sizing: border-box;
+      $('.sw-btn-next').on('click', function(){
+        $('#smartwizard').smartWizard("next");
+      });
+    });
+
+    function sendData() {
+      var currentStep = $('#smartwizard').smartWizard("getStepIndex") + 1;
+      var data = {};
+
+      if (currentStep === 1) {
+        data.inputStep1 = $('#inputStep1').val();
+      } else if (currentStep === 2) {
+        data.inputStep2 = $('#inputStep2').val();
+      } else if (currentStep === 3) {
+        data.inputStep3 = $('#inputStep3').val();
       }
 
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f7f7f7;
-        margin: 0;
-        padding: 20px;
-      }
-
-      .upload-container {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .file-input-container {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 10px;
-      }
-
-      .upload-button {
-        background-color: #007bff;
-        color: #fff;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        transition: background-color 0.3s ease;
-        font-size: 16px;
-      }
-
-      .upload-button i {
-        margin-right: 10px;
-      }
-
-      .upload-button:hover {
-        background-color: #0056b3;
-      }
-
-      .file-info {
-        display: flex;
-        align-items: center;
-        font-size: 14px;
-        color: #333;
-        background-color: #fff;
-        padding: 12px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-
-      .file-info strong {
-        font-weight: bold;
-      }
-
-      .file-info .file-name {
-        flex-grow: 1;
-        margin-right: 10px;
-      }
-
-      .file-info .delete-button {
-        color: #ff0000;
-        cursor: pointer;
-      }
-
-      .submit-button {
-        background-color: #28a745;
-        color: #fff;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        transition: background-color 0.3s ease;
-        font-size: 16px;
-        margin-top: 10px;
-        width: 150px;
-      }
-
-      .submit-button i {
-        margin-right: 10px;
-      }
-
-      .submit-button:hover {
-        background-color: #1e7e34;
-      }
-
-      .download-link {
-        margin-top: 10px;
-        font-size: 14px;
-        color: #007bff;
-        list-style-type: disc;
-        padding-left: 20px;
-      }
-
-      .download-link li {
-        margin-bottom: 5px;
-      }
-
-      .download-link a {
-        text-decoration: none;
-      }
-    </style>
-    <script>
-      // Khai báo biến để lưu trữ các tệp tin đã tải lên
-      let uploadedFiles = [];
-
-      // Hàm xử lý việc tải lên tệp tin
-      function handleFileUpload() {
-        // Tạo một phần tử input để cho phép người dùng chọn tệp tin
-        const fileInput = document.createElement("input");
-        fileInput.type = "file";
-        fileInput.multiple = true;
-        fileInput.style.display = "none";
-
-        // Gắn sự kiện lắng nghe cho sự thay đổi trong file input
-        fileInput.addEventListener("change", displayFileInfos);
-
-        // Thêm file input vào phần tử body của tài liệu
-        document.body.appendChild(fileInput);
-
-        // Kích hoạt sự kiện click trên file input để mở hộp thoại chọn tệp tin
-        fileInput.click();
-      }
-
-      // Hàm hiển thị thông tin về các tệp tin đã chọn
-      function displayFileInfos(event) {
-        const fileInput = event.target;
-        const fileDisplay = document.getElementById("file-display");
-
-        // Xử lý từng tệp tin đã chọn
-        for (let i = 0; i < fileInput.files.length; i++) {
-          const file = fileInput.files[i];
-
-          // Lưu trữ tệp tin vào mảng uploadedFiles
-          uploadedFiles.push(file);
-
-          // Tạo các phần tử HTML để hiển thị thông tin về tệp tin
-          const fileInfoContainer = document.createElement("div");
-          fileInfoContainer.className = "file-info";
-
-          const fileNameElement = document.createElement("div");
-          fileNameElement.className = "file-name";
-          fileNameElement.innerHTML = `<strong>File đã tải lên:</strong> ${file.name}`;
-
-          const deleteButton = document.createElement("i");
-          deleteButton.className = "fas fa-times-circle delete-button";
-          deleteButton.setAttribute("title", "Xóa file");
-          deleteButton.addEventListener("click", deleteFile.bind(null, file));
-
-          // Gắn các phần tử vào fileInfoContainer
-          fileInfoContainer.appendChild(fileNameElement);
-          fileInfoContainer.appendChild(deleteButton);
-
-          // Gắn fileInfoContainer vào fileDisplay
-          fileDisplay.appendChild(fileInfoContainer);
-        }
-
-        // Xóa file input khỏi DOM
-        fileInput.remove();
-      }
-
-      // Hàm xóa tệp tin đã chọn
-      function deleteFile(file) {
-        const fileDisplay = document.getElementById("file-display");
-        const fileInfos = fileDisplay.getElementsByClassName("file-info");
-
-        // Xử lý từng phần tử file-info
-        for (let i = 0; i < fileInfos.length; i++) {
-          const fileInfo = fileInfos[i];
-          const fileNameElement = fileInfo.querySelector(".file-name");
-
-          // Kiểm tra xem tên tệp tin có khớp với tên tệp tin cần xóa hay không
-          if (fileNameElement.innerHTML.includes(file.name)) {
-            // Xóa fileInfo khỏi DOM
-            fileInfo.remove();
-
-            // Cập nhật mảng uploadedFiles bằng cách loại bỏ tệp tin có tên tương tự
-            uploadedFiles = uploadedFiles.filter(
-              (uploadedFile) => uploadedFile.name !== file.name
-            );
-
-            // Dừng vòng lặp
-            break;
-          }
-        }
-      }
-
-      // Hàm xử lý khi người dùng gửi biểu mẫu
-      function handleSubmit() {
-        const downloadLinkContainer = document.getElementById(
-          "download-link-container"
-        );
-
-        // Xóa nội dung hiện tại của downloadLinkContainer
-        downloadLinkContainer.innerHTML = "";
-
-        // Xử lý từng tệp tin đã tải lên
-        for (let i = 0; i < uploadedFiles.length; i++) {
-          const file = uploadedFiles[i];
-
-          // Tạo liên kết tải xuống cho mỗi tệp tin
-          const downloadLink = document.createElement("li");
-          downloadLink.innerHTML = `<a href="${URL.createObjectURL(
-            file
-          )}" download="${file.name}">${file.name}</a>`;
-
-          // Gắn downloadLink vào downloadLinkContainer
-          downloadLinkContainer.appendChild(downloadLink);
-        }
-      }
-    </script>
-  </head>
-  <body>
-    <div class="upload-container">
-      <div class="file-input-container">
-        <button class="upload-button" onclick="handleFileUpload()">
-          <i class="fas fa-cloud-upload-alt"></i>Tải lên
-        </button>
-      </div>
-      <div id="file-display"></div>
-      <button class="submit-button" onclick="handleSubmit()">
-        <i class="fas fa-download"></i>Tải xuống
-      </button>
-      <ul id="download-link-container" class="download-link"></ul>
-    </div>
-  </body>
+      // Gửi dữ liệu bằng URL parameters
+      var params = new URLSearchParams(data);
+      var url = 'formwizard.html?' + params.toString();
+      window.location.href = url;
+    }
+  </script>
+</body>
 </html>
