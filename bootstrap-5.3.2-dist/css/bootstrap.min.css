@@ -2019,6 +2019,7 @@ progress {
   width: 100%;
   display: block;
   font-weight: 400;
+  margin-top: 5rem;
   line-height: 1.5;
   appearance: none;
   font-size: 0.875rem;
@@ -2031,6 +2032,7 @@ progress {
   border-radius: var(--bs-border-radius);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  
 }
 
 .form-control {
@@ -12618,7 +12620,7 @@ fieldset:disabled .btn {
   border-radius: 8px;
   /* border: 1px solid #ddd; */
   margin: 106px 0 20px 0;
-  display: flex;
+  /* display: flex; */
   user-select: none;
   
 }

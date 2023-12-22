@@ -1,86 +1,140 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Trang 1 - Smart Wizard</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/smartwizard/5.1.0/css/smartwizard.min.css" />
-</head>
-<body>
-  <h1>Trang 1</h1>
-  
-  <div id="smartwizard">
-    <ul class="nav nav-progress">
-      <li class="nav-item">
-        <a class="nav-link" href="#step-1">Bước 1</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#step-2">Bước 2</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#step-3">Bước 3</a>
-      </li>
-    </ul>
+  <head>
+    <title>Trang 1 - Smart Wizard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/smartwizard@6/dist/css/smart_wizard_all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/smartwizard@6/dist/js/jquery.smartWizard.min.js"
+      type="text/javascript"
+    ></script>
+  </head>
+  <body>
+    <h1>Trang 1</h1>
 
-    <div class="tab-content">
-      <div id="step-1" class="tab-pane" role="tabpanel" aria-labelledby="step-1">
-        <input type="text" id="inputStep1" placeholder="Nhập dữ liệu cho Bước 1" />
-      </div>
-      <div id="step-2" class="tab-pane" role="tabpanel" aria-labelledby="step-2">
-        <input type="text" id="inputStep2" placeholder="Nhập dữ liệu cho Bước 2" />
-      </div>
-      <div id="step-3" class="tab-pane" role="tabpanel" aria-labelledby="step-3">
-        <input type="text" id="inputStep3" placeholder="Nhập dữ liệu cho Bước 3" />
-      </div>
-    </div>
-    
-    <div class="toolbar toolbar-bottom">
-      <div class="container">
-        <div class="d-flex justify-content-end">
-          <button class="btn btn-primary sw-btn-next">Next</button>
+    <div id="smartwizard">
+      <ul class="nav nav-progress">
+        <li class="nav-item">
+          <a class="nav-link" href="#step-1">Bước 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#step-2">Bước 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#step-3">Bước 3</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#step-4">Bước 4</a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <div
+          id="step-1"
+          class="tab-pane"
+          role="tabpanel"
+          aria-labelledby="step-1"
+        >
+          <input
+            type="text"
+            id="inputStep1"
+            placeholder="Nhập dữ liệu cho Bước 1"
+          />
+        </div>
+        <div
+          id="step-2"
+          class="tab-pane"
+          role="tabpanel"
+          aria-labelledby="step-2"
+        >
+          <input
+            type="text"
+            id="inputStep2"
+            placeholder="Nhập dữ liệu cho Bước 2"
+          />
+        </div>
+        <div
+          id="step-3"
+          class="tab-pane"
+          role="tabpanel"
+          aria-labelledby="step-3"
+        >
+          <input
+            type="text"
+            id="inputStep3"
+            placeholder="Nhập dữ liệu cho Bước 3"
+          />
+        </div>
+        <div
+          id="step-4"
+          class="tab-pane"
+          role="tabpanel"
+          aria-labelledby="step-4"
+        >
+          giá trị của inputStep1: <span id="outputStep1"></span>
+          <br />
+          giá trị của inputStep2: <span id="outputStep2"></span>
+          <br />
+          giá trị của inputStep3: <span id="outputStep3"></span>
         </div>
       </div>
     </div>
-  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/smartwizard/5.1.0/js/jquery.smartWizard.min.js"></script>
-  <script>
-    $(document).ready(function(){
-      $('#smartwizard').smartWizard({
-        theme: 'default',
-        transitionEffect: 'fade',
-        toolbarSettings: {
-          toolbarPosition: 'none' // Ẩn thanh công cụ
-        },
-        onLeaveStep: function(){
-          sendData();
-          return true;
+    <script>
+      $(document).ready(function () {
+        $("#smartwizard").smartWizard({
+          onLeaveStep: leaveStep,
+          onFinish: sendData,
+        });
+
+        $(".sw-btn-next").text("Tiếp theo");
+        $(".sw-btn-prev").text("Quay lại");
+
+        // Lấy dữ liệu từ localStorage và điền vào các trường nhập liệu
+        var data = JSON.parse(localStorage.getItem("data"));
+        if (data) {
+          $("#inputStep1").val(data.stt);
+          $("#inputStep2").val(data.input2);
+          $("#inputStep3").val(data.input3);
         }
+
+        $(".sw-btn-next").on("click", function () {
+          sendData();
+        });
       });
 
-      $('.sw-btn-next').on('click', function(){
-        $('#smartwizard').smartWizard("next");
-      });
-    });
+      function leaveStep(obj, context) {
+        var data = {
+          stt: $("#inputStep1").val(),
+          input2: $("#inputStep2").val(),
+          input3: $("#inputStep3").val(),
+        };
 
-    function sendData() {
-      var currentStep = $('#smartwizard').smartWizard("getStepIndex") + 1;
-      var data = {};
-
-      if (currentStep === 1) {
-        data.inputStep1 = $('#inputStep1').val();
-      } else if (currentStep === 2) {
-        data.inputStep2 = $('#inputStep2').val();
-      } else if (currentStep === 3) {
-        data.inputStep3 = $('#inputStep3').val();
+        localStorage.setItem("data", JSON.stringify(data));
+        return true;
       }
 
-      // Gửi dữ liệu bằng URL parameters
-      var params = new URLSearchParams(data);
-      var url = 'formwizard.html?' + params.toString();
-      window.location.href = url;
-    }
-  </script>
-</body>
+      function sendData() {
+        var data = {
+          stt: $("#inputStep1").val(),
+          input2: $("#inputStep2").val(),
+          input3: $("#inputStep3").val(),
+        };
+
+        localStorage.setItem("data", JSON.stringify(data));
+        // Tiếp theo, bạn có thể thực hiện các hành động khác sau khi lưu dữ liệu
+      }
+    </script>
+  </body>
 </html>

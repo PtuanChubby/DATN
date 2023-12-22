@@ -434,51 +434,11 @@ function handleCheckboxChange(event, siblingCheckboxId) {
   }
 }
 // End Checkbox
-// (function () {
-//   // Khởi tạo SmartWizard
-//   // Sự kiện khi chuyển đến bước trước đó
-//   $("#smartwizard").on(
-//     "leaveStep",
-//     function (e, anchorObject, stepNumber, stepDirection) {
-//       if (stepDirection === "backward" && stepNumber === 3) {
-//         var inputStep3Value = $("#inputStep3").val();
-//         $("#inputStep3Value").text(inputStep3Value);
-//         updateStep4Data();
-//       }
-//     }
-//   );
 
-//   // Sự kiện khi chuyển đến bước tiếp theo
-//   $("#smartwizard").on(
-//     "showStep",
-//     function (e, anchorObject, stepNumber, stepDirection) {
-//       if (stepDirection === "forward" && stepNumber === 2) {
-//         var inputStep1Value = $("#inputStep1").val();
-//         var inputStep2Value = $("#inputStep2").val();
-//         var inputStep3Value = $("#inputStep3").val();
-//         $("#inputStep1Value").text(inputStep1Value);
-//         $("#inputStep2Value").text(inputStep2Value);
-//         $("#inputStep3Value").text(inputStep3Value);
-//       }
-//       if (stepNumber === 3) {
-//         updateStep4Data();
-//       }
-//     }
-//   );
-
-//   // Hàm cập nhật dữ liệu cho Bước 4
-//   function updateStep4Data() {
-//     var inputStep1Value = $("#inputStep1").val();
-//     var inputStep2Value = $("#inputStep2").val();
-//     var inputStep3Value = $("#inputStep3").val();
-//     $("#inputStep1Value").text(inputStep1Value);
-//     $("#inputStep2Value").text(inputStep2Value);
-//     $("#inputStep3Value").text(inputStep3Value);
-//   }
-// });
-// End Multi Step Form
 // upload file
-function handleFileUpload() {
+function handleFileUpload(event) {
+  event.preventDefault(); // Ngăn chặn hành vi mặc định của form
+
   const fileInput = document.getElementById("inputFile");
   fileInput.accept = ".pdf"; // Chỉ chấp nhận tệp PDF
   fileInput.click();
@@ -486,16 +446,63 @@ function handleFileUpload() {
 
 function displayFileInfo() {
   const fileInput = document.getElementById("inputFile");
-  const fileDisplay = document.getElementById("file-display");
-  const fileName = fileInput.files[0].name;
+  const fileList = document.getElementById("file-list");
 
-  fileDisplay.innerHTML = `<strong>File đã tải lên:</strong> ${fileName}<i class="fas fa-times delete-icon" onclick="deleteFile()"></i>`;
+  fileList.innerHTML = ""; // Xóa danh sách tệp hiện tại
+
+  const files = [...fileInput.files];
+  files.forEach((file) => {
+    const listItem = document.createElement("li");
+    listItem.classList.add("file-item");
+    listItem.innerHTML = `
+    <strong>${file.name}</strong>
+    <i class="fa-solid fa-xmark delete-icon" onclick="deleteFile(this)"></i>
+  `;
+    fileList.appendChild(listItem);
+  });
 }
 
-function deleteFile() {
-  const fileInput = document.getElementById("inputFile");
-  fileInput.value = "";
-  const fileDisplay = document.getElementById("file-display");
-  fileDisplay.innerHTML = "Không có tệp nào được chọn";
+function deleteFile(deleteIcon) {
+  const listItem = deleteIcon.parentNode;
+  const fileList = document.getElementById("file-list");
+  fileList.removeChild(listItem);
 }
+
+function initializeFileDropzone() {
+  const dropzone = document.querySelector(".dropzone");
+
+  dropzone.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    dropzone.classList.add("highlight");
+  });
+
+  dropzone.addEventListener("dragleave", () => {
+    dropzone.classList.remove("highlight");
+  });
+
+  dropzone.addEventListener("drop", (e) => {
+    e.preventDefault();
+    dropzone.classList.remove("highlight");
+    const fileInput = document.getElementById("inputFile");
+    const files = e.dataTransfer.files;
+    fileInput.files = files;
+    displayFileInfo();
+  });
+}
+document.addEventListener("DOMContentLoaded", function () {
+  initializeFileDropzone();
+
+  const nextButton = document.getElementById("btn-next");
+  const fileButton = document.querySelector(".dropzone");
+
+  nextButton.addEventListener("click", function (event) {
+    event.preventDefault(); // Ngăn chặn hành vi mặc định của form
+    // Thực hiện các xử lý khác (chuyển đến bước tiếp theo, vv.)
+  });
+
+  fileButton.addEventListener("click", handleFileUpload);
+});
 // end upload file
+// Multi Step Form
+
+// End Multi Step Form

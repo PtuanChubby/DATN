@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trang cá nhân | TV-TTH | USSH-VNUHCM</title>
+    <link href="/Asset/IMG/610_TVTT.png" rel="icon" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/bootstrap-5.3.2-dist/css/bootstrap.min.css" />
+    <!-- Main CSS-->
+    <!-- <link rel="stylesheet" type="text/css" href="./Asset/CSS/css/main.css" /> -->
+    <!-- Font-icon css-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/4ced78dcc2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/fontawesome-free-6.4.2-web/css/all.css" />
+    <!-- smart-wizard -->
+    <!-- <link rel="stylesheet" href="/Asset/CSS/smart/smart_wizard_all.min.css" /> -->
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="/Asset/CSS/mainUSSH.css" />
+  </head>
+  <body class="app sidebar-mini">
+    <!-- Navbar-->
+    <header class="app-header">
+      <!-- Sidebar toggle button-->
+      <a
+        class="app-sidebar__toggle"
+        href="#"
+        data-toggle="sidebar"
+        aria-label="Hide Sidebar"
+        ><i class="icon fa-solid fa-bars fs-5"></i
+      ></a>
+      <!-- <div class="title-header">
+        <h5><i class="bi bi-book-half"></i> HỆ THỐNG QUẢN LÝ ĐỀ TÀI</h5>
+      </div> -->
+      <!-- Navbar Right Menu-->
+      <ul class="app-nav">
+        <li class="app-search">
+          <input
+            class="app-search__input"
+            type="search"
+            placeholder="Tìm kiếm"
+          />
+          <button class="app-search__button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </li>
+        <!--Notification Menu-->
+        <li class="dropdown">
+          <a
+            class="app-nav__item"
+            href="#"
+            data-bs-toggle="dropdown"
+            aria-label="Show notifications"
+            ><i class="fa-regular fa-bell fs-5"></i
+          ></a>
+          <ul class="app-notification dropdown-menu dropdown-menu-right">
+            <li class="app-notification__title">
+              You have 4 new notifications.
+            </li>
+            <div class="app-notification__content">
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-envelope fs-4 text-primary"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Lisa sent you a mail
+                    </p>
+                    <p class="app-notification__meta">2 min ago</p>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-exclamation-triangle fs-4 text-warning"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Mail server not working
+                    </p>
+                    <p class="app-notification__meta">5 min ago</p>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-cash fs-4 text-success"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Transaction complete
+                    </p>
+                    <p class="app-notification__meta">2 days ago</p>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-envelope fs-4 text-primary"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Lisa sent you a mail
+                    </p>
+                    <p class="app-notification__meta">2 min ago</p>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-exclamation-triangle fs-4 text-warning"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Mail server not working
+                    </p>
+                    <p class="app-notification__meta">5 min ago</p>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a class="app-notification__item" href="javascript:;"
+                  ><span class="app-notification__icon"
+                    ><i class="bi bi-cash fs-4 text-success"></i
+                  ></span>
+                  <div>
+                    <p class="app-notification__message">
+                      Transaction complete
+                    </p>
+                    <p class="app-notification__meta">2 days ago</p>
+                  </div></a
+                >
+              </li>
+            </div>
+            <li class="app-notification__footer">
+              <a href="#">See all notifications.</a>
+            </li>
+          </ul>
+        </li>
+        <!-- User Menu-->
+        <li class="dropdown">
+          <a
+            class="app-nav__item"
+            href="#"
+            data-bs-toggle="dropdown"
+            aria-label="Open Profile Menu"
+            ><i class="fa-regular fa-user fs-5"></i
+          ></a>
+          <ul class="dropdown-menu settings-menu dropdown-menu-right">
+            <li>
+              <a class="dropdown-item" href="page-user.html"
+                ><i class="bi bi-gear me-2 fs-5"></i> Settings</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="page-user.html"
+                ><i class="bi bi-person me-2 fs-5"></i> Profile</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="page-login.html"
+                ><i class="bi bi-box-arrow-right me-2 fs-5"></i> Logout</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </header>
+    <!-- Sidebar menu-->
+    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+    <aside class="app-sidebar">
+      <div class="app-header__logo">
+        <img
+          class="app-header__logo-avatar"
+          src="/Asset/IMG/610_TVTT.png"
+          alt="User Image"
+        />
+        <div>
+          <b class="app-header__logo-name">Khoa thư viện thông tin học</b>
+          <p class="app-header__logo-designation">Quản lý hoạt động NCKH</p>
+        </div>
+      </div>
+      <ul class="app-menu">
+        <li>
+          <a class="app-menu__item" href="#">
+            <i class="app-menu__icon fa-solid fa-house"></i>
+            <span class="app-menu__label">Trang chủ</span></a
+          >
+        </li>
+        <li class="my-md-3">
+          <span class="app-sidebar-title fw-semibold">ĐỀ TÀI</span>
+        </li>
+        <li>
+          <a class="app-menu__item ps-4" href="trangchu1.html">
+            <i class="app-menu__icon fa-solid fa-list"></i>
+            <span class="app-menu__label">Danh mục đề tài</span></a
+          >
+          <a class="app-menu__item ps-4 active" href="#">
+            <i class="app-menu__icon fa-solid fa-folder-open"></i>
+            <span class="app-menu__label">Đăng ký</span></a
+          >
+          <a class="app-menu__item ps-4" href="trangchu1.html">
+            <i class="app-menu__icon fa-solid fa-file"></i>
+            <span class="app-menu__label">Quản lý đề tài</span></a
+          >
+        </li>
+        <li class="my-md-3">
+          <span class="app-sidebar-title fw-semibold">ĐÁNH GIÁ</span>
+        </li>
+        <li>
+          <a class="app-menu__item ps-4" href="#">
+            <i class="app-menu__icon fa-solid fa-list"></i>
+            <span class="app-menu__label">Nhận xét của giảng viên</span></a
+          >
+          <a class="app-menu__item ps-4" href="#">
+            <i class="app-menu__icon fa-solid fa-folder-open"></i>
+            <span class="app-menu__label">Điểm đề tài</span></a
+          >
+        </li>
+        <li class="my-md-2">
+          <span class="app-sidebar-title fw-semibold">TÀI KHOẢN</span>
+        </li>
+        <li>
+          <a class="app-menu__item ps-4" href="#">
+            <i class="app-menu__icon fa-solid fa-user"></i>
+            <span class="app-menu__label">Thông tin tài khoản</span></a
+          >
+        </li>
+      </ul>
+
+      <div class="app-footer__user">
+        <img
+          class="app-footer__user-avatar"
+          src="/Asset/IMG/PNGH.jpg"
+          alt="User Image"
+        />
+        <div>
+          <b class="app-footer__user-name">Phạm Ngọc Gia Hân</b>
+          <p class="app-footer__user-designation">Sinh viên</p>
+        </div>
+        <button class="log-out__icon">
+          <a href="#"><i class="fa-solid fa-right-to-bracket"></i></a>
+        </button>
+      </div>
+    </aside>
+    <main class="app-content">
+      <div class="app-title">
+        <div class="panel-title">
+          <div class="breadcrumb-item">
+            <a class="icon-return" href="#"
+              ><i class="fa-solid fa-arrow-left mt-1"></i>Quay lại</a
+            >
+          </div>
+          <b class="panel-heading">Đề tài đang đăng ký</b>
+          <p class="panel-subtitle">
+            Biểu mẫu điền thông tin đăng ký đề tài nghiên cứu khoa học danh cho
+            sinh viên
+          </p>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+
+      <div class="app-step">
+        <div class="row">
+          <div class="card shadow">
+            <div class="card-body">
+              <form class="form-content ">
+                <!-- progressbar -->
+                <div class="msform position-sticky" style="max-height: 5.5rem">
+                  <ul class="progressbar">
+                    <li class="active stepOne">
+                      <span class="step-title">Thông tin chung</span>
+                    </li>
+                    <li class="stepTwo">
+                      <span class="step-title">Mô tả nghiên cứu</span>
+                    </li>
+                    <li class="stepThree">
+                      <span class="step-title">Đăng ký sản phẩm</span>
+                    </li>
+                    <li class="stepFour">
+                      <span class="step-title">Xem hồ sơ</span>
+                    </li>
+                  </ul>
+                </div>
+                <!-- Có thể viết thêm style này để scroll
+                    style="
+                    max-height: calc(63vh);
+                    overflow-y: scroll;
+                    overflow-x: hidden;
+                  " -->
+                <div class="fieldset-card">
+                  <!-- Step 1 -->
+                  <fieldset>
+                    <div action="" class="form-horizontal">
+                      <div class="row">
+                        <div class="col-md-12 mt-2">
+                          <div class="card">
+                            <div class="card-header">
+                              <h4 class="card-title">A. THÔNG TIN CHUNG</h4>
+                            </div>
+                            <div class="card-body">
+                              <div class="card-group">
+                                <div class="col-12 mt-2">
+                                  <div class="title-form">
+                                    <h5 for="inputName">
+                                      A1.Tên đề tài và loại đề tài
+                                    </h5>
+                                  </div>
+                                  <div class="row">
+                                    <div class="form-group required">
+                                      <label for="inputNameTV" class="mb-1"
+                                        >Tên tiếng việt<span
+                                          class="required-star ms-1 mb-4"
+                                          >*</span
+                                        ></label
+                                      >
+                                      <textarea
+                                        class="form-control input-name__detai"
+                                        id="inputNameTV"
+                                        cols="30"
+                                        rows="1"
+                                      ></textarea>
+                                      <div class="invalid-feedback">
+                                        Please enter your name.
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="form-group required mt-2">
+                                      <label for="inputNameTA" class="mb-1"
+                                        >Tên tiếng anh<span
+                                          class="required-star ms-1"
+                                          >*</span
+                                        ></label
+                                      >
+                                      <textarea
+                                        class="form-control input-name__detai"
+                                        id="inputNameTA"
+                                        cols="30"
+                                        rows="1"
+                                      ></textarea>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="form-group required mt-2">
+                                      <label for="inputNameTA" class="mb-1"
+                                        >Loại đề tài<span
+                                          class="required-star ms-1"
+                                          >*</span
+                                        ></label
+                                      >
+                                      <select
+                                        id="inputLoaidetai"
+                                        class="form-control"
+                                        required
+                                      >
+                                        <option selected="" disabled="">
+                                          Loại đề tài
+                                        </option>
+                                        <option>Cấp khoa</option>
+                                        <option>Cấp trường</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="card-group"
+                                onsubmit="return validateForm()"
+                              >
+                                <div class="col-12 mt-2">
+                                  <div class="title-form">
+                                    <h5 for="inputName">
+                                      A2. Thuộc ngành/nhóm ngành:
+                                    </h5>
+                                  </div>
+                                  <div class="row">
+                                    <div class="form-group required">
+                                      <label
+                                        for="inputhedaotao"
+                                        class="col-form-label col-md-12 col-sm-3 label-align"
+                                        >Hệ đào tạo<span
+                                          class="required-star ms-1 mb-4"
+                                          >*</span
+                                        ></label
+                                      >
+                                      <select
+                                        name=""
+                                        id="inputhedaotao"
+                                        class="form-control"
+                                        required
+                                      >
+                                        <option selected="" disabled="">
+                                          Chọn hệ đào tạo
+                                        </option>
+                                        <option>Chương trình chuẩn</option>
+                                        <!-- <option>Chương trình chất lượng cao</option> -->
+                                      </select>
+                                      <div class="invalid-feedback">
+                                        Vui lòng chọn hệ đào tạo.
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div
+                                      class="form-group required mt-2 col-md-6"
+                                    >
+                                      <label
+                                        for="inputnhomnganh"
+                                        class="col-form-label col-md-12 col-sm-3 label-align"
+                                        >Nhóm ngành<span
+                                          class="required-star ms-1"
+                                          >*</span
+                                        ></label
+                                      >
+                                      <input
+                                        type="text"
+                                        id="inputnhomnganh"
+                                        class="form-control"
+                                        required
+                                      />
+                                      <div class="invalid-feedback">
+                                        Vui lòng nhập nhóm ngành.
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="form-group required mt-2 col-md-6"
+                                    >
+                                      <label
+                                        for="inputchuyennganhhep"
+                                        class="col-form-label col-md-12 col-sm-3 label-align"
+                                        >Chuyên ngành hẹp<span
+                                          class="required-star ms-1"
+                                          >*</span
+                                        ></label
+                                      >
+                                      <select
+                                        name=""
+                                        id="inputchuyennganhhep"
+                                        class="form-control"
+                                        required
+                                      >
+                                        <option selected="" disabled="">
+                                          Chọn Chuyên ngành
+                                        </option>
+                                        <option>Quản lý thông tin</option>
+                                        <option>Thông tin thư viện</option>
+                                      </select>
+                                      <div class="invalid-feedback">
+                                        Vui lòng chọn chuyên ngành hẹp.
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="card-group">
+                                <div class="col-12 mt-2">
+                                  <div class="title-form">
+                                    <h5 for="inputName">
+                                      A3. Thông tin chủ nhiệm đề tài
+                                    </h5>
+                                  </div>
+                                  <div class="row">
+                                    <div
+                                      class="form-group required mt-2 col-md-6"
+                                    >
+                                      <label for="inputNameHT" class="mb-1"
+                                        >Họ và tên<span
+                                          class="required-star ms-1 mb-4"
+                                          >*</span
+                                        ></label
+                                      >
+                                      <input
+                                        type="text"
+                                        id="inputNameHT"
+                                        class="form-control"
+                                      />
+                                    </div>
+                                    <div
+                                      class="form-group required mt-2 col-md-6"
+                                    >
+                                      <label for="input-mssv-cn" class="mb-1"
+                                        >MSSV<span class="required-star ms-1"
+                                          >*</span
+                                        ></label
+                                      >
+                                      <input
+                                        type="number"
+                                        id="input-mssv-cn"
+                                        class="form-control"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div
+                                      class="form-group required mt-2 col-md-6"
+                                    >
+                                      <label
+                                        for="birthday"
+                                        class="col-form-label col-md-12 col-sm-3 label-align"
+                                        >Ngày sinh
+                                        <span class="required-star ms-1"
+                                          >*</span
+                                        >
+                                      </label>
+                                      <input
+                                        id="birthday"
+                                        class="form-control"
+                                        placeholder="dd-mm-yyyy"
+                                        type="date"
+                                        required="required"
+                                      />
+                                    </div>
+
+                                    <div
+                                      class="form-group required mt-2 col-md-6"
+                                    >
+                                      <label
+                                        for="inputGioitinh"
+                                        class="col-form-label col-md-12 col-sm-3 label-align"
+                                        >Giới tính<span
+                                          class="required-star ms-1"
+                                          >*</span
+                                        >
+                                      </label>
+                                      <select
+                                        id="inputGioitinh"
+                                        class="form-control custom-select"
+                                      >
+                                        <option selected="" disabled="">
+                                          Chọn giới tính
+                                        </option>
+                                        <option>Nam</option>
+                                        <option>Nữ</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div
+                                      class="form-group required mt-2 col-md-4"
+                                    >
+                                      <label
+                                        for="inputCCCD"
+                                        class="col-form-label col-md-12 col-sm-3 label-align"
+                                        >Số CCCD<span class="required-star ms-1"
+                                          >*</span
+                                        >
+                                      </label>
+                                      <input
+                                        type="number"
+                                        id="inputCCCD"
+                                        class="form-control"
+                                      />
+                                    </div>
+                                    <div
+                                      class="form-group required mt-2 col-md-4"
+                                    >
+                                      <label
+                                        for="inputNoicap"
+                                        class="col-form-label label-align"
+                                        >Nơi cấp<span
+                                          class="required-star ms-1 mb-4"
+                                          >*</span
+                                        ></label
+                                      >
+                                      <input
+                                        type="text"
+                                        id="inputNoicap"
+                                        class="form-control"
+                                      />
+                                    </div>
+                                    <div
+                                      class="form-group required mt-2 col-md-4"
+                                    >
+                                      <label
+                                        for="dateofissua"
+                                        class="col-form-label col-md-12 col-sm-3 label-align"
+                                        >Ngày cấp
+                                        <span class="required-star ms-1"
+                                          >*</span
+                                        >
+                                      </label>
+                                      <input
+                                        id="dateofissua"
+                                        class="form-control"
+                                        placeholder="dd-mm-yyyy"
+                                        type="date"
+                                        required="required"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div
+                                      class="form-group required mt-2 col-md-6"
+                                    >
+                                      <label
+                                        for="inputSTK"
+                                        class="col-form-label label-align"
+                                        >Số tài khoản ngân hàng<span
+                                          class="required-star ms-1 mb-4"
+                                          >*</span
+                                        ></label
+                                      >
+                                      <input
+                                        type="text"
+                                        id="inputSTK"
+                                        class="form-control"
+                                      />
+                                    </div>
+                                    <div
+                                      class="form-group required mt-2 col-md-6"
+                                    >
+                                      <label
+                                        for="inputTaiNH"
+                                        class="col-form-label label-align"
+                                        >tại Ngân hàng<span
+                                          class="required-star ms-1"
+                                          >*</span
+                                        ></label
+                                      >
+                                      <input
+                                        type="text"
+                                        id="inputTaiNH"
+                                        class="form-control"
+                                      />
+                                    </div>
+                                    <div class="form-group required mt-2">
+                                      <label
+                                        for="inputCNNH"
+                                        class="col-form-label label-align"
+                                        >Chi nhánh ngân hàng<span
+                                          class="required-star ms-1"
+                                          >*</span
+                                        ></label
+                                      >
+                                      <input
+                                        type="text"
+                                        id="inputCNNH"
+                                        class="form-control"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="form-group required mt-2">
+                                      <label
+                                        for="inputDiachi"
+                                        class="col-form-label col-md-12 col-sm-3 label-align"
+                                        >Địa chỉ liên hệ<span
+                                          class="required-star ms-1 mb-4"
+                                          >*</span
+                                        ></label
+                                      >
+                                      <textarea
+                                        class="form-control input-name__detai"
+                                        id="inputDiachi"
+                                        cols="30"
+                                        rows="1"
+                                      ></textarea>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div
+                                      class="form-group required mt-2 col-md-6"
+                                    >
+                                      <label
+                                        for="inputSDT"
+                                        class="col-form-label col-md-12 col-sm-3 label-align"
+                                        >Điện thoại<span
+                                          class="required-star ms-1 mb-4"
+                                          >*</span
+                                        ></label
+                                      >
+                                      <input
+                                        type="number"
+                                        id="inputSDT"
+                                        class="form-control"
+                                      />
+                                    </div>
+                                    <div
+                                      class="form-group required mt-2 col-md-6"
+                                    >
+                                      <label
+                                        for="inputEmail"
+                                        class="col-form-label col-md-12 col-sm-3 label-align"
+                                        >Email<span class="required-star ms-1"
+                                          >*</span
+                                        ></label
+                                      >
+                                      <input
+                                        type="email"
+                                        id="inputEmail"
+                                        class="form-control"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="card-group">
+                                <div class="col-12 mt-2">
+                                  <div class="title-form">
+                                    <h5 for="inputName">
+                                      A4. Thông tin nhóm nghiên cứu:
+                                    </h5>
+                                    <button
+                                      type="button"
+                                      class="add-member-btn"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#member-modal"
+                                    >
+                                      <i class="fa-solid fa-user-plus"></i>
+                                    </button>
+                                  </div>
+                                  <div class="row">
+                                    <div class="form-table form-group required">
+                                      <div id="member-list"></div>
+                                    </div>
+                                  </div>
+
+                                  <div
+                                    class="modal fade"
+                                    id="member-modal"
+                                    tabindex="-1"
+                                    role="dialog"
+                                    aria-labelledby="member-modal-label"
+                                    aria-hidden="true"
+                                  >
+                                    <div
+                                      class="modal-dialog modal-dialog-centered"
+                                      role="document"
+                                    >
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5
+                                            class="modal-title"
+                                            id="member-modal-label"
+                                          >
+                                            Thông tin thành viên
+                                          </h5>
+                                          <button
+                                            id="close-member-btn"
+                                            type="button"
+                                            class="btn-close"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close"
+                                          ></button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <form id="member-form">
+                                            <div class="input-group">
+                                              <div class="info-email required">
+                                                <label
+                                                  for="input-text-email"
+                                                  class="mb-1"
+                                                >
+                                                  Email
+                                                  <span class="required-star"
+                                                    >*</span
+                                                  >
+                                                </label>
+                                                <input
+                                                  type="email"
+                                                  class="form-control"
+                                                  placeholder="Email"
+                                                  id="input-email"
+                                                  required
+                                                />
+                                              </div>
+                                              <div class="info-ht required">
+                                                <label
+                                                  for="input-text-name"
+                                                  class="mb-1"
+                                                >
+                                                  Họ và tên
+                                                  <span class="required-star"
+                                                    >*</span
+                                                  >
+                                                </label>
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  placeholder="Họ và tên"
+                                                  id="input-name"
+                                                  required
+                                                />
+                                              </div>
+                                              <div class="info-mssv required">
+                                                <label
+                                                  for="input-text-mssv"
+                                                  class="mb-1"
+                                                >
+                                                  Mã số sinh viên
+                                                  <span class="required-star"
+                                                    >*</span
+                                                  >
+                                                </label>
+                                                <input
+                                                  type="number"
+                                                  class="form-control"
+                                                  placeholder="MSSV"
+                                                  id="input-mssv"
+                                                  required
+                                                />
+                                              </div>
+                                              <div class="info-nganh required">
+                                                <label
+                                                  for="input-text-nganh"
+                                                  class="mb-1"
+                                                >
+                                                  Ngành
+                                                  <span class="required-star"
+                                                    >*</span
+                                                  >
+                                                </label>
+                                                <select
+                                                  id="input-nganh"
+                                                  class="form-control"
+                                                  placeholder="Ngành"
+                                                  required
+                                                >
+                                                  <option
+                                                    selected=""
+                                                    disabled=""
+                                                  >
+                                                    Chọn chuyên ngành
+                                                  </option>
+                                                  <option>
+                                                    Thông tin thư viện
+                                                  </option>
+                                                  <option>
+                                                    Quản lý thông tin
+                                                  </option>
+                                                </select>
+                                              </div>
+                                              <div class="info-cvu required">
+                                                <label for="input-text-office"
+                                                  >Phân công (chủ trì hoặc tham
+                                                  gia)
+                                                  <span class="required-star"
+                                                    >*</span
+                                                  >
+                                                </label>
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  placeholder="Chức vụ"
+                                                  id="input-cvu"
+                                                  required
+                                                />
+                                              </div>
+                                            </div>
+                                          </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button
+                                            type="button"
+                                            class="btn btn-secondary"
+                                            data-bs-dismiss="modal"
+                                            id="close-member-btn"
+                                          >
+                                            Đóng
+                                          </button>
+                                          <button
+                                            type="button"
+                                            class="btn btn-primary"
+                                            id="add-member-btn"
+                                          >
+                                            Thêm
+                                          </button>
+                                          <button
+                                            type="button"
+                                            class="btn btn-primary"
+                                            id="save-member-btn"
+                                            style="display: none"
+                                          >
+                                            Lưu
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="card-group">
+                                <div class="col-12 mt-2">
+                                  <div class="title-form">
+                                    <h5 for="inputName">
+                                      A5. Kinh phí(đề xuất):
+                                    </h5>
+                                  </div>
+                                  <div class="row">
+                                    <div class="form-group required">
+                                      <label for="inputSotienso" class="mb-1"
+                                        >Số tiền bằng số (VND)<span
+                                          class="required-star ms-1 mb-4"
+                                          >*</span
+                                        ></label
+                                      >
+                                      <input
+                                        type="number"
+                                        id="inputSotienso"
+                                        class="form-control"
+                                      />
+                                    </div>
+                                    <div class="form-group required mt-2">
+                                      <label for="inputSotienchu" class="mb-1"
+                                        >Số tiền bằng chữ<span
+                                          class="required-star ms-1 mb-4"
+                                          >*</span
+                                        ></label
+                                      >
+                                      <input
+                                        type="text"
+                                        id="inputSotienchu"
+                                        class="form-control"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Action Space - NEXT & PREVIOUS BUTTON -->
+                    <div class="row justify-content-end px-2">
+                      <div class="col-auto">
+                        <button
+                          type="button"
+                          name="next"
+                          class="btn fw-semibold btn-primary next action-button"
+                          id="btn-next-1"
+                        >
+                          Tiếp theo
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <!-- Step 2 -->
+                  <fieldset>
+                    <div action="" class="form-horizontal">
+                      <div class="row">
+                        <div class="col-md-12 mt-2">
+                          <div class="card">
+                            <div class="card-header">
+                              <h4 class="card-title">B. MÔ TẢ NGHIÊN CỨU</h4>
+                            </div>
+                            <div class="card-body">
+                              <h5>File Mô tả nghiên cứu gồm các mục sau:</h5>
+                              <ul class="list-disc">
+                                <li>
+                                  <span class="font-normal text-lg"
+                                    >B1. Lý do chọn đề tài</span
+                                  >
+                                </li>
+                                <li>
+                                  <span class="font-normal text-lg"
+                                    >B2. Tổng quan tình hình nghiên cứu</span
+                                  >
+                                </li>
+                                <li>
+                                  <span class="font-normal text-lg"
+                                    >B3. Mục tiêu nghiên cứu</span
+                                  >
+                                </li>
+                                <li>
+                                  <span class="font-normal text-lg"
+                                    >B4. Đối tượng và phạm vi nghiên cứu</span
+                                  >
+                                </li>
+                                <li>
+                                  <span class="font-normal text-lg"
+                                    >B5. Phương pháp nghiên cứu</span
+                                  >
+                                </li>
+                                <li>
+                                  <span class="font-normal text-lg"
+                                    >B6. Ý nghĩa khoa học và thực tiễn</span
+                                  >
+                                </li>
+                                <li>
+                                  <span class="font-normal text-lg"
+                                    >B7. Bố cục đề tài</span
+                                  >
+                                </li>
+                                <li>
+                                  <span class="font-normal text-lg"
+                                    >B8. Đăng ký sản phẩm khoa học của đề tài
+                                  </span>
+                                </li>
+                              </ul>
+                              <div class="ps-sm-3">
+                                <div class="mt-sm-4">
+                                  <div class="mb-3">
+                                    <div class="title-form">
+                                      <h5>Đăng tải file mô tả nghiên cứu:</h5>
+                                    </div>
+
+                                    <div class="col-12 mt-2">
+                                      <div class="title-form">
+                                        <h6>Tải file mẫu tại đây:</h6>
+                                        <div class="ms-3 mb-2">
+                                          <a
+                                            href="./File/R01_Thuyet-minh-VNU-cap-nhat 2022-kh4-Muc-B.docx"
+                                            class="fs-5 fw-medium fst-italic"
+                                            download=""
+                                          >
+                                            <i
+                                              class="fs-6 fa-solid fa-download"
+                                            ></i>
+                                            <span class="fs-6 fw-semibold"
+                                              >Tải về</span
+                                            >
+                                          </a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="upload-container">
+                                    <div class="dropzone">
+                                      <a
+                                        href="#"
+                                        class="align-items-center d-flex btn btn-primary gap-2"
+                                        onclick="handleFileUpload(event)"
+                                      >
+                                        <i class="fas fa-upload"></i>Chọn file
+                                      </a>
+                                      <div class="form-text">
+                                        <span class="text-black"
+                                          >Nhấp để tải file vào đây để tải
+                                          lên</span
+                                        >
+                                        <span class="text-black-alpha-90"
+                                          >(Chỉ chấp nhận tải file pdf)</span
+                                        >
+                                      </div>
+                                    </div>
+                                    <input
+                                      type="file"
+                                      id="inputFile"
+                                      class="file-input"
+                                      onchange="displayFileInfo()"
+                                      multiple
+                                    />
+                                    <ul id="file-list" class="file-list"></ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+<!-- Action Space - NEXT & PREVIOUS BUTTON -->
+                    <div class="row justify-content-end px-3">
+                      <div class="col-auto">
+                        <button
+                          type="button"
+                          name="previous"
+                          class="btn btn-secondary previous action-button-previous"
+                        >
+                          Quay lại
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          type="button"
+                          name="next"
+                          class="btn btn-primary next action-button"
+                        >
+                          Tiếp theo
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <!-- Step 3 -->
+                  <fieldset>
+                    <div class="form-card">Fieldset 3</div>
+<!-- Action Space - NEXT & PREVIOUS BUTTON -->
+                    <div class="row justify-content-end px-3">
+                      <div class="col-auto">
+                        <button
+                          type="button"
+                          name="previous"
+                          class="btn btn-secondary previous action-button-previous"
+                        >
+                          Quay lại
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button
+                          type="button"
+                          name="next"
+                          class="btn btn-primary next action-button"
+                        >
+                          Tiếp theo
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <!-- Step 4 -->
+                  <fieldset>
+                    <div action="" class="form-horizontal">
+                      <div class="app-form-button">
+                        <div class="d-flex justify-content-end gap-2">
+                          <button
+                            aria-label="Tải hồ sơ đề tài"
+                            type="button"
+                            class="btn btn-warning d-block w-auto h-25"
+                          >
+                            <span class="button-icon me-lg-2">
+                              <i class="fa-solid fa-download"></i>
+                            </span>
+                            <span class="fw-bold">Tải hồ sơ đề tài</span>
+                            <span role="presentation" class="btn-link"></span>
+                          </button>
+                          <button
+                            aria-label="Xuất file Word"
+                            type="button"
+                            class="btn btn-info d-block w-auto h-25"
+                          >
+                            <span class="button-icon me-lg-2">
+                              <i class="fa-regular fa-file-word"></i>
+                            </span>
+                            <span class="fw-bold">Xuất file Word</span>
+                            <span role="presentation" class="btn-link"></span>
+                          </button>
+                          <button
+                            aria-label="Xuất file PDF"
+                            type="button"
+                            class="btn btn-danger d-block w-auto h-25"
+                          >
+                            <span class="button-icon me-lg-2">
+                              <i class="fa-regular fa-file-pdf"></i>
+                            </span>
+                            <span class="fw-bold">Xuất file PDF</span>
+                            <span role="presentation" class="btn-link"></span>
+                          </button>
+                          <div class="d-flex flex-column align-items-end">
+                            <button
+                              aria-label="In PDF"
+                              type="button"
+                              class="btn btn-primary d-block w-auto"
+                            >
+                              <span class="button-icon me-lg-2">
+                                <i class="fa-solid fa-print"></i>
+                              </span>
+                              <span class="fw-bold">In PDF</span>
+                              <span role="presentation" class="btn-link"></span>
+                            </button>
+                            <span class="cursor-pointer fs-7 text-blue mt-1"
+                              >Hướng dẫn in PDF
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        id="projectProposalDetail"
+                        class="m-0 bg-white p-5 p-fluid detail-info-project-proposal"
+                      >
+                        <style>
+                          @page {
+                            margin: 0.5in 0.5in 0.2in 0.2in !important;
+                          }
+                        </style>
+                        <div
+                          class="mb-5 d-flex justify-content-between align-items-center"
+                        >
+                          <img
+                            src="/Asset/IMG/Logo USSH.jpg"
+                            alt="VNU-HCM logo"
+                            height="75px"
+                            class="ml-3"
+                          />
+                          <div>
+                            <table class="text-black-alpha-90">
+                              <tbody>
+                                <tr>
+                                  <td colspan="2" class="p-1">
+                                    Mẫu R01 - Cập nhật 2022
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td
+                                    class="border-dotted border-1 p-1 w-10rem"
+                                  >
+                                    Ngày nhận hồ sơ
+                                  </td>
+                                  <td
+                                    class="border-dotted border-1 p-1 w-8rem"
+                                  ></td>
+                                </tr>
+                                <tr>
+                                  <td
+                                    class="border-dotted border-1 p-1 w-10rem"
+                                  >
+                                    Mã số đề tài
+                                  </td>
+                                  <td
+                                    class="border-dotted border-1 p-1 w-8rem"
+                                  ></td>
+                                </tr>
+                                <tr>
+                                  <td
+                                    colspan="2"
+                                    class="border-dotted border-1 p-1 text-center"
+                                  >
+                                    <span class="font-italic"
+                                      >(Do CQ quản lý ghi)</span
+                                    >
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <h3 class="mb-5 lh-base fs-2 text-center fw-bold">
+                          THUYẾT MINH<br /><span class="fw-normal"
+                            >ĐỀ TÀI NGHIÊN CỨU KHOA HỌC SINH VIÊN CẤP TRƯỜNG/
+                            KHOA</span
+                          >
+                        </h3>
+                        <div class="ms-sm-4">
+                          <div class="pb-sm-2">
+                            <h4>A. THÔNG TIN CHUNG</h4>
+                            <div class="col-md-12">
+                              <h4 class="mb-2">A1. Tên và loại đề tài</h4>
+                              <div class="d-flex ms-sm-5 fs-6 flex-sm-column">
+                                <div class="d-flex flex-wrap mb-1">
+                                  <div class="me-sm-2 fw-semibold">
+                                    Tên tiếng Việt:
+                                  </div>
+                                  <span
+                                    class="flex-fill"
+                                    id="inputNameTVValue"
+                                  ></span>
+                                </div>
+                                <div class="d-flex flex-wrap mb-1">
+                                  <div class="me-sm-2 fw-semibold">
+                                    Tên tiếng Anh:
+                                  </div>
+                                  <span
+                                    class="flex-fill"
+                                    id="inputNameTAValue"
+                                  ></span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <h4 class="mb-2">A2. Thuộc ngành/nhóm ngành</h4>
+                              <div class="d-flex ms-sm-5 fs-6 flex-sm-column">
+                                <div class="d-flex flex-wrap mb-1">
+                                  <div class="me-sm-2 fw-semibold">
+                                    Hệ đào tạo:
+                                  </div>
+                                  <span
+                                    class="flex-fill"
+                                    id="inputhedaotaoValue"
+                                  ></span>
+                                </div>
+                                <div class="d-flex flex-wrap mb-1">
+                                  <div class="me-sm-2 fw-semibold">
+                                    Chuyên ngành hẹp:
+                                  </div>
+                                  <span
+                                    class="flex-fill"
+                                    id="inputchuyennganhhepValue"
+                                  ></span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <h4 class="mb-2">A3. Chủ nhiệm</h4>
+                              <div class="d-flex ms-sm-5 fs-6 flex-sm-column">
+                                <div class="d-flex flex-wrap mb-1">
+                                  <div class="d-flex mb-2 w-50">
+                                    <div class="me-sm-2 fw-semibold">
+                                      Họ và tên:
+                                    </div>
+                                    <span
+                                      class="flex-fill"
+                                      id="inputNameHTValue"
+                                    ></span>
+                                  </div>
+                                  <div class="d-flex mb-2">
+                                    <div class="me-sm-2 fw-semibold">MSSV:</div>
+                                    <span
+                                      class="flex-fill"
+                                      id="input-mssv-cnValue"
+                                    ></span>
+                                  </div>
+                                </div>
+                                <div class="d-flex flex-wrap mb-1">
+                                  <div class="d-flex mb-2 w-50">
+                                    <div class="me-sm-2 fw-semibold">
+                                      Ngày tháng năm sinh:
+                                    </div>
+                                    <span
+                                      class="flex-fill"
+                                      id="birthdayValue"
+                                    ></span>
+                                  </div>
+                                  <div class="d-flex mb-2">
+                                    <div class="me-sm-2 fw-semibold">
+                                      Nam/Nữ:
+                                    </div>
+                                    <span
+                                      class="flex-fill"
+                                      id="inputGioitinhValue"
+                                    ></span>
+                                  </div>
+                                </div>
+                                <div class="d-flex flex-wrap mb-1">
+                                  <div class="d-flex mb-2 w-50">
+                                    <div class="me-sm-2 fw-semibold">
+                                      Số CCCD:
+                                    </div>
+                                    <span
+                                      class="flex-fill"
+                                      id="inputCCCDValue"
+                                    ></span>
+                                  </div>
+                                  <div class="d-flex mb-2 w-25">
+                                    <div class="me-sm-2 fw-semibold">
+                                      Nơi cấp:
+                                    </div>
+                                    <span
+                                      class="flex-fill"
+                                      id="inputNoicapValue"
+                                    ></span>
+                                  </div>
+                                  <div class="d-flex mb-2 w-25">
+                                    <div class="me-sm-2 fw-semibold">
+                                      Ngày cấp:
+                                    </div>
+                                    <span
+                                      class="flex-fill"
+                                      id="dateofissuaValue"
+                                    ></span>
+                                  </div>
+                                </div>
+                                <div class="d-flex flex-wrap mb-1">
+                                  <div class="d-flex mb-2 w-50">
+                                    <div class="me-sm-2 fw-semibold">
+                                      Số tài khoản:
+                                    </div>
+                                    <span
+                                      class="flex-fill"
+                                      id="inputSTKValue"
+                                    ></span>
+                                  </div>
+                                  <div class="d-flex mb-2 w-50">
+                                    <div class="me-sm-2 fw-semibold">
+                                      Tại ngân hàng:
+                                    </div>
+                                    <span
+                                      class="flex-fill"
+                                      id="inputTaiNHValue"
+                                    ></span>
+                                  </div>
+                                  <div class="d-flex mb-2">
+                                    <div class="me-sm-2 fw-semibold">
+                                      Chi nhánh:
+                                    </div>
+                                    <span
+                                      class="flex-fill"
+                                      id="inputCNNHValue"
+                                    ></span>
+                                  </div>
+                                </div>
+                                <div class="d-flex flex-wrap mb-1">
+                                  <div class="d-flex mb-2">
+                                    <div class="me-sm-2 fw-semibold">
+                                      Địa chỉ liên hệ:
+                                    </div>
+                                    <span
+                                      class="flex-fill"
+                                      id="inputDiachiValue"
+                                    ></span>
+                                  </div>
+                                </div>
+                                <div class="d-flex flex-wrap mb-1">
+                                  <div class="d-flex mb-2 w-50">
+                                    <div class="me-sm-2 fw-semibold">
+                                      Điện thoại di động:
+                                    </div>
+                                    <span
+                                      class="flex-fill"
+                                      id="inputSDTValue"
+                                    ></span>
+                                  </div>
+                                  <div class="d-flex mb-2">
+                                    <div class="me-sm-2 fw-semibold">
+                                      Email:
+                                    </div>
+                                    <span
+                                      class="flex-fill"
+                                      id="inputEmailValue"
+                                    ></span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <h4 class="mb-2">A4. Nhóm nghiên cứu</h4>
+                              <div class="d-flex ms-sm-5 fs-6 flex-sm-column">
+                                <div class="d-flex flex-wrap mb-1">
+                                  <div class="me-sm-2 fw-semibold">
+                                    Hệ đào tạo:
+                                  </div>
+                                  <span
+                                    class="flex-fill"
+                                    id="inputhedaotaoValue"
+                                  ></span>
+                                </div>
+                                <div class="d-flex flex-wrap mb-1">
+                                  <div class="me-sm-2 fw-semibold">
+                                    Chuyên ngành hẹp:
+                                  </div>
+                                  <span
+                                    class="flex-fill"
+                                    id="inputchuyennganhhepValue"
+                                  ></span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <h4 class="mb-2">
+                                A5. Kinh phí thực hiện(đề xuất):
+                              </h4>
+                              <div class="d-flex ms-sm-5 fs-6 flex-sm-column">
+                                <div class="d-flex flex-wrap mb-1">
+                                  <div class="me-sm-2 fw-semibold">
+                                    Số tiền bằng số (VND):
+                                  </div>
+                                  <span
+                                    class="flex-fill"
+                                    id="inputSotiensoValue"
+                                  ></span>
+                                </div>
+                                <div class="d-flex flex-wrap mb-1">
+                                  <div class="me-sm-2 fw-semibold">
+                                    Số tiền bằng chữ(VND):
+                                  </div>
+                                  <span
+                                    class="flex-fill"
+                                    id="inputSotienchuValue"
+                                  ></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="pb-sm-2">
+                            <h4>B. MÔ TẢ NGHIÊN CỨU</h4>
+                            <div class="col-md-12">
+                              <h4 class="mb-2">B1-B7</h4>
+                              <div class="d-flex ms-sm-5 fs-6 flex-sm-column">
+                                <div class="d-flex flex-wrap mb-1">
+                                  <div class="me-sm-2 fw-semibold">
+                                    File đính kèm:
+                                  </div>
+                                  <a
+                                    class="flex-fill"
+                                    id="inputFileLink"
+                                    href="#"
+                                    download
+                                  ></a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-column align-items-end py-5 pr-5"
+                          style="gap: 9rem"
+                        >
+                          <div
+                            class="flex justify-content-between"
+                            style="gap: 9rem"
+                          >
+                            <div class="text-center">
+                              <p class="m-0 font-italic text-xl">
+                                Ngày .... tháng .... năm ......
+                              </p>
+                              <p class="m-0 font-semibold text-xl">Chủ nhiệm</p>
+                              <p class="m-0 font-italic text-xl">
+                                (Họ tên và chữ ký)
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+<!-- Action Space - NEXT & PREVIOUS BUTTON -->
+                    <div class="row justify-content-end px-2">
+                      <div class="col-auto">
+                        <button
+                          type="button"
+                          name="previous"
+                          class="btn btn-secondary previous action-button-previous"
+                        >
+                          Quay lại
+                        </button>
+                      </div>
+
+                      <div class="col-auto ps-0">
+                        <button
+                          type="button"
+                          name="submit"
+                          class="btn btn-success submit"
+                        >
+                          Lưu
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <!-- Step 5 -->
+                  
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Essential javascripts for application to work-->
+    <script src="/Asset/JS/Jquery/jquery-3.7.1.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="/Asset/JS/js/plugins/chart.js"></script>
+    <!-- <script src="/Asset/JS/js/jquery.smartWizard.js"></script> -->
+    <!-- <script src="/Asset/JS/Don-dang-ky/don-dk.js"></script> -->
+    <script src="/Asset/JS/index.js"></script>
+    <script src="/Asset/JS/user.js"></script>
+    <!-- <script>
+      $(function () {
+        // SmartWizard initialize
+        $("#smartwizard").smartWizard();
+      });
+    </script> -->
+    <script>
+      initializeFileDropzone();
+    </script>
+    <script></script>
+  </body>
+</html>

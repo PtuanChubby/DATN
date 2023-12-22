@@ -1,34 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Trang 2</title>
+  <title>Bảng dữ liệu</title>
+  <style>
+    .header_table {
+      display: flex;
+      background-color: #f2f2f2;
+      padding: 10px;
+    }
+
+    .body-table {
+      display: flex;
+      padding: 10px;
+    }
+
+    .text-header_cell,
+    .text-body_cell {
+      font-weight: bold;
+    }
+
+    .cell {
+      flex: 1;
+    }
+  </style>
 </head>
 <body>
-  <h1>Trang 2</h1>
+  <div id="tableContainer"></div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var queryString = window.location.search;
-      var urlParams = new URLSearchParams(queryString);
-      var inputStep1 = urlParams.get("inputStep1");
-      var inputStep2 = urlParams.get("inputStep2");
-      var inputStep3 = urlParams.get("inputStep3");
+    function createTable() {
+      var tableContainer = document.getElementById("tableContainer");
 
-      console.log("Dữ liệu từ trang 1:");
-      console.log("Bước 1:", inputStep1);
-      console.log("Bước 2:", inputStep2);
-      console.log("Bước 3:", inputStep3);
+      // Tạo header table
+      var headerTable = document.createElement("div");
+      headerTable.classList.add("header_table");
 
-      // Xử lý dữ liệu ở trang 2 theo ý bạn
+      var headerCells = [
+        "STT",
+        "Tên tiếng việt",
+        "Tên tiếng anh",
+        "Chủ nhiệm",
+        "Thời gian thực hiện",
+        "Thao tác"
+      ];
 
-      // Ví dụ: Hiển thị dữ liệu lên trang
-      var resultElement = document.createElement("p");
-      resultElement.innerText = "Dữ liệu từ trang 1:" +
-        "\nBước 1: " + inputStep1 +
-        "\nBước 2: " + inputStep2 +
-        "\nBước 3: " + inputStep3;
-      document.body.appendChild(resultElement);
-    });
+      headerCells.forEach(function(cellText) {
+        var cell = document.createElement("div");
+        cell.classList.add("cell");
+
+        var cellTextElement = document.createElement("span");
+        cellTextElement.classList.add("text-header_cell");
+        cellTextElement.innerText = cellText;
+
+        cell.appendChild(cellTextElement);
+        headerTable.appendChild(cell);
+      });
+
+      tableContainer.appendChild(headerTable);
+
+      // Lấy dữ liệu từ localStorage
+      var data = JSON.parse(localStorage.getItem('data'));
+
+      // Tạo body table từ dữ liệu
+      var bodyTable = document.createElement("div");
+      bodyTable.classList.add("body-table");
+
+      var bodyCells = [
+        data.stt,
+        data.tenTiengViet,
+        data.tenTiengAnh,
+        data.chuNhiem,
+        data.thoiGian
+      ];
+
+      bodyCells.forEach(function(cellText) {
+        var cell = document.createElement("div");
+        cell.classList.add("cell");
+
+        var cellTextElement = document.createElement("span");
+        cellTextElement.classList.add("text-body_cell");
+        cellTextElement.innerText = cellText;
+
+        cell.appendChild(cellTextElement);
+        bodyTable.appendChild(cell);
+      });
+
+      tableContainer.appendChild(bodyTable);
+    }
+
+    // Gọi hàm tạo bảng khi cần
+    createTable();
   </script>
 </body>
 </html>
