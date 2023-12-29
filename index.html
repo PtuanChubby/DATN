@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trang Index</title>
+    <script>
+      function saveData() {
+        // Lấy dữ liệu từ các trường nhập liệu
+        var data = {
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          message: document.getElementById("message").value,
+        };
+
+        // Lưu dữ liệu vào sessionStorage
+        sessionStorage.setItem("data", JSON.stringify(data));
+      }
+
+      function loadData() {
+        // Lấy dữ liệu từ sessionStorage
+        var data = JSON.parse(sessionStorage.getItem("data"));
+
+        // Nạp dữ liệu vào các trường nhập liệu
+        if (data) {
+          document.getElementById("name").value = data.name;
+          document.getElementById("email").value = data.email;
+          document.getElementById("message").value = data.message;
+        }
+      }
+
+      // Nạp dữ liệu khi trang được tải
+      window.onload = function () {
+        localStorage.clear(); // Xóa dữ liệu trong Local Storage
+        sessionStorage.clear(); // Xóa dữ liệu trong sessionStorage
+
+        // Tiếp tục tải trang
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Trang Index</h1>
+    <label for="name">Tên:</label>
+    <input type="text" id="name" /><br /><br />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" /><br /><br />
+
+    <label for="message">Nội dung:</label>
+    <textarea id="message"></textarea><br /><br />
+
+    <button onclick="saveData()">Lưu dữ liệu</button>
+  </body>
+</html>

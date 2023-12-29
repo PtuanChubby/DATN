@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trang Chỉnh Sửa Thông Tin</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <h1>Trang Chỉnh Sửa Thông Tin</h1>
+    <form id="editForm">
+      <label for="name">Tên:</label>
+      <input
+        class="input_detail"
+        type="text"
+        name="name"
+        required
+      /><br />
+
+      <label for="email">Email:</label>
+      <input
+        class="input_detail"
+        type="email"
+        name="email"
+        required
+      /><br />
+      <label for="SĐT">Số điện thoại:</label>
+      <input
+        class="input_detail"
+        type="number"
+        name="SĐT"
+        required
+      /><br />
+
+      <!-- Các trường dữ liệu khác -->
+
+    </form>
+    <button class="submitForm" id="SubmitInfo" type="submit">Cập Nhật</button>
+
+    <button id="goBackButton">Quay Lại</button>
+
+    <script>
+      window.onload = function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const infoData = {};
+        for (const [key, value] of urlParams) {
+          infoData[key] = value;
+        }
+
+        // Điền dữ liệu thông tin hiện tại vào các trường chỉnh sửa
+        const inputFields = document.getElementsByClassName("input_detail");
+        for (let i = 0; i < inputFields.length; i++) {
+          const fieldName = inputFields[i].name;
+          inputFields[i].value = infoData[fieldName];
+        }
+
+        function handleEditSubmit(event) {
+          event.preventDefault();
+
+          // Lấy dữ liệu từ các trường chỉnh sửa
+          const updatedData = {};
+          for (let i = 0; i < inputFields.length; i++) {
+            const fieldName = inputFields[i].name;
+            const fieldValue = inputFields[i].value;
+            updatedData[fieldName] = fieldValue;
+          }
+
+          // Cập nhật dữ liệu thông tin mới
+          Object.assign(infoData, updatedData);
+
+          // Lưu dữ liệu mới vào localStorage
+          localStorage.setItem(infoData.index, JSON.stringify(infoData));
+
+          // Hiển thị thông báo cập nhật thành công
+          alert("Dữ liệu đã được cập nhật thành công!");
+
+          // Xóa dữ liệu chỉnh sửa trong trường nhập liệu
+          for (let i = 0; i < inputFields.length; i++) {
+            inputFields[i].value = "";
+          }
+        }
+
+        function handleGoBack() {
+          window.history.back();
+        }
+
+        const submitForm = document.getElementById("SubmitInfo");
+        submitForm.addEventListener("click", handleEditSubmit);
+
+        const goBackButton = document.getElementById("goBackButton");
+        goBackButton.addEventListener("click", handleGoBack);
+      };
+    </script>
+  </body>
+</html>

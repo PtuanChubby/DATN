@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trang Nhập Thông Tin</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <h1>Trang Nhập Thông Tin</h1>
+    <form id="infoForm">
+      <label for="name">Tên:</label>
+      <input class="input_detai" type="text" id="name1" name="name" required /><br />
+
+      <label for="email">Email:</label>
+      <input class="input_detai" type="email" id="email1" name="email" required /><br />
+      <label for="SĐT">Số điện thoại</label>
+      <input class="input_detai" type="number" id="SĐT1" name="SĐT" required /><br />
+
+      <button type="submit">Lưu</button>
+    </form>
+
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault();
+
+        const inputFields = document.querySelectorAll(".input_detai");
+        const data = {};
+
+        inputFields.forEach((input) => {
+          const fieldName = input.getAttribute("name");
+          const fieldValue = input.value;
+
+          // Kiểm tra xem trường input có giá trị không
+          if (fieldValue) {
+            data[fieldName] = fieldValue;
+          }
+        });
+
+        if (Object.keys(data).length > 0) {
+          const timestamp = Date.now();
+          localStorage.setItem(
+            `Thông tin đã nhập_${timestamp}`,
+            JSON.stringify(data)
+          );
+        } else {
+        }
+      }
+
+      const infoForm = document.getElementById("infoForm");
+      infoForm.addEventListener("submit", handleSubmit);
+    </script>
+  </body>
+</html>

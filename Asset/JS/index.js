@@ -9,47 +9,133 @@ $(document).ready(function () {
   setProgressBar(current);
 
   $(".progressbar li").on("click", function () {
-    $(".progress-bar li active").removeClass("active");
-    $(this).addClass("active");
-    current_fs = $(this);
+    var current_fs = $(this);
+
+    // Kiểm tra tính hợp lệ của dữ liệu
+    if (!validateData(current_fs)) {
+      return;
+    }
+
+    $(".progress-bar li.active").removeClass("active");
+    current_fs.addClass("active");
 
     showActive(current_fs.index());
     showFieldset(current_fs.index());
   });
 
+  function validateData() {
+    var inputs = $("fieldset:visible").find(
+      "input#inputNameHT, input#input-mssv-cn, textarea#inputNameTV, textarea#inputNameTA"
+    );
+    
+    var isValid = true;
+
+    inputs.each(function () {
+      var input = $(this);
+      var value = input.val().trim();
+      // var errorContainer = input.next(".invalid-feedback");
+
+      if (value === "") {
+        input.removeClass("is-valid");
+        input.addClass("is-invalid");
+        // errorContainer.show();
+        isValid = false;
+      } else {
+        input.removeClass("is-invalid");
+        input.addClass("is-valid");
+        // errorContainer.hide();
+      }
+    });
+
+    
+
+    return isValid;
+  }
+
   $(".next").click(function () {
     current_fs = $(this).parent().parent().parent();
-
     next_fs = $(this).parent().parent().parent().next();
     c = next_fs.index();
 
-    //Add Class Active
+    // Kiểm tra xem có các id đã được gọi hay không
+    var input = current_fs.find(
+      "input#inputNameHT, input#input-mssv-cn,  textarea#inputNameTV, textarea#inputNameTA"
+    );
+    if (input.length === 0) {
+      // Nếu không có các id đã được gọi, bỏ qua và chuyển đến fieldset tiếp theo
+      $(".progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+      next_fs.show();
+      next_fs.animate({ scrollTop: 0 } * 100);
+      $(".fieldset-card").scrollTop(0);
+      current_fs.animate(
+        { opacity: 0 },
+        {
+          step: function (now) {
+            opacity = 1 - now;
+            current_fs.css({
+              display: "none",
+              position: "relative",
+            });
+            next_fs.css({ opacity: opacity });
+          },
+          duration: 500,
+        }
+      );
+      setProgressBar(++current);
+      return;
+    }
+
+    // Kiểm tra tính hợp lệ của dữ liệu
+    var value = input.val().trim();
+    var id = input.attr("id");
+    if (value === "" && id) {
+      input.addClass("is-invalid");
+      input.removeClass("is-valid");
+      return;
+    }
+
+    // Add Class Active
     $(".progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
 
-    //show the next fieldset
+    // Show the next fieldset
     next_fs.show();
     next_fs.animate({ scrollTop: 0 } * 100);
     $(".fieldset-card").scrollTop(0);
 
-    //hide the current fieldset with style
+    // Hide the current fieldset with style
     current_fs.animate(
       { opacity: 0 },
       {
         step: function (now) {
-          // for making fielset appear animation
           opacity = 1 - now;
-
           current_fs.css({
             display: "none",
             position: "relative",
           });
-
           next_fs.css({ opacity: opacity });
         },
         duration: 500,
       }
     );
     setProgressBar(++current);
+  });
+
+  $("input#inputNameHT, input#input-mssv-cn, textarea#inputNameTV, textarea#inputNameTA").on("input", function () {
+    // Kiểm tra tính hợp lệ của dữ liệu
+    var value = $(this).val();
+    if (value.trim() !== "") {
+      // Nếu dữ liệu hợp lệ, ẩn thông báo không hợp lệ,
+      // đánh dấu là hợp lệ và thêm lớp is-valid
+      $(this).removeClass("is-invalid");
+      $(this).addClass("is-valid");
+      // $(this).parent().find(".invalid-feedback").hide();
+    } else {
+      // Nếu dữ liệu không hợp lệ, hiển thị thông báo không hợp lệ,
+      // đánh dấu là không hợp lệ và xóa lớp is-valid
+      $(this).removeClass("is-valid");
+      $(this).addClass("is-invalid");
+      // $(this).parent().find(".invalid-feedback").show();
+    }
   });
 
   $(".previous").click(function () {
@@ -116,60 +202,4 @@ $(document).ready(function () {
 
     c = index;
   }
-});
-$(document).ready(function () {
-  // Lưu các giá trị đã nhập vào các biến
-  var inputValues = [];
-
-  var fields = [
-    { id: "inputStep1", outputId: "inputStep1Value" },
-    { id: "inputNameTV", outputId: "inputNameTVValue" },
-    { id: "inputNameTA", outputId: "inputNameTAValue" },
-    { id: "inputLoaidetai", outputId: "inputLoaidetaiValue" },
-    { id: "inputhedaotao", outputId: "inputhedaotaoValue" },
-    { id: "inputnhomnganh", outputId: "inputnhomnganhValue" },
-    { id: "inputchuyennganhhep", outputId: "inputchuyennganhhepValue" },
-    { id: "inputNameHT", outputId: "inputNameHTValue" },
-    { id: "input-mssv-cn", outputId: "input-mssv-cnValue" },
-    { id: "birthday", outputId: "birthdayValue" },
-    { id: "inputGioitinh", outputId: "inputGioitinhValue" },
-    { id: "inputCCCD", outputId: "inputCCCDValue" },
-    { id: "inputNoicap", outputId: "inputNoicapValue" },
-    { id: "dateofissua", outputId: "dateofissuaValue" },
-    { id: "inputSTK", outputId: "inputSTKValue" },
-    { id: "inputTaiNH", outputId: "inputTaiNHValue" },
-    { id: "inputCNNH", outputId: "inputCNNHValue" },
-    { id: "inputDiachi", outputId: "inputDiachiValue" },
-    { id: "inputSDT", outputId: "inputSDTValue" },
-    { id: "inputEmail", outputId: "inputEmailValue" },
-    { id: "inputSotienso", outputId: "inputSotiensoValue" },
-    { id: "inputSotienchu", outputId: "inputSotienchuValue" },
-    { id: "inputFile", outputId: "inputFileLink" },
-
-    // Thêm các trường dữ liệu khác tại đây
-  ];
-
-  // Bắt sự kiện khi nút "Tiếp theo" trong từng bước được nhấn
-  var btnNext = $(".next");
-
-        btnNext.on("click", function () {
-          for (var i = 0; i < fields.length; i++) {
-            var input = $("#" + fields[i].id);
-            var output = $("#" + fields[i].outputId);
-
-            if (fields[i].id === "inputFile") {
-              // Handle file upload
-              var fileInput = $("#inputFile")[0];
-              uploadedFile = fileInput.files[0];
-
-              // Update the file link with the uploaded file name and make it downloadable
-              output.text(uploadedFile.name);
-              output.attr("href", URL.createObjectURL(uploadedFile));
-              output.attr("download", uploadedFile.name);
-            } else {
-              inputValues[i] = input.val();
-              output.text(inputValues[i]);
-            }
-          }
-        });
 });

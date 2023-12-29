@@ -2019,7 +2019,7 @@ progress {
   width: 100%;
   display: block;
   font-weight: 400;
-  margin-top: 5rem;
+  margin-top: 1rem;
   line-height: 1.5;
   appearance: none;
   font-size: 0.875rem;
@@ -4330,6 +4330,7 @@ fieldset:disabled .btn {
   background-clip: border-box;
   /* border: var(--bs-card-border-width) solid var(--bs-card-border-color); */
   border-radius: var(--bs-card-border-radius);
+  border: none;
 }
 .card > hr {
   margin-right: 0;
@@ -5360,7 +5361,7 @@ fieldset:disabled .btn {
   word-wrap: break-word;
 }
 .modal {
-  --bs-modal-zindex: 1055;
+  --bs-modal-zindex: 9999;
   --bs-modal-width: 41.6667%;
   --bs-modal-padding: 1rem;
   --bs-modal-margin: 0.5rem;
@@ -11891,18 +11892,21 @@ fieldset:disabled .btn {
 }
 
 .app-content {
+  position: relative;
   min-height: calc(100vh - 50px);
-  margin-top: 50px;
-  padding: 30px;
+  margin-top: 66px;
+  padding: 10px;
   background-color: #fafbfc;
   -webkit-transition: margin-left 0.3s ease;
   transition: margin-left 0.3s ease;
-  z-index: 1;
+  /* z-index: 1; */
   justify-content: flex-end;
 }
 @media (min-width: 768px) {
   .app-content {
-    margin-left: 240px;
+    transition: left 0.3s ease, width 0.3s ease;
+    left: 20%;
+    width: 80%;
   }
 }
 @media (max-width: 767px) {
@@ -11942,23 +11946,25 @@ fieldset:disabled .btn {
 /*----- Componant: Top Navigation Bar ----- */
 .app-header {
   position: fixed;
-  left: 0;
+  left: 20%;
   right: 0;
   top: 0;
-  /* width: 100%; */
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   background-color: #ffffff;
   z-index: 1030;
-  transition: margin-left 0.3s ease;
+  transition: left 0.3s ease, width 0.3s ease;
   padding: 16px 24px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 @media (min-width: 768px) {
   .app-header {
-    margin-left: 240px;
+    transition: left 0.3s ease, width 0.3s ease;
+    left: 20%;
+    width: 80%;
   }
 }
 @media print {
@@ -11974,7 +11980,7 @@ fieldset:disabled .btn {
   -ms-flex-align: center;
   align-items: center;
   padding: 10px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   color: #fff;
 }
 
@@ -12228,7 +12234,7 @@ fieldset:disabled .btn {
   bottom: 0;
   left: 0;
   padding-top: 16px;
-  width: 240px;
+  width: 20%;
   overflow: auto;
   z-index: 1030;
   background-color: var(--bs-white);
@@ -12420,11 +12426,13 @@ fieldset:disabled .btn {
   }
   .sidebar-mini.sidenav-toggled .app-header,
   .sidebar-mini.sidenav-toggled .app-content {
-    margin-left: 50px;
+    width: 96%;
+    left: 4%;
+    /* margin-left: 50px; */
   }
   .sidebar-mini.sidenav-toggled .app-sidebar {
     left: 0;
-    width: 50px;
+    width: 4%;
     overflow: hidden;
   }
   .sidebar-mini.sidenav-toggled .app-sidebar:hover {
@@ -12522,8 +12530,8 @@ fieldset:disabled .btn {
   text-decoration: none;
   -webkit-transform: translate3d(0, -1px, 0);
   transform: translate3d(0, -1px, 0);
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  /* -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4); */
 }
 .btn[disabled] {
   cursor: not-allowed;
@@ -12539,8 +12547,8 @@ fieldset:disabled .btn {
   width: 100%;
   z-index: 105;
   display: flex;
-  position: fixed;
-  padding: 5px 15px;
+  position: relative;
+  padding: 10px;
   flex-direction: row;
   align-items: center;
   display: -webkit-box;
@@ -12549,7 +12557,7 @@ fieldset:disabled .btn {
   -ms-flex-align: center;
   -ms-flex-pack: justify;
   -ms-flex-direction: row;
-  margin: -15px -30px 30px;
+  /* margin: -15px -30px 30px; */
   -webkit-box-align: center;
   -webkit-box-pack: justify;
   -webkit-box-direction: normal;
@@ -12619,7 +12627,7 @@ fieldset:disabled .btn {
   width: 100%;
   border-radius: 8px;
   /* border: 1px solid #ddd; */
-  margin: 106px 0 20px 0;
+  /* margin: 106px 0 20px 0; */
   /* display: flex; */
   user-select: none;
   

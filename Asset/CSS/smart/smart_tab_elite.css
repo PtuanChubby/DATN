@@ -45,6 +45,7 @@
 }
 
 .st > .tab-content > .tab-pane {
+    overflow-x: auto;
     padding: 0.8rem;
 }
 

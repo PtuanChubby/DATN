@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trang Hiển Thị Thông Tin</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+      .viewBtn {
+        background-color: blue;
+        color: white;
+      }
+
+      .editBtn {
+        background-color: orange;
+        color: black;
+      }
+
+      .deleteBtn {
+        background-color: red;
+        color: white;
+      }
+      .ten {
+        color: red;
+      }
+      .info {
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Trang Hiển Thị Thông Tin</h1>
+    <div id="infoContainer"></div>
+
+    <script>
+      let infoCount = 0; // Biến đếm số thứ tự thông tin
+
+      function createInfoDiv(info, key) {
+        const infoDiv = document.createElement("div");
+        infoDiv.classList.add("info-container"); // Thêm lớp "info-container" vào phần tử cha
+        infoDiv.setAttribute("data-index", key); // Lưu số thứ tự vào thuộc tính data-index
+
+        infoCount++; // Tăng giá trị biến đếm sau mỗi lần tạo thông tin
+
+        const formattedStt = String(infoCount).padStart(2, "0"); // Định dạng số thứ tự
+        infoDiv.innerHTML = `
+          <div class="cell-stt">
+            <span class="text-body_stt">${formattedStt}</span>
+          </div>
+          <div class="ten info">${info.name}</div>
+          <div><strong>Email:</strong> ${info.email}</div>
+          <div><strong>SĐT:</strong> ${info.SĐT}</div>
+          <button class="custom-button" onclick="handleView('${key}')">Xem</button>
+          <button class="custom-button" onclick="handleEdit('${key}')">Chỉnh Sửa</button>
+          <button class="custom-button" onclick="handleDelete('${key}')">Xóa</button>
+        `;
+
+        return infoDiv;
+      }
+
+      function handleView(key) {
+        const info = JSON.parse(localStorage.getItem(key));
+        localStorage.setItem("Thông tin xem", JSON.stringify(info));
+        window.location.href = "trang3.html";
+      }
+
+      function handleEdit(key) {
+        const allInfo = JSON.parse(localStorage.getItem(key));
+        const info = allInfo;
+        info.index = key; // Lưu số thứ tự vào thông tin chỉnh sửa
+        const queryString = Object.keys(info)
+          .map((key) => key + "=" + encodeURIComponent(info[key]))
+          .join("&");
+        window.location.href = "edit.html?" + queryString;
+      }
+
+      function handleDelete(key) {
+        localStorage.removeItem(key);
+        const infoDiv = document.getElementById(key);
+        infoDiv.parentNode.removeChild(infoDiv);
+
+        infoCount--; // Giảm giá trị biến đếm sau mỗi lần xóa
+
+        // Cập nhật lại số thứ tự cho các thông tin còn lại
+        const infoDivs = document.getElementsByClassName("info-container");
+        for (let i = 0; i < infoDivs.length; i++) {
+          const infoDiv = infoDivs[i];
+          const sttSpan = infoDiv.querySelector(".text-body_stt");
+          const formattedStt = String(i + 1).padStart(2, "0"); // Định dạng số thứ tự
+          sttSpan.innerText = formattedStt;
+        }
+      }
+
+      function displayInfo() {
+        const infoContainer = document.getElementById("infoContainer");
+
+        // Lấy các khóa thông tin từ local storage
+        const infoKeys = Object.keys(localStorage);
+
+        // Kiểm tra xem có thông tin nào có sẵn hay không
+        if (infoKeys.length > 0) {
+          // Duyệt qua các khóa thông tin và tạo các div thông tin
+          infoKeys.forEach((key) => {
+            const info = JSON.parse(localStorage.getItem(key));
+            const infoDiv = createInfoDiv(info, key);
+            infoDiv.setAttribute("id", key);
+            infoContainer.appendChild(infoDiv);
+          });
+        }
+      }
+
+      // Gọi hàm displayInfo để hiển thị thông tin trên trang web
+      displayInfo();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trang Xem Thông Tin</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>Trang Xem Thông Tin</h1>
+  <div id="infoContainer"></div>
+  <button id="backBtn">Quay Lại</button>
+
+  <script>
+    const info = JSON.parse(localStorage.getItem('Thông tin đã nhập'));
+    document.getElementById('infoContainer').innerHTML = `
+      <p><strong>Tên:</strong> ${info.name}</p>
+      <p><strong>Email:</strong> ${info.email}</p>
+    `;
+
+    const backBtn = document.getElementById('backBtn');
+
+    backBtn.addEventListener('click', function() {
+      window.location.href = 'display.html';
+    });
+  </script>
+</body>
+</html>
