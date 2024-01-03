@@ -197,48 +197,39 @@
         </div>
       </div>
       <ul class="app-menu">
-        <li>
+        <!-- <li>
           <a class="app-menu__item" href="#">
             <i class="app-menu__icon fa-solid fa-house"></i>
             <span class="app-menu__label">Trang chủ</span></a
           >
-        </li>
-        <li class="mt-3 mb-1">
+        </li> -->
+        <li class="my-md-2">
           <span class="app-sidebar-title fw-semibold">ĐỀ TÀI</span>
         </li>
         <li>
-          <a class="app-menu__item ps-4" href="trangchu1.html">
-            <i class="app-menu__icon fa-solid fa-list"></i>
-            <span class="app-menu__label">Danh mục đề tài</span></a
-          >
-          <a class="app-menu__item ps-4 active" href="#">
-            <i class="app-menu__icon fa-solid fa-folder-open"></i>
-            <span class="app-menu__label">Đăng ký</span></a
-          >
           <a class="app-menu__item ps-4" href="Quanlydetai.html">
-            <i class="app-menu__icon fa-solid fa-file"></i>
+            <i class="app-menu__icon fa-regular fa-rectangle-list"></i>
             <span class="app-menu__label">Quản lý đề tài</span></a
           >
-        </li>
-        <li class="mt-3 mb-1">
-          <span class="app-sidebar-title fw-semibold">ĐÁNH GIÁ</span>
-        </li>
-        <li>
-          <a class="app-menu__item ps-4" href="#">
+          <!-- <a class="app-menu__item ps-4" href="#">
             <i class="app-menu__icon fa-solid fa-list"></i>
-            <span class="app-menu__label">Nhận xét của giảng viên</span></a
+            <span class="app-menu__label">Danh mục đề tài</span></a
+          > -->
+          <a class="app-menu__item ps-4 active" href="Dangkydetai.html">
+            <i class="app-menu__icon fa-regular fa-file-lines"></i>
+            <span class="app-menu__label">Đăng ký đề tài</span></a
           >
-          <a class="app-menu__item ps-4" href="#">
-            <i class="app-menu__icon fa-solid fa-folder-open"></i>
-            <span class="app-menu__label">Điểm đề tài</span></a
+          <a class="app-menu__item ps-4 " href="Dangkydetai.html">
+            <i class="app-menu__icon fa-regular fa-newspaper"></i>
+            <span class="app-menu__label">Xem kết quả</span></a
           >
         </li>
         <li class="my-md-2">
           <span class="app-sidebar-title fw-semibold">TÀI KHOẢN</span>
         </li>
         <li>
-          <a class="app-menu__item ps-4" href="#">
-            <i class="app-menu__icon fa-solid fa-user"></i>
+          <a class="app-menu__item ps-4" href="profile.html">
+            <i class="app-menu__icon fa-regular fa-circle-user"></i>
             <span class="app-menu__label">Thông tin tài khoản</span></a
           >
         </li>
@@ -255,7 +246,7 @@
           <p class="app-footer__user-designation">Sinh viên</p>
         </div>
         <button class="log-out__icon">
-          <a href="#"><i class="fa-solid fa-right-to-bracket"></i></a>
+          <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i></a>
         </button>
       </div>
     </aside>
@@ -371,7 +362,7 @@
                                   class="form-control input_detai"
                                   required
                                 >
-                                  <option selected="" disabled="">
+                                  <option value="" selected="" disabled="">
                                     Loại đề tài
                                   </option>
                                   <option>Cấp khoa</option>
@@ -520,9 +511,9 @@
                                   <span class="required-star ms-1">*</span>
                                 </label>
                                 <input
-                                name="birthday"
+                                  name="birthday"
                                   id="birthday"
-                                  class="form-control input_detai"
+                                  class="form-control"
                                   placeholder="dd-mm-yyyy"
                                   type="date"
                                   required="required"
@@ -538,9 +529,9 @@
                                   >
                                 </label>
                                 <select
-                                name="inputGioitinh"
+                                  name="inputGioitinh"
                                   id="inputGioitinh"
-                                  class="form-control custom-select input_detai" 
+                                  class="form-control custom-select input_detai"
                                 >
                                   <option selected="" disabled="">
                                     Chọn giới tính
@@ -560,7 +551,7 @@
                                   >
                                 </label>
                                 <input
-                                name="inputCCCD"
+                                  name="inputCCCD"
                                   type="number"
                                   id="inputCCCD"
                                   class="form-control input_detai"
@@ -575,7 +566,7 @@
                                   ></label
                                 >
                                 <input
-                                name="inputNoicap"
+                                  name="inputNoicap"
                                   type="text"
                                   id="inputNoicap"
                                   class="form-control input_detai"
@@ -589,9 +580,9 @@
                                   <span class="required-star ms-1">*</span>
                                 </label>
                                 <input
-                                name="dateofissua"
+                                  name="dateofissua"
                                   id="dateofissua"
-                                  class="form-control input_detai"
+                                  class="form-control"
                                   placeholder="dd-mm-yyyy"
                                   type="date"
                                   required="required"
@@ -609,7 +600,7 @@
                                   ></label
                                 >
                                 <input
-                                name="inputSTK"
+                                  name="inputSTK"
                                   type="text"
                                   id="inputSTK"
                                   class="form-control input_detai"
@@ -624,7 +615,7 @@
                                   ></label
                                 >
                                 <input
-                                name="inputTaiNH"
+                                  name="inputTaiNH"
                                   type="text"
                                   id="inputTaiNH"
                                   class="form-control input_detai"
@@ -640,7 +631,7 @@
                                   ></label
                                 >
                                 <input
-                                name="inputCNNH"
+                                  name="inputCNNH"
                                   type="text"
                                   id="inputCNNH"
                                   class="form-control input_detai"
@@ -658,7 +649,7 @@
                                   ></label
                                 >
                                 <textarea
-                                name="inputDiachi"
+                                  name="inputDiachi"
                                   class="form-control input_detai"
                                   id="inputDiachi"
                                   cols="30"
@@ -677,7 +668,7 @@
                                   ></label
                                 >
                                 <input
-                                name="inputSDT"
+                                  name="inputSDT"
                                   type="number"
                                   id="inputSDT"
                                   class="form-control input_detai"
@@ -692,7 +683,7 @@
                                   ></label
                                 >
                                 <input
-                                name="inputEmail"
+                                  name="inputEmail"
                                   type="email"
                                   id="inputEmail"
                                   class="form-control input_detai"
@@ -899,7 +890,7 @@
                                   ></label
                                 >
                                 <input
-                                name="inputSotienchu"
+                                  name="inputSotienchu"
                                   type="text"
                                   id="inputSotienchu"
                                   class="form-control input_detai"
@@ -1024,7 +1015,7 @@
                                 </div>
                               </div>
                               <input
-                              name="inputFile"
+                                name="inputFile"
                                 type="file"
                                 id="inputFile"
                                 class="file-input input_detai"
@@ -1101,7 +1092,7 @@
                             </div>
                             <div class="qty_prod">
                               <input
-                              name="inputQTY-hoithaokhoahoc"
+                                name="inputQTY-hoithaokhoahoc"
                                 type="number"
                                 id="inputQTY-hoithaokhoahoc"
                                 class="form-control input_detai"
@@ -1119,7 +1110,7 @@
                             </div>
                             <div class="qty_prod">
                               <input
-                              name="inputQTY-tapchichuyensan"
+                                name="inputQTY-tapchichuyensan"
                                 type="number"
                                 id="inputQTY-tapchichuyensan"
                                 class="form-control input_detai"
@@ -1182,17 +1173,6 @@
                         <i class="fa-solid fa-download"></i>
                       </span>
                       <span class="fw-bold">Tải hồ sơ đề tài</span>
-                      <span role="presentation" class="btn-link"></span>
-                    </button>
-                    <button
-                      aria-label="Xuất file Word"
-                      type="button"
-                      class="btn btn-info d-block w-auto h-25"
-                    >
-                      <span class="button-icon me-lg-2">
-                        <i class="fa-regular fa-file-word"></i>
-                      </span>
-                      <span class="fw-bold">Xuất file Word</span>
                       <span role="presentation" class="btn-link"></span>
                     </button>
                     <button

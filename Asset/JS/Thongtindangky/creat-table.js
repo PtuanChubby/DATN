@@ -39,6 +39,9 @@ function createinfodata(data, key) {
   <button class="btn-xoa btn-xs" onclick="handleDelete('${key}')">
   <i class="fa fa-trash-o"></i>
   </button>
+  <button class="btn-xem btn-xs" onclick="handleView('${key}')">
+  <i class="fa fa-eye"></i>
+  </button>
   </div>
   </div>
 `;
@@ -47,14 +50,19 @@ function createinfodata(data, key) {
 }
 
 function handleView(key) {
-  const data = JSON.parse(localStorage.getItem(key));
-  localStorage.setItem("Thông tin xem", JSON.stringify(data));
-  window.location.href = "trang3.html";
+  const allInfo = JSON.parse(localStorage.getItem(key));
+  const info = allInfo;
+  info.index = key; // Lưu số thứ tự vào thông tin chỉnh sửa
+  const queryString = Object.keys(info)
+    .map((key) => key + "=" + encodeURIComponent(info[key]))
+    .join("&");
+  window.location.href = "Xemdetai.html?" + queryString;
 }
 
+
 function handleEdit(key) {
-  const allData = JSON.parse(localStorage.getItem(key));
-  const data = allData;
+  const allInfo = JSON.parse(localStorage.getItem(key));
+  const data = allInfo;
   data.index = key; // Lưu số thứ tự vào thông tin chỉnh sửa
   const queryString = Object.keys(data)
     .map((key) => key + "=" + encodeURIComponent(data[key]))
@@ -77,23 +85,31 @@ function handleDelete(key) {
     const sttSpan = sttDiv.querySelector(".text-body_stt");
     sttSpan.innerHTML = String(i + 1).padStart(2, "0");
   }
+
+  // Kiểm tra nếu không còn thông tin nào hiển thị, hiện lại emptymessage
+  if (infoCount === 0) {
+    const emptyMessage = document.getElementById("emptymessage");
+    emptyMessage.style.display = "flex";
+  }
 }
 
 function displayInfo() {
   const projectDataTable = document.getElementById("projectDataTable");
+  const emptyMessage = document.getElementById("emptymessage");
 
-  // Lấy các khóa thông tin từ local storage
   const dataKeys = Object.keys(localStorage);
 
-  // Kiểm tra xem có thông tin nào có sẵn hay không
   if (dataKeys.length > 0) {
-    // Duyệt qua các khóa thông tin và tạo các div thông tin
+    emptyMessage.style.display = "none"; // Ẩn thẻ emptymessage nếu có dữ liệu
+
     dataKeys.forEach((key) => {
       const data = JSON.parse(localStorage.getItem(key));
       const dataDiv = createinfodata(data, key);
       dataDiv.setAttribute("id", key);
       projectDataTable.appendChild(dataDiv);
     });
+  } else {
+    emptyMessage.style.display = "flex"; // Hiển thị thẻ emptymessage nếu không có dữ liệu
   }
 }
 

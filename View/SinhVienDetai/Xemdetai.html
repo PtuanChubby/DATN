@@ -197,48 +197,43 @@
         </div>
       </div>
       <ul class="app-menu">
-        <li>
+        <!-- <li>
           <a class="app-menu__item" href="#">
             <i class="app-menu__icon fa-solid fa-house"></i>
             <span class="app-menu__label">Trang chủ</span></a
           >
+        </li> -->
+        <li class="my-md-3">
+          <span class="app-sidebar-title fw-semibold">ĐỀ TÀI</span>
         </li>
-        <li class="mt-3 mb-1">
+        <li></li>
+        <li class="my-md-2">
           <span class="app-sidebar-title fw-semibold">ĐỀ TÀI</span>
         </li>
         <li>
-          <a class="app-menu__item ps-4" href="trangchu1.html">
-            <i class="app-menu__icon fa-solid fa-list"></i>
-            <span class="app-menu__label">Danh mục đề tài</span></a
-          >
-          <a class="app-menu__item ps-4 active" href="#">
-            <i class="app-menu__icon fa-solid fa-folder-open"></i>
-            <span class="app-menu__label">Đăng ký</span></a
-          >
           <a class="app-menu__item ps-4" href="Quanlydetai.html">
-            <i class="app-menu__icon fa-solid fa-file"></i>
+            <i class="app-menu__icon fa-regular fa-rectangle-list"></i>
             <span class="app-menu__label">Quản lý đề tài</span></a
           >
-        </li>
-        <li class="mt-3 mb-1">
-          <span class="app-sidebar-title fw-semibold">ĐÁNH GIÁ</span>
-        </li>
-        <li>
-          <a class="app-menu__item ps-4" href="#">
-            <i class="app-menu__icon fa-solid fa-list"></i>
-            <span class="app-menu__label">Nhận xét của giảng viên</span></a
+          <!-- <a class="app-menu__item ps-4" href="#">
+              <i class="app-menu__icon fa-solid fa-list"></i>
+              <span class="app-menu__label">Danh mục đề tài</span></a
+            > -->
+          <a class="app-menu__item ps-4 active" href="Dangkydetai.html">
+            <i class="app-menu__icon fa-regular fa-file-lines"></i>
+            <span class="app-menu__label">Đăng ký đề tài</span></a
           >
-          <a class="app-menu__item ps-4" href="#">
-            <i class="app-menu__icon fa-solid fa-folder-open"></i>
-            <span class="app-menu__label">Điểm đề tài</span></a
+          <a class="app-menu__item ps-4" href="Dangkydetai.html">
+            <i class="app-menu__icon fa-regular fa-newspaper"></i>
+            <span class="app-menu__label">Xem kết quả</span></a
           >
         </li>
         <li class="my-md-2">
           <span class="app-sidebar-title fw-semibold">TÀI KHOẢN</span>
         </li>
         <li>
-          <a class="app-menu__item ps-4" href="#">
-            <i class="app-menu__icon fa-solid fa-user"></i>
+          <a class="app-menu__item ps-4" href="profile.html">
+            <i class="app-menu__icon fa-regular fa-circle-user"></i>
             <span class="app-menu__label">Thông tin tài khoản</span></a
           >
         </li>
@@ -255,13 +250,12 @@
           <p class="app-footer__user-designation">Sinh viên</p>
         </div>
         <button class="log-out__icon">
-          <a href="#"><i class="fa-solid fa-right-to-bracket"></i></a>
+          <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i></a>
         </button>
       </div>
     </aside>
     <main class="app-content">
       <div class="app-title">
-
         <div class="panel-title">
           <!-- <div class="breadcrumb-item">
             <a class="icon-return" href="#"
@@ -275,48 +269,28 @@
           </p>
           <div class="clearfix"></div>
         </div>
-        <div class="app-form-button">
-          <div class="d-flex justify-content-end gap-2">
-            <button
-              aria-label="Tải hồ sơ đề tài"
-              type="button"
-              class="btn btn-warning d-block w-auto h-25"
-            >
-              <span class="button-icon me-lg-2">
-                <i class="fa-solid fa-download"></i>
-              </span>
-              <span class="fw-bold">Tải hồ sơ đề tài</span>
-              <span role="presentation" class="btn-link"></span>
-            </button>
-            
-            <button
-              aria-label="Xuất file PDF"
-              type="button"
-              class="btn btn-danger d-block w-auto h-25"
-            >
-              <span class="button-icon me-lg-2">
-                <i class="fa-regular fa-file-pdf"></i>
-              </span>
-              <span class="fw-bold">Xuất file PDF</span>
-              <span role="presentation" class="btn-link"></span>
-            </button>
-            <div class="d-flex flex-column align-items-end">
-              <button
-                aria-label="In PDF"
-                type="button"
-                class="btn btn-primary d-block w-auto"
-              >
-                <span class="button-icon me-lg-2">
-                  <i class="fa-solid fa-print"></i>
-                </span>
-                <span class="fw-bold">In PDF</span>
-                <span role="presentation" class="btn-link"></span>
-              </button>
-              <span class="cursor-pointer fs-7 text-blue mt-1"
-                >Hướng dẫn in PDF
-              </span>
-            </div>
-          </div>
+        <div class="panel-button-title col-5 d-flex justify-content-end">
+          <button
+            id="Viewinfo"
+            type="button"
+            class="btn btn-primary fw-semibold view-info-btn view mx-1"
+            onclick="handleEdit()"
+          >
+            <a href="Chinhsuadetai.html">
+              <i class="fa-solid fa-pen-to-square"></i>
+              Chinh sửa đề tài
+            </a>
+          </button>
+          <button
+            id="Downloadinfo"
+            type="button"
+            class="btn btn-info fw-semibold down-info-btn down mx-1"
+          >
+            <a href="Chinhsuadetai.html">
+              <i class="fa-solid fa-download"></i>
+              Xuất
+            </a>
+          </button>
         </div>
       </div>
 
@@ -348,7 +322,7 @@
           <div class="fieldset-card">
             <!-- Step 1 -->
             <fieldset>
-              <div class="form-horizontal">
+              <div class="form-horizontal" id="ProjectTableProposalDetail">
                 <div class="row">
                   <div class="col-md-12 mt-2">
                     <div class="card">
@@ -372,7 +346,9 @@
                                   ></label
                                 >
                                 <textarea
-                                  class="form-control input-name__detai"
+                                  class="form-control input_detai"
+                                  disabled
+                                  name="inputNameTV"
                                   id="inputNameTV"
                                   cols="30"
                                   rows="1"
@@ -390,7 +366,9 @@
                                   ></label
                                 >
                                 <textarea
-                                  class="form-control input-name__detai"
+                                  class="form-control input_detai"
+                                  disabled
+                                  name="inputNameTA"
                                   id="inputNameTA"
                                   cols="30"
                                   rows="1"
@@ -409,10 +387,12 @@
                                 >
                                 <select
                                   id="inputLoaidetai"
-                                  class="form-control"
+                                  name="inputLoaidetai"
+                                  class="form-control input_detai"
+                                  disabled
                                   required
                                 >
-                                  <option selected="" disabled="">
+                                  <option value="" selected="" disabled="">
                                     Loại đề tài
                                   </option>
                                   <option>Cấp khoa</option>
@@ -446,9 +426,10 @@
                                   ></label
                                 >
                                 <select
-                                  name=""
+                                  name="inputhedaotao"
                                   id="inputhedaotao"
-                                  class="form-control"
+                                  class="form-control input_detai"
+                                  disabled
                                   required
                                 >
                                   <option selected="" disabled="">
@@ -472,9 +453,11 @@
                                   ></label
                                 >
                                 <input
+                                  name="inputnhomnganh"
                                   type="text"
                                   id="inputnhomnganh"
-                                  class="form-control"
+                                  class="form-control input_detai"
+                                  disabled
                                   required
                                 />
                                 <div class="invalid-feedback">
@@ -491,9 +474,10 @@
                                   ></label
                                 >
                                 <select
-                                  name=""
+                                  name="inputchuyennganhhep"
                                   id="inputchuyennganhhep"
-                                  class="form-control"
+                                  class="form-control input_detai"
+                                  disabled
                                   required
                                 >
                                   <option selected="" disabled="">
@@ -525,9 +509,11 @@
                                   ></label
                                 >
                                 <input
+                                  name="inputNameHT"
                                   type="text"
                                   id="inputNameHT"
-                                  class="form-control"
+                                  class="form-control input_detai"
+                                  disabled
                                 />
                                 <div class="invalid-feedback">
                                   Vui lòng nhập họ và tên.
@@ -540,9 +526,11 @@
                                   ></label
                                 >
                                 <input
+                                  name="input-mssv-cn"
                                   type="number"
                                   id="input-mssv-cn"
-                                  class="form-control"
+                                  class="form-control input_detai"
+                                  disabled
                                 />
                                 <div class="invalid-feedback">
                                   Vui lòng nhập MSSV.
@@ -558,6 +546,7 @@
                                   <span class="required-star ms-1">*</span>
                                 </label>
                                 <input
+                                  name="birthday"
                                   id="birthday"
                                   class="form-control"
                                   placeholder="dd-mm-yyyy"
@@ -575,8 +564,10 @@
                                   >
                                 </label>
                                 <select
+                                  name="inputGioitinh"
                                   id="inputGioitinh"
-                                  class="form-control custom-select"
+                                  class="form-control custom-select input_detai"
+                                  disabled
                                 >
                                   <option selected="" disabled="">
                                     Chọn giới tính
@@ -596,9 +587,11 @@
                                   >
                                 </label>
                                 <input
+                                  name="inputCCCD"
                                   type="number"
                                   id="inputCCCD"
-                                  class="form-control"
+                                  class="form-control input_detai"
+                                  disabled
                                 />
                               </div>
                               <div class="form-group required mt-2 col-md-4">
@@ -610,9 +603,11 @@
                                   ></label
                                 >
                                 <input
+                                  name="inputNoicap"
                                   type="text"
                                   id="inputNoicap"
-                                  class="form-control"
+                                  class="form-control input_detai"
+                                  disabled
                                 />
                               </div>
                               <div class="form-group required mt-2 col-md-4">
@@ -623,6 +618,7 @@
                                   <span class="required-star ms-1">*</span>
                                 </label>
                                 <input
+                                  name="dateofissua"
                                   id="dateofissua"
                                   class="form-control"
                                   placeholder="dd-mm-yyyy"
@@ -642,9 +638,11 @@
                                   ></label
                                 >
                                 <input
+                                  name="inputSTK"
                                   type="text"
                                   id="inputSTK"
-                                  class="form-control"
+                                  class="form-control input_detai"
+                                  disabled
                                 />
                               </div>
                               <div class="form-group required mt-2 col-md-6">
@@ -656,9 +654,11 @@
                                   ></label
                                 >
                                 <input
+                                  name="inputTaiNH"
                                   type="text"
                                   id="inputTaiNH"
-                                  class="form-control"
+                                  class="form-control input_detai"
+                                  disabled
                                 />
                               </div>
                               <div class="form-group required mt-2">
@@ -671,9 +671,11 @@
                                   ></label
                                 >
                                 <input
+                                  name="inputCNNH"
                                   type="text"
                                   id="inputCNNH"
-                                  class="form-control"
+                                  class="form-control input_detai"
+                                  disabled
                                 />
                               </div>
                             </div>
@@ -688,7 +690,9 @@
                                   ></label
                                 >
                                 <textarea
-                                  class="form-control input-name__detai"
+                                  name="inputDiachi"
+                                  class="form-control input_detai"
+                                  disabled
                                   id="inputDiachi"
                                   cols="30"
                                   rows="1"
@@ -706,9 +710,11 @@
                                   ></label
                                 >
                                 <input
+                                  name="inputSDT"
                                   type="number"
                                   id="inputSDT"
-                                  class="form-control"
+                                  class="form-control input_detai"
+                                  disabled
                                 />
                               </div>
                               <div class="form-group required mt-2 col-md-6">
@@ -720,9 +726,11 @@
                                   ></label
                                 >
                                 <input
+                                  name="inputEmail"
                                   type="email"
                                   id="inputEmail"
-                                  class="form-control"
+                                  class="form-control input_detai"
+                                  disabled
                                 />
                               </div>
                             </div>
@@ -909,7 +917,8 @@
                                   ></label
                                 >
                                 <input
-                                  class="form-control"
+                                  class="form-control input_detai"
+                                  disabled
                                   type="text"
                                   name="inputSotienso"
                                   id="inputSotienso"
@@ -926,9 +935,11 @@
                                   ></label
                                 >
                                 <input
+                                  name="inputSotienchu"
                                   type="text"
                                   id="inputSotienchu"
-                                  class="form-control"
+                                  class="form-control input_detai"
+                                  disabled
                                 />
                               </div>
                             </div>
@@ -1050,9 +1061,11 @@
                                 </div>
                               </div>
                               <input
+                                name="inputFile"
                                 type="file"
                                 id="inputFile"
-                                class="file-input"
+                                class="file-input input_detai"
+                                disabled
                                 onchange="displayFileInfo()"
                                 multiple
                               />
@@ -1126,9 +1139,11 @@
                             </div>
                             <div class="qty_prod">
                               <input
+                                name="inputQTY-hoithaokhoahoc"
                                 type="number"
                                 id="inputQTY-hoithaokhoahoc"
-                                class="form-control"
+                                class="form-control input_detai"
+                                disabled
                                 min="0"
                                 placeholder="0"
                               />
@@ -1143,9 +1158,11 @@
                             </div>
                             <div class="qty_prod">
                               <input
+                                name="inputQTY-tapchichuyensan"
                                 type="number"
                                 id="inputQTY-tapchichuyensan"
-                                class="form-control"
+                                class="form-control input_detai"
+                                disabled
                                 min="0"
                                 placeholder="0"
                               />
@@ -1194,7 +1211,6 @@
             <!-- Step 4 -->
             <fieldset>
               <div class="form-horizontal">
-                
                 <div
                   id="projectProposalDetail"
                   class="m-0 bg-white p-5 p-fluid detail-info-project-proposal"
@@ -1260,18 +1276,14 @@
                         <h4 class="mb-2">A1. Tên và loại đề tài</h4>
                         <div class="d-flex ms-sm-5 fs-6 flex-sm-column">
                           <div class="d-flex flex-wrap mb-1">
-                            <div class="me-sm-2 fw-medium">
-                              Tên tiếng Việt:
-                            </div>
+                            <div class="me-sm-2 fw-medium">Tên tiếng Việt:</div>
                             <span
                               class="flex-fill"
                               id="inputNameTVValue"
                             ></span>
                           </div>
                           <div class="d-flex flex-wrap mb-1">
-                            <div class="me-sm-2 fw-medium">
-                              Tên tiếng Anh:
-                            </div>
+                            <div class="me-sm-2 fw-medium">Tên tiếng Anh:</div>
                             <span
                               class="flex-fill"
                               id="inputNameTAValue"
@@ -1359,9 +1371,7 @@
                           </div>
                           <div class="d-flex flex-wrap mb-1">
                             <div class="d-flex mb-2 w-50">
-                              <div class="me-sm-2 fw-medium">
-                                Số tài khoản:
-                              </div>
+                              <div class="me-sm-2 fw-medium">Số tài khoản:</div>
                               <span class="flex-fill" id="inputSTKValue"></span>
                             </div>
                             <div class="d-flex mb-2 w-50">
@@ -1458,9 +1468,7 @@
                         <h4 class="mb-2">B1-B7</h4>
                         <div class="d-flex ms-sm-5 fs-6 flex-sm-column">
                           <div class="d-flex flex-wrap mb-1">
-                            <div class="me-sm-2 fw-medium">
-                              File đính kèm:
-                            </div>
+                            <div class="me-sm-2 fw-medium">File đính kèm:</div>
                             <a
                               class="flex-fill"
                               id="inputFileLink"
@@ -1477,9 +1485,7 @@
                         <h4 class="mb-2">B1-B7</h4>
                         <div class="d-flex ms-sm-5 fs-6 flex-sm-column">
                           <div class="d-flex flex-wrap mb-1">
-                            <div class="me-sm-2 fw-medium">
-                              File đính kèm:
-                            </div>
+                            <div class="me-sm-2 fw-medium">File đính kèm:</div>
                             <a
                               class="flex-fill"
                               id="inputFileLink"
@@ -1551,6 +1557,7 @@
     <script src="/Asset/JS/user.js"></script>
     <script src="/Asset/JS/FileUpload/fileUpload.js"></script>
     <script src="/Asset/JS/curerncy/currency.js"></script>
+    <script src="/Asset/JS/Thongtindangky/viewdata.js"></script>
     <script>
       initializeFileDropzone();
     </script>

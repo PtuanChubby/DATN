@@ -6,34 +6,24 @@
   </head>
   <body>
     <h1>Trang Chỉnh Sửa Thông Tin</h1>
-    <form id="editForm">
+    <form>
       <label for="name">Tên:</label>
-      <input
-        class="input_detail"
-        type="text"
-        name="name"
-        required
-      /><br />
-
+      <input class="input_detai" type="text" name="name" required /><br />
+      
       <label for="email">Email:</label>
-      <input
-        class="input_detail"
-        type="email"
-        name="email"
-        required
-      /><br />
+      <input class="input_detai" type="email" name="email" required /><br />
+      
       <label for="SĐT">Số điện thoại:</label>
-      <input
-        class="input_detail"
-        type="number"
-        name="SĐT"
-        required
-      /><br />
+      <input class="input_detai" type="number" name="SĐT" required /><br />
+      
+      <label for="name">File</label>
+      <input class="input_detai" type="file" name="file" required /><br />
 
+      <label for="name">Ngày:</label>
+      <input class="input_detai" type="date" name="date" required /><br />
       <!-- Các trường dữ liệu khác -->
-
     </form>
-    <button class="submitForm" id="SubmitInfo" type="submit">Cập Nhật</button>
+    <button class="submitForm" id="SubmitInfo">Cập Nhật</button>
 
     <button id="goBackButton">Quay Lại</button>
 
@@ -46,7 +36,7 @@
         }
 
         // Điền dữ liệu thông tin hiện tại vào các trường chỉnh sửa
-        const inputFields = document.getElementsByClassName("input_detail");
+        const inputFields = document.getElementsByClassName("input_detai");
         for (let i = 0; i < inputFields.length; i++) {
           const fieldName = inputFields[i].name;
           inputFields[i].value = infoData[fieldName];

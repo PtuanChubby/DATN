@@ -195,48 +195,40 @@
         </div>
       </div>
       <ul class="app-menu">
-        <li>
+        <!-- <li>
           <a class="app-menu__item" href="#">
             <i class="app-menu__icon fa-solid fa-house"></i>
             <span class="app-menu__label">Trang chủ</span></a
           >
-        </li>
-        <li class="my-md-3">
+        </li> -->
+        
+        <li class="my-md-2">
           <span class="app-sidebar-title fw-semibold">ĐỀ TÀI</span>
         </li>
         <li>
-          <a class="app-menu__item ps-4" href="#">
-            <i class="app-menu__icon fa-solid fa-list"></i>
-            <span class="app-menu__label">Danh mục đề tài</span></a
-          >
-          <a class="app-menu__item ps-4" href="Dangkydetai.html">
-            <i class="app-menu__icon fa-solid fa-folder-open"></i>
-            <span class="app-menu__label">Đăng ký đề tài</span></a
-          >
           <a class="app-menu__item ps-4 active" href="Quanlydetai.html">
-            <i class="app-menu__icon fa-solid fa-file"></i>
+            <i class="app-menu__icon fa-regular fa-rectangle-list"></i>
             <span class="app-menu__label">Quản lý đề tài</span></a
           >
-        </li>
-        <li class="my-md-3">
-          <span class="app-sidebar-title fw-semibold">ĐÁNH GIÁ</span>
-        </li>
-        <li>
-          <a class="app-menu__item ps-4" href="#">
-            <i class="app-menu__icon fa-solid fa-list"></i>
-            <span class="app-menu__label">Nhận xét của giảng viên</span></a
+          <!-- <a class="app-menu__item ps-4" href="#">
+              <i class="app-menu__icon fa-solid fa-list"></i>
+              <span class="app-menu__label">Danh mục đề tài</span></a
+            > -->
+          <a class="app-menu__item ps-4" href="Dangkydetai.html">
+            <i class="app-menu__icon fa-regular fa-file-lines"></i>
+            <span class="app-menu__label">Đăng ký đề tài</span></a
           >
-          <a class="app-menu__item ps-4" href="#">
-            <i class="app-menu__icon fa-solid fa-folder-open"></i>
-            <span class="app-menu__label">Điểm đề tài</span></a
+          <a class="app-menu__item ps-4" href="Dangkydetai.html">
+            <i class="app-menu__icon fa-regular fa-newspaper"></i>
+            <span class="app-menu__label">Xem kết quả</span></a
           >
         </li>
         <li class="my-md-2">
           <span class="app-sidebar-title fw-semibold">TÀI KHOẢN</span>
         </li>
         <li>
-          <a class="app-menu__item ps-4" href="#">
-            <i class="app-menu__icon fa-solid fa-user"></i>
+          <a class="app-menu__item ps-4" href="profile.html">
+            <i class="app-menu__icon fa-regular fa-circle-user"></i>
             <span class="app-menu__label">Thông tin tài khoản</span></a
           >
         </li>
@@ -253,7 +245,7 @@
           <p class="app-footer__user-designation">Sinh viên</p>
         </div>
         <button class="log-out__icon">
-          <a href="#"><i class="fa-solid fa-right-to-bracket"></i></a>
+          <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i></a>
         </button>
       </div>
     </aside>
@@ -309,6 +301,10 @@
                     </div>
                   </div>
                   <div id="projectDataTable" class="body-table">
+                    <div class="p-1 emptymessage" id="emptymessage">
+                      <span class="fw-semibold">Không có đề tài đăng ký</span>
+                    </div>
+
                     <!-- <div class="information_table" id="infor-01">
                       <div class="table_check-box">
                         <input class="form-check-input" type="checkbox" />
@@ -403,9 +399,9 @@
                     <div class="number_links">
                       <a href="#" class="link active">1</a>
                       <a href="#" class="link">2</a>
-                      <a href="#" class="link">3</a>
+                      <!-- <a href="#" class="link">3</a>
                       <a href="#" class="link">4</a>
-                      <a href="#" class="link">5</a>
+                      <a href="#" class="link">5</a> -->
                     </div>
 
                     <button class="button prevNext" id="next">

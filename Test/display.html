@@ -42,24 +42,30 @@
 
         const formattedStt = String(infoCount).padStart(2, "0"); // Định dạng số thứ tự
         infoDiv.innerHTML = `
-          <div class="cell-stt">
-            <span class="text-body_stt">${formattedStt}</span>
-          </div>
-          <div class="ten info">${info.name}</div>
-          <div><strong>Email:</strong> ${info.email}</div>
-          <div><strong>SĐT:</strong> ${info.SĐT}</div>
-          <button class="custom-button" onclick="handleView('${key}')">Xem</button>
-          <button class="custom-button" onclick="handleEdit('${key}')">Chỉnh Sửa</button>
-          <button class="custom-button" onclick="handleDelete('${key}')">Xóa</button>
-        `;
+                <div class="cell-stt">
+                  <span class="text-body_stt">${formattedStt}</span>
+                </div>
+                <div><strong>Tên:</strong> ${info.name}</div>
+                <div><strong>File:</strong> <a href="${info.file.url}" download>${info.file.name}</a></div>
+                <div><strong>Ngày:</strong> ${info.date}</div>
+                <div><strong>Email:</strong> ${info.email}</div>
+                <div><strong>SĐT:</strong> ${info.SĐT}</div>
+                <button class="custom-button" onclick="handleView('${key}')">Xem</button>
+                <button class="custom-button" onclick="handleEdit('${key}')">Chỉnh Sửa</button>
+                <button class="custom-button" onclick="handleDelete('${key}')">Xóa</button>
+              `;
 
         return infoDiv;
       }
 
       function handleView(key) {
-        const info = JSON.parse(localStorage.getItem(key));
-        localStorage.setItem("Thông tin xem", JSON.stringify(info));
-        window.location.href = "trang3.html";
+        const allInfo = JSON.parse(localStorage.getItem(key));
+        const info = allInfo;
+        info.index = key; // Lưu số thứ tự vào thông tin chỉnh sửa
+        const queryString = Object.keys(info)
+          .map((key) => key + "=" + encodeURIComponent(info[key]))
+          .join("&");
+        window.location.href = "view.html?" + queryString;
       }
 
       function handleEdit(key) {

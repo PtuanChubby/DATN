@@ -2,25 +2,55 @@
 <html>
 <head>
   <title>Trang Xem Thông Tin</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
   <h1>Trang Xem Thông Tin</h1>
-  <div id="infoContainer"></div>
-  <button id="backBtn">Quay Lại</button>
+  <form>
+    <label for="name">Tên:</label>
+    <input class="input_detail" type="text" name="name" disabled /><br />
+
+    <label for="file">File:</label>
+    <input class="input_detail" type="text" name="file" disabled /><br />
+
+    <label for="date">Ngày:</label>
+    <input class="input_detail" type="text" name="date" disabled /><br />
+
+    <label for="email">Email:</label>
+    <input class="input_detail" type="email" name="email" disabled /><br />
+
+    <label for="phone">Số điện thoại:</label>
+    <input class="input_detail" type="number" name="SĐT" disabled /><br />
+
+    <!-- Các trường dữ liệu khác -->
+  </form>
+
+  <button id="goBackButton">Quay Lại</button>
 
   <script>
-    const info = JSON.parse(localStorage.getItem('Thông tin đã nhập'));
-    document.getElementById('infoContainer').innerHTML = `
-      <p><strong>Tên:</strong> ${info.name}</p>
-      <p><strong>Email:</strong> ${info.email}</p>
-    `;
+    window.onload = function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const infoData = {};
+      for (const [key, value] of urlParams) {
+        infoData[key] = value;
+      }
 
-    const backBtn = document.getElementById('backBtn');
+      // Điền dữ liệu thông tin đã nhập vào các trường chỉnh sửa
+      const inputFields = document.getElementsByClassName("input_detail");
+      for (let i = 0; i < inputFields.length; i++) {
+        const fieldName = inputFields[i].name;
+        if (infoData.hasOwnProperty(fieldName)) {
+          inputFields[i].value = infoData[fieldName];
+        }
+      }
 
-    backBtn.addEventListener('click', function() {
-      window.location.href = 'display.html';
-    });
+      function handleGoBack() {
+        window.history.back();
+      }
+
+      const goBackButton = document.getElementById("goBackButton");
+      goBackButton.addEventListener("click", handleGoBack);
+    };
   </script>
 </body>
 </html>

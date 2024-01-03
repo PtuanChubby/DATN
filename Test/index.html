@@ -8,12 +8,19 @@
     <h1>Trang Nhập Thông Tin</h1>
     <form id="infoForm">
       <label for="name">Tên:</label>
-      <input class="input_detai" type="text" id="name1" name="name" required /><br />
+      <input class="input_detai" type="text" name="name" required /><br />
+
+      <label for="name">File</label>
+      <input class="input_detai" type="file" name="file" required /><br />
+
+      <label for="name">Ngày:</label>
+      <input class="input_detai" type="date" name="date" required /><br />
 
       <label for="email">Email:</label>
-      <input class="input_detai" type="email" id="email1" name="email" required /><br />
+      <input class="input_detai" type="email" name="email" required /><br />
+
       <label for="SĐT">Số điện thoại</label>
-      <input class="input_detai" type="number" id="SĐT1" name="SĐT" required /><br />
+      <input class="input_detai" type="number" name="SĐT" required /><br />
 
       <button type="submit">Lưu</button>
     </form>
@@ -27,7 +34,22 @@
 
         inputFields.forEach((input) => {
           const fieldName = input.getAttribute("name");
-          const fieldValue = input.value;
+          const fieldType = input.getAttribute("type");
+          let fieldValue = input.value;
+
+          // Xử lý dữ liệu theo từng loại trường
+          if (fieldType === "file") {
+            // Nếu là trường input file, lưu thông tin về tên tệp và đường dẫn
+            const file = input.files[0];
+            fieldValue = {
+              name: file.name,
+              path: URL.createObjectURL(file),
+            };
+          } else if (fieldType === "date") {
+            // Nếu là trường input date, chuyển đổi giá trị thành chuỗi ngày tháng
+            const date = new Date(input.value);
+            fieldValue = date.toISOString().split("T")[0];
+          }
 
           // Kiểm tra xem trường input có giá trị không
           if (fieldValue) {
@@ -41,7 +63,6 @@
             `Thông tin đã nhập_${timestamp}`,
             JSON.stringify(data)
           );
-        } else {
         }
       }
 

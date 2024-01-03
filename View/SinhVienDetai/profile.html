@@ -3,20 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Trang cá nhân | USSH-VNUHCM</title>
-    <link href="./Asset/IMG/Logo USSH.jpg" rel="icon" />
-    <!-- <script
-      src="https://kit.fontawesome.com/4ced78dcc2.js"
-      crossorigin="anonymous"
-    ></script> -->
+    <title>Trang cá nhân | TV-TTH | USSH-VNUHCM</title>
+    <link href="/Asset/IMG/610_TVTT.png" rel="icon" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="/bootstrap-5.3.2-dist/css/bootstrap.min.css"
-    />
+
+    <link rel="stylesheet" href="/bootstrap-5.3.2-dist/css/bootstrap.min.css" />
     <!-- Main CSS-->
     <!-- <link rel="stylesheet" type="text/css" href="./Asset/CSS/css/main.css" /> -->
     <!-- Font-icon css-->
@@ -24,8 +19,15 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     />
+    <script
+      src="https://kit.fontawesome.com/4ced78dcc2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/fontawesome-free-6.4.2-web/css/all.css" />
+    <!-- smart-wizard -->
+    <!-- <link rel="stylesheet" href="/Asset/CSS/smart/smart_wizard_all.min.css" /> -->
     <!-- Admin CSS -->
-    <link rel="stylesheet" href="/Asset/CSS/user.css" />
+    <link rel="stylesheet" href="/Asset/CSS/mainUSSH.css" />
   </head>
   <body class="app sidebar-mini">
     <!-- Navbar-->
@@ -36,13 +38,23 @@
         href="#"
         data-toggle="sidebar"
         aria-label="Hide Sidebar"
+        ><i class="icon fa-solid fa-bars fs-5"></i
       ></a>
-      <div class="title-header">
-        <h5><i class="bi bi-book-half"></i> HỆ THỐNG QUẢN LÝ ĐỀ TÀI</h5>
-      </div>
+      <!-- <div class="title-header">
+      <h5><i class="bi bi-book-half"></i> HỆ THỐNG QUẢN LÝ ĐỀ TÀI</h5>
+    </div> -->
       <!-- Navbar Right Menu-->
       <ul class="app-nav">
-        
+        <li class="app-search">
+          <input
+            class="app-search__input"
+            type="search"
+            placeholder="Tìm kiếm"
+          />
+          <button class="app-search__button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </li>
         <!--Notification Menu-->
         <li class="dropdown">
           <a
@@ -50,7 +62,7 @@
             href="#"
             data-bs-toggle="dropdown"
             aria-label="Show notifications"
-            ><i class="bi bi-bell fs-5"></i
+            ><i class="fa-regular fa-bell fs-5"></i
           ></a>
           <ul class="app-notification dropdown-menu dropdown-menu-right">
             <li class="app-notification__title">
@@ -148,7 +160,7 @@
             href="#"
             data-bs-toggle="dropdown"
             aria-label="Open Profile Menu"
-            ><i class="bi bi-person fs-4"></i
+            ><i class="fa-regular fa-user fs-5"></i
           ></a>
           <ul class="dropdown-menu settings-menu dropdown-menu-right">
             <li>
@@ -173,264 +185,262 @@
     <!-- Sidebar menu-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
-      <div class="app-sidebar__user">
+      <div class="app-header__logo">
         <img
-          class="app-sidebar__user-avatar"
-          src="https://randomuser.me/api/portraits/men/1.jpg"
+          class="app-header__logo-avatar"
+          src="/Asset/IMG/610_TVTT.png"
           alt="User Image"
         />
         <div>
-          <p class="app-sidebar__user-name">John Doe</p>
-          <p class="app-sidebar__user-designation">Frontend Developer</p>
+          <b class="app-header__logo-name">Khoa thư viện thông tin học</b>
+          <p class="app-header__logo-designation">Quản lý hoạt động NCKH</p>
         </div>
       </div>
       <ul class="app-menu">
+        <!-- <li>
+        <a class="app-menu__item" href="#">
+          <i class="app-menu__icon fa-solid fa-house"></i>
+          <span class="app-menu__label">Trang chủ</span></a
+        >
+      </li> -->
+        <li class="my-md-3">
+          <span class="app-sidebar-title fw-normal">ĐỀ TÀI</span>
+        </li>
         <li>
-          <a class="app-menu__item active" href="/user.html"
-            ><i class="app-menu__icon bi bi-house-door"></i
-            ><span class="app-menu__label">Trang cá nhân</span></a
+          <a class="app-menu__item ps-4" href="Quanlydetai.html">
+            <i class="app-menu__icon fa-regular fa-rectangle-list"></i>
+            <span class="app-menu__label">Quản lý đề tài</span></a
+          >
+          <!-- <a class="app-menu__item ps-4" href="#">
+            <i class="app-menu__icon fa-solid fa-list"></i>
+            <span class="app-menu__label">Danh mục đề tài</span></a
+          > -->
+          <a class="app-menu__item ps-4" href="Dangkydetai.html">
+            <i class="app-menu__icon fa-regular fa-file-lines"></i>
+            <span class="app-menu__label">Đăng ký đề tài</span></a
+          >
+          <a class="app-menu__item ps-4" href="Dangkydetai.html">
+            <i class="app-menu__icon fa-regular fa-newspaper"></i>
+            <span class="app-menu__label">Xem kết quả</span></a
           >
         </li>
-        <li class="treeview">
-          <a class="app-menu__item" href="#" data-toggle="treeview"
-            ><i class="app-menu__icon bi bi-laptop"></i
-            ><span class="app-menu__label">Đề tài</span
-            ><i class="treeview-indicator bi bi-chevron-right"></i
-          ></a>
-          <ul class="treeview-menu">
-            <li>
-              <a class="treeview-item" href="dk-de-tai.html"
-                ><i class="icon bi bi-circle-fill"></i> Đăng ký đề tài</a
-              >
-            </li>
-            <li>
-              <a class="treeview-item" href="Ds-de-tai.html"
-                ><i class="icon bi bi-circle-fill"></i> Danh sách đề tài</a
-              >
-            </li>
-            <li>
-              <a class="treeview-item" href="gia-han-de-tai.html"
-                ><i class="icon bi bi-circle-fill"></i> Gia hạn đề tài</a
-              >
-            </li>
-            <li>
-              <a class="treeview-item" href="huy-de-tai.html"
-                ><i class="icon bi bi-circle-fill"></i> Hủy đề tài</a
-              >
-            </li>
-          </ul>
+        <li class="my-md-2">
+          <span class="app-sidebar-title fw-normal">TÀI KHOẢN</span>
         </li>
-        <li class="treeview">
-          <a class="app-menu__item" href="#" data-toggle="treeview"
-            ><i class="app-menu__icon bi bi-ui-checks"></i
-            ><span class="app-menu__label">Xem và đánh giá</span
-            ><i class="treeview-indicator bi bi-chevron-right"></i
-          ></a>
-          <ul class="treeview-menu">
-            <li>
-              <a class="treeview-item" href="form-components.html"
-                ><i class="icon bi bi-circle-fill"></i> Điểm đề cương</a
-              >
-            </li>
-            <li>
-              <a class="treeview-item" href="form-samples.html"
-                ><i class="icon bi bi-circle-fill"></i> Điểm đề tài</a
-              >
-            </li>
-            <li>
-              <a class="treeview-item" href="form-samples.html"
-                ><i class="icon bi bi-circle-fill"></i> Nhận xét của giảng
-                viên</a
-              >
-            </li>
-          </ul>
+        <li>
+          <a class="app-menu__item ps-4 active" href="#">
+            <i class="app-menu__icon fa-regular fa-circle-user"></i>
+            <span class="app-menu__label">Thông tin tài khoản</span></a
+          >
         </li>
       </ul>
+
+      <div class="app-footer__user">
+        <img
+          class="app-footer__user-avatar"
+          src="/Asset/IMG/PNGH.jpg"
+          alt="User Image"
+        />
+        <div>
+          <b class="app-footer__user-name">Phạm Ngọc Gia Hân</b>
+          <p class="app-footer__user-designation">Sinh viên</p>
+        </div>
+        <button class="log-out__icon">
+          <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i></a>
+        </button>
+      </div>
     </aside>
     <main class="app-content">
       <div class="app-title">
-        <div>
-          <h1><i class="bi bi-person-vcard"></i> Lý lịch sinh viên</h1>
+        <div class="app-sidebar__user">
+          <img
+            class="app-sidebar__user-avatar"
+            src="/Asset/IMG/PNGH.jpg"
+            alt="User Image"
+          />
+          <div>
+            <b class="app-sidebar__user-name">Phạm Ngọc Gia Hân</b>
+            <p class="app-sidebar__user-designation">Sinh viên</p>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="panel-button-title col-3 d-flex justify-content-end">
+          <button
+            disabled
+            id="EditInfo"
+            class="btn btn-primary fw-normal edit-info-btn"
+          >
+            <i class="fa-solid fa-pen-to-square"></i>
+            Chỉnh sửa
+          </button>
         </div>
       </div>
       <div class="app-form">
-        <div class="tile">
-          <h3 class="tile-title">Thông tin cơ bản</h3>
-          <div class="tile-body">
-            <div class="row">
-              <div class="col-md-6 border-right">
-                <div class="p-3">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <h6 class="lables">Họ tên</h6>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="first name"
-                        readonly
-                        value="Phạm Văn Tuấn"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12">
-                      <h6 class="lables">Mã số sinh viên</h6>
-                      <input
-                        type="text"
-                        class="form-control"
-                        readonly
-                        value="2056210120"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12">
-                      <h6 class="labels">Ngày sinh</h6>
-                      <input
-                        type="text"
-                        class="form-control"
-                        readonly
-                        placeholder="Ngày sinh"
-                        value="30/06/2001"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12">
-                      <h6 class="labels">GIới tính</h6>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="GIới tính"
-                        value="Nam"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12">
-                      <h6 class="labels">Số điện thoại</h6>
-                      <input
-                        name="sSDT"
-                        type="text"
-                        class="form-control"
-                        placeholder="Số điện thoại"
-                        value="0363110621"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12">
-                      <h6 class="labels">Địa chỉ</h6>
-                      <input
-                        name="sDiachi"
-                        type="text"
-                        class="form-control"
-                        placeholder="Địa chỉ"
-                        value="Thanh Hóa"
-                      />
-                    </div>
-                  </div>
-                  <div class="mt-5 text-center">
-                    <button
-                      class="btn btn-primary profile-button"
-                      type="submit"
-                    >
-                      Chỉnh sửa thông tin
-                    </button>
-                  </div>
+        <div class="form-info d-flex">
+          <div class="d-flex col-md-3 flex-wrap">
+            <div class="d-flex col-12">
+              <div class="d-flex mb-1 align-items-start col-12">
+                <div class="fw-medium-1 w-11rem fs-5 mt-1">
+                  Thông tin cá nhân
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="p-3">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <h6 class="lables">Khoa</h6>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Khoa"
-                        readonly
-                        value="Thư viện - thông tin học"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12">
-                      <h6 class="lables">Ngành</h6>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Chuyên ngành"
-                        readonly
-                        value="Quản lý thông tin"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12">
-                      <h6 class="labels">Lớp</h6>
-                      <input
-                        type="text"
-                        class="form-control"
-                        readonly
-                        placeholder="Lớp"
-                        value="20621"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12">
-                      <h6 class="labels">Hệ đào tạo</h6>
-                      <input
-                        name="sHDT"
-                        type="text"
-                        class="form-control"
-                        placeholder="Hệ đào tạo"
-                        value="Chính quy"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12">
-                      <h6 class="labels">Niên khóa</h6>
-                      <input
-                        name="sNK"
-                        type="text"
-                        class="form-control"
-                        placeholder="Niên khóa"
-                        value="2020-2024"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12">
-                      <h6 class="labels">Quốc tịch</h6>
-                      <input
-                        name="sCSDT"
-                        type="text"
-                        class="form-control"
-                        placeholder="Quốc tịch"
-                        value="Việt Nam"
-                      />
-                    </div>
-                  </div>
-
-                  <div class="mt-5 text-center">
-                    <button
-                      class="btn btn-success profile-button"
-                      type="submit"
-                    >
-                      Lưu thông tin
-                    </button>
-                  </div>
+            </div>
+          </div>
+          <div class="d-flex col-md-9 flex-wrap">
+            <div class="d-flex justify-content-end col-12">
+              <div class="d-flex mb-1 align-items-center col-12">
+                <div class="fw-normal w-8rem">Họ và Tên:</div>
+                <span class="form-control flex-fill fs-6 color-disabled">
+                  Phạm Ngọc Gia Hân
+                </span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end col-12 mt-2">
+              <div class="d-flex mb-1 align-items-center col-6">
+                <div class="fw-normal w-8rem">Ngày sinh:</div>
+                <span class="form-control flex-fill fs-6 color-disabled">
+                  30/10/2000
+                </span>
+              </div>
+              <div class="d-flex mb-1 align-items-center col-6">
+                <div class="fw-normal w-6rem ms-4">Giới tính:</div>
+                <span class="form-control flex-fill fs-6 color-disabled">
+                  Nữ
+                </span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end col-12 mt-2">
+              <div class="d-flex mb-1 align-items-center col-12">
+                <div class="fw-normal w-8rem">Ngành:</div>
+                <span class="form-control flex-fill fs-6 color-disabled">
+                  Thư viện - thông tin học
+                </span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end col-12 mt-2">
+              <div class="d-flex mb-1 align-items-center col-12">
+                <div class="fw-normal w-8rem">Mã số sinh viên:</div>
+                <span class="form-control flex-fill fs-6 color-disabled">
+                  2056210014
+                </span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end col-12 mt-2">
+              <div class="d-flex mb-1 align-items-center col-6">
+                <div class="fw-normal w-8rem">Niên khóa:</div>
+                <span class="form-control flex-fill fs-6 color-disabled">
+                  2020-2024
+                </span>
+              </div>
+              <div class="d-flex mb-1 align-items-center col-6">
+                <div class="fw-normal w-6rem ms-4">Hệ đào tạo:</div>
+                <span class="form-control flex-fill fs-6 color-disabled">
+                  Đại trà
+                </span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end col-12 mt-2">
+              <div class="d-flex mb-1 align-items-center col-12">
+                <div class="fw-normal w-8rem">Số CMND/CCCD:</div>
+                <span class="form-control flex-fill fs-6 color-disabled">
+                  2056210014
+                </span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end col-12 mt-2">
+              <div class="d-flex mb-1 align-items-center col-6">
+                <div class="fw-normal w-8rem">Ngày cấp:</div>
+                <span class="form-control flex-fill fs-6 color-disabled">
+                  21/11/2021
+                </span>
+              </div>
+              <div class="d-flex mb-1 align-items-center col-6">
+                <div class="fw-normal w-6rem ms-4">Nơi cấp:</div>
+                <span class="form-control flex-fill fs-6 color-disabled">
+                  Bình Thuận
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-info d-flex">
+          <div class="d-flex col-md-3 flex-wrap">
+            <div class="d-flex col-12">
+              <div class="d-flex mb-1 align-items-start col-12">
+                <div class="fw-medium-1 w-11rem fs-5 mt-1">
+                  Thông tin liên lạc
                 </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex col-md-9 flex-wrap">
+            <div class="d-flex justify-content-end col-12">
+              <div class="d-flex mb-1 align-items-center col-12">
+                <div class="fw-normal w-8rem">Địa chỉ liên lạc:</div>
+                <span class="form-control flex-fill fs-6 color-disabled">
+                  Ký túc xá ĐHQG Khu B - ĐHQG Tp.HCM, phường Đông Hòa, thành phố
+                  Dĩ An, Bình Dương
+                </span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end col-12 mt-2">
+              <div class="d-flex mb-1 align-items-center col-12">
+                <div class="fw-normal w-8rem">Số điện thoại:</div>
+                <span class="form-control flex-fill fs-6 color-disabled">
+                  0344407929
+                </span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end col-12 mt-2">
+              <div class="d-flex mb-1 align-items-center col-12">
+                <div class="fw-normal w-8rem">Mã số sinh viên:</div>
+                <span class="form-control flex-fill fs-6 color-disabled">
+                  pngiahan3010@gmail.com
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-info d-flex">
+          <div class="d-flex col-md-3 flex-wrap">
+            <div class="d-flex col-12">
+              <div class="d-flex mb-1 align-items-start col-12">
+                <div class="fw-medium-1 w-11rem fs-5 mt-1">
+                  Tài khoản ngân hàng
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex col-md-9 flex-wrap">
+            <div class="d-flex justify-content-end col-12">
+              <div class="d-flex mb-1 align-items-center col-12">
+                <div class="fw-normal w-8rem">Số tài khoản:</div>
+                <span class="form-control flex-fill fs-6 color-disabled">
+                  12345678968433
+                </span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end col-12 mt-2">
+              <div class="d-flex mb-1 align-items-center col-12">
+                <div class="fw-normal w-8rem">Ngân hàng:</div>
+                <span class="form-control flex-fill fs-6 color-disabled"
+                  >Techcombank</span
+                >
+              </div>
+            </div>
+            <div class="d-flex justify-content-end col-12 mt-2">
+              <div class="d-flex mb-1 align-items-center col-12">
+                <div class="fw-normal w-8rem">Chi nhánh:</div>
+                <span class="form-control flex-fill fs-6 color-disabled">
+                  Phan Rí Cửa
+                </span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <a
+      <!-- <a
         class="btn btn-secondary"
         href="/user.html"
         style="
@@ -446,85 +456,24 @@
         "
       >
         <i class="bi bi-reply-fill" style="margin-top: 2px"></i>
-      </a>
+      </a> -->
     </main>
-    <!-- Essential javascripts for application to work-->
-    <script src="/Asset/JS/jquery-3.7.1.min.js"></script>
+    <script src="/Asset/JS/js/jquery-3.7.0.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <!-- <script src="./bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script> -->
+    <!-- <script type="text/javascript" src="/Asset/JS/js/plugins/chart.js"></script> -->
+    <!-- <script src="/Asset/JS/js/jquery.smartWizard.js"></script> -->
+    <script src="/Asset/JS/index.js"></script>
+    <script src="/Asset/JS/Don-dang-ky/don-dk.js"></script>
     <script src="/Asset/JS/user.js"></script>
-    <!-- Page specific javascripts-->
-    <script
-      type="text/javascript"
-      src="/Asset/JS/js/plugins/chart.js"
-    ></script>
-    <script type="text/javascript">
-      const salesData = {
-        type: "line",
-        data: {
-          labels: ["Jan", "Feb", "March", "April", "May", "June"],
-          datasets: [
-            {
-              label: "Monthly Sales",
-              data: [65, 59, 80, 81, 56, 55, 40],
-              fill: false,
-              borderColor: "rgb(75, 192, 192)",
-              tension: 0.1,
-            },
-          ],
-        },
-      };
-
-      const supportRequests = {
-        type: "doughnut",
-        data: {
-          labels: ["In-Progress", "Complete", "Delayed"],
-          datasets: [
-            {
-              label: "Support Requests",
-              data: [300, 50, 100],
-              backgroundColor: ["#EFCC00", "#5AD3D1", "#FF5A5E"],
-              hoverOffset: 4,
-            },
-          ],
-        },
-      };
-
-      const salesChartCtx = document.getElementById("salesChart");
-      new Chart(salesChartCtx, salesData);
-
-      const supportChartCtx = document.getElementById("supportRequestChart");
-      new Chart(supportChartCtx, supportRequests);
-    </script>
-    <!-- Google analytics script-->
-    <script type="text/javascript">
-      if (document.location.hostname == "pratikborsadiya.in") {
-        (function (i, s, o, g, r, a, m) {
-          i["GoogleAnalyticsObject"] = r;
-          (i[r] =
-            i[r] ||
-            function () {
-              (i[r].q = i[r].q || []).push(arguments);
-            }),
-            (i[r].l = 1 * new Date());
-          (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-          a.async = 1;
-          a.src = g;
-          m.parentNode.insertBefore(a, m);
-        })(
-          window,
-          document,
-          "script",
-          "//www.google-analytics.com/analytics.js",
-          "ga"
-        );
-        ga("create", "UA-72504830-1", "auto");
-        ga("send", "pageview");
-      }
+    <script src="/Asset/JS/FileUpload/fileUpload.js"></script>
+    <script src="/Asset/JS/Curerncy/currency.js"></script>
+    <script src="/Asset/JS/Thongtindangky/savedata.js"></script>
+    <script>
+      initializeFileDropzone();
     </script>
   </body>
 </html>

@@ -14,10 +14,17 @@
   font-size: 16px;
 }
 .log-out__icon {
+  color: #fe5401;
   border: none;
   margin: 0 0 8px 10px;
   background-color: #ffffff;
   font-size: 20px;
+}
+.log-out__icon a {
+  color: #fe5401;
+}
+.log-out__icon a:hover {
+  color: #dc3545;
 }
 
 .input-group .info-ht,
@@ -35,9 +42,9 @@
 }
 
 .app-project {
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
   background-color: #ffffff;
-  border: 3px solid #f8f9fa;
+  border: 1px solid #FFF0EB;
   padding: 20px;
   border-radius: 8px;
 }
@@ -252,7 +259,7 @@
   background-color: #ffffff;
   font-size: 15px;
 }
-.btn-xem a {
+.btn-xem  {
   font-size: 16px;
   line-height: 1.5;
   border-radius: 3px;
@@ -937,4 +944,13 @@ input[type="number"] {
 }
 .themtheloai span {
   margin-bottom: 2px;
+}
+.emptymessage {
+  font-size: 12px;
+  color: #999;
+  margin-top: 0.5rem;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
 }

@@ -197,48 +197,43 @@
         </div>
       </div>
       <ul class="app-menu">
-        <li>
+        <!-- <li>
           <a class="app-menu__item" href="#">
             <i class="app-menu__icon fa-solid fa-house"></i>
             <span class="app-menu__label">Trang chủ</span></a
           >
+        </li> -->
+        <li class="my-md-3">
+          <span class="app-sidebar-title fw-semibold">ĐỀ TÀI</span>
         </li>
-        <li class="mt-3 mb-1">
+        <li></li>
+        <li class="my-md-2">
           <span class="app-sidebar-title fw-semibold">ĐỀ TÀI</span>
         </li>
         <li>
-          <a class="app-menu__item ps-4" href="trangchu1.html">
-            <i class="app-menu__icon fa-solid fa-list"></i>
-            <span class="app-menu__label">Danh mục đề tài</span></a
-          >
-          <a class="app-menu__item ps-4 active" href="#">
-            <i class="app-menu__icon fa-solid fa-folder-open"></i>
-            <span class="app-menu__label">Đăng ký</span></a
-          >
           <a class="app-menu__item ps-4" href="Quanlydetai.html">
-            <i class="app-menu__icon fa-solid fa-file"></i>
+            <i class="app-menu__icon fa-regular fa-rectangle-list"></i>
             <span class="app-menu__label">Quản lý đề tài</span></a
           >
-        </li>
-        <li class="mt-3 mb-1">
-          <span class="app-sidebar-title fw-semibold">ĐÁNH GIÁ</span>
-        </li>
-        <li>
-          <a class="app-menu__item ps-4" href="#">
-            <i class="app-menu__icon fa-solid fa-list"></i>
-            <span class="app-menu__label">Nhận xét của giảng viên</span></a
+          <!-- <a class="app-menu__item ps-4" href="#">
+              <i class="app-menu__icon fa-solid fa-list"></i>
+              <span class="app-menu__label">Danh mục đề tài</span></a
+            > -->
+          <a class="app-menu__item ps-4 active" href="Dangkydetai.html">
+            <i class="app-menu__icon fa-regular fa-file-lines"></i>
+            <span class="app-menu__label">Đăng ký đề tài</span></a
           >
-          <a class="app-menu__item ps-4" href="#">
-            <i class="app-menu__icon fa-solid fa-folder-open"></i>
-            <span class="app-menu__label">Điểm đề tài</span></a
+          <a class="app-menu__item ps-4" href="Dangkydetai.html">
+            <i class="app-menu__icon fa-regular fa-newspaper"></i>
+            <span class="app-menu__label">Xem kết quả</span></a
           >
         </li>
         <li class="my-md-2">
           <span class="app-sidebar-title fw-semibold">TÀI KHOẢN</span>
         </li>
         <li>
-          <a class="app-menu__item ps-4" href="#">
-            <i class="app-menu__icon fa-solid fa-user"></i>
+          <a class="app-menu__item ps-4" href="profile.html">
+            <i class="app-menu__icon fa-regular fa-circle-user"></i>
             <span class="app-menu__label">Thông tin tài khoản</span></a
           >
         </li>
@@ -255,19 +250,19 @@
           <p class="app-footer__user-designation">Sinh viên</p>
         </div>
         <button class="log-out__icon">
-          <a href="#"><i class="fa-solid fa-right-to-bracket"></i></a>
+          <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i></a>
         </button>
       </div>
     </aside>
     <main class="app-content">
       <div class="app-title">
-        <div class="panel-title col-9">
+        <div class="panel-title">
           <!-- <div class="breadcrumb-item">
             <a class="icon-return" href="#"
               ><i class="fa-solid fa-arrow-left mt-1"></i>Quay lại</a
             >
           </div> -->
-          <b class="panel-heading">Chỉnh sửa đề tài</b>
+          <b class="panel-heading">Đề tài đang đăng ký</b>
           <p class="panel-subtitle">
             Biểu mẫu điền thông tin đăng ký đề tài nghiên cứu khoa học danh cho
             sinh viên
@@ -280,9 +275,8 @@
             type="submit"
             class="btn btn-primary fw-semibold save-info-btn submit"
           >
-          Lưu thay đổi
+            Lưu thay đổi
           </button>
-          
         </div>
       </div>
 
@@ -381,7 +375,7 @@
                                   class="form-control input_detai"
                                   required
                                 >
-                                  <option selected="" disabled="">
+                                  <option value="" selected="" disabled="">
                                     Loại đề tài
                                   </option>
                                   <option>Cấp khoa</option>
@@ -532,7 +526,7 @@
                                 <input
                                   name="birthday"
                                   id="birthday"
-                                  class="form-control input_detai"
+                                  class="form-control"
                                   placeholder="dd-mm-yyyy"
                                   type="date"
                                   required="required"
@@ -601,7 +595,7 @@
                                 <input
                                   name="dateofissua"
                                   id="dateofissua"
-                                  class="form-control input_detai"
+                                  class="form-control"
                                   placeholder="dd-mm-yyyy"
                                   type="date"
                                   required="required"
@@ -1037,7 +1031,7 @@
                                 name="inputFile"
                                 type="file"
                                 id="inputFile"
-                                class="file-input input_detai"
+                                class="file-input"
                                 onchange="displayFileInfo()"
                                 multiple
                               />
@@ -1580,7 +1574,8 @@
     <script src="/Asset/JS/user.js"></script>
     <script src="/Asset/JS/FileUpload/fileUpload.js"></script>
     <script src="/Asset/JS/Curerncy/currency.js"></script>
-    <script src="/Asset/JS/Thongtindangky/edit-info.js"></script>
+    <script src="/Asset/JS/Thongtindangky/creat-table.js"></script>
+    <script src="/Asset/JS/Thongtindangky/editinfo.js"></script>
     <script>
       initializeFileDropzone();
     </script>
