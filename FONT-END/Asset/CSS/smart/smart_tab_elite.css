@@ -191,6 +191,7 @@
 }
 
 .st-theme-elite > .nav .nav-link {
+    width: 150px;
     border: 1px solid transparent;
     border-bottom-width: 0;
     color: var( --st-color-black) !important; 

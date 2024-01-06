@@ -15,16 +15,16 @@ function createinfodata(data, key) {
   </div>
   <div class="cell-ttv">
   <span class="text-body_ttv"
-  >${data.inputNameTV}</span
+  >${data.tenTV}</span
   >
   </div>
   <div class="cell-tta">
   <span class="text-body_tta"
-  >${data.inputNameTA}</span
+  >${data.tenTA}</span
   >
   </div>
   <div class="cell-cn">
-  <span class="text-body_cn">${data.inputNameHT}</span>
+  <span class="text-body_cn">${data.hoTenCn}</span>
   </div>
   <div class="cell-time">
   <span class="text-body_time"

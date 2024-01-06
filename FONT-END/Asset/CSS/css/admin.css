@@ -1,0 +1,169 @@
+.admin-header_table {
+  /* background-color: rgba(255, 255, 255, 0); */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: flex-start; */
+  padding: 8px 12px;
+  background-color: #e9ecef;
+  border-radius: 8px 8px 0 0;
+}
+.admin-body-table {
+  position: relative;
+  width: 100%;
+}
+.admin-body-table .information_table {
+  cursor: pointer;
+  padding: 8px 12px;
+  align-self: stretch;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: flex-start; */
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.admin-body-table :hover {
+    background-color: #f7f9fc;
+}
+.admin-text-header_cell {
+  font-weight: bold;
+  position: relative;
+}
+
+.admin-table_check-box {
+  font-size: 15px;
+  align-self: stretch;
+  width: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 8px 9px;
+}
+/* .admin-cell-stt {
+  background-color: rgba(255, 255, 255, 0);
+  width: 5%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8px 8px 9px;
+  box-sizing: border-box;
+} */
+
+.admin-cell-tdetai {
+  position: relative;
+  align-self: stretch;
+  width: 25%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8px 8px 9px;
+  box-sizing: border-box;
+}
+.admin-cell-execution-time,
+.admin-cell-registration-time {
+  position: relative;
+  align-self: stretch;
+  width: 20%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8px 8px 9px;
+  box-sizing: border-box;
+}
+.admin-cell-cndetai {
+  position: relative;
+  align-self: stretch;
+  width: 15%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8px 8px 9px;
+  box-sizing: border-box;
+}
+.admin-cell-action {
+  position: relative;
+  align-self: stretch;
+  width: 15%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8px 8px 9px;
+  box-sizing: border-box;
+}
+.admin-icon-action {
+  position: relative;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .icon-action {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+/* CSS cho các nút chỉnh sửa */
+.btn-xs {
+  border: none;
+  background-color: #ffffff;
+  font-size: 15px;
+}
+.admin-btn-cricle-check {
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 3px;
+  color: #00ff00;
+}
+.admin-btn-xem {
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 3px;
+  color: #00bcd4;
+}
+.admin-btn-xem a {
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 3px;
+  color: #00bcd4;
+}
+.admin-btn-sua {
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 3px;
+  color: #0dcaf0;
+}
+.admin-btn-xoa {
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 3px;
+  color: #dc3545;
+}
+.admin-btn-rotate {
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 3px;
+  color: #6c757d;
+}
